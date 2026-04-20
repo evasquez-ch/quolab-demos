@@ -1,0 +1,71 @@
+<!-- SERVICIOS B: Layout alternado imagen/texto, uno por fila -->
+<section id="servicios" class="servicios servicios-b">
+  <div class="container">
+    <div class="servicios-b__header">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Lo que hacemos por ti</h2>
+    </div>
+    <div class="servicios-b__list">
+      <div class="sb-item">
+        <div class="sb-item__img"><img src="{{img_servicios_1_url}}" alt="{{servicio_1_titulo}}" loading="lazy"></div>
+        <div class="sb-item__text">
+          <div class="sb-item__num">01</div>
+          <div class="sb-item__ico">{{servicio_1_icono}}</div>
+          <h3 class="sb-item__title">{{servicio_1_titulo}}</h3>
+          <p class="sb-item__desc">{{servicio_1_desc}}</p>
+        </div>
+      </div>
+      <div class="sb-item sb-item--reverse">
+        <div class="sb-item__img"><img src="{{img_servicios_2_url}}" alt="{{servicio_2_titulo}}" loading="lazy"></div>
+        <div class="sb-item__text sb-item__text--dark">
+          <div class="sb-item__num sb-item__num--light">02</div>
+          <div class="sb-item__ico">{{servicio_2_icono}}</div>
+          <h3 class="sb-item__title sb-item__title--light">{{servicio_2_titulo}}</h3>
+          <p class="sb-item__desc sb-item__desc--light">{{servicio_2_desc}}</p>
+        </div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-item__img"><img src="{{img_servicios_3_url}}" alt="{{servicio_3_titulo}}" loading="lazy"></div>
+        <div class="sb-item__text">
+          <div class="sb-item__num">03</div>
+          <div class="sb-item__ico">{{servicio_3_icono}}</div>
+          <h3 class="sb-item__title">{{servicio_3_titulo}}</h3>
+          <p class="sb-item__desc">{{servicio_3_desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.servicios-b { background: #fff; }
+.servicios-b__header { text-align: center; margin-bottom: 4rem; }
+.servicios-b__list { display: flex; flex-direction: column; gap: 1.5rem; }
+.sb-item {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid #eef0f5; min-height: 320px;
+}
+.sb-item--reverse .sb-item__img { order: 2; }
+.sb-item--reverse .sb-item__text { order: 1; }
+.sb-item__img { overflow: hidden; }
+.sb-item__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.sb-item:hover .sb-item__img img { transform: scale(1.04); }
+.sb-item__text {
+  padding: 2.5rem; background: #f8faff;
+  display: flex; flex-direction: column; justify-content: center; gap: 0.6rem;
+}
+.sb-item__text--dark { background: #080c14; }
+.sb-item__num { font-size: 0.7rem; font-weight: 800; color: var(--color-primario); letter-spacing: 0.15em; }
+.sb-item__num--light { color: rgba(255,255,255,0.3); }
+.sb-item__ico { font-size: 2.2rem; line-height: 1; margin-bottom: 0.25rem; }
+.sb-item__title { font-size: 1.4rem; font-weight: 800; color: #0a0a0a; line-height: 1.2; font-family: var(--font-display); }
+.sb-item__title--light { color: #fff; }
+.sb-item__desc { font-size: 0.92rem; color: #666; line-height: 1.7; }
+.sb-item__desc--light { color: rgba(255,255,255,0.55); }
+@media(max-width:768px) {
+  .sb-item { grid-template-columns: 1fr; min-height: auto; }
+  .sb-item--reverse .sb-item__img { order: 0; }
+  .sb-item--reverse .sb-item__text { order: 1; }
+  .sb-item__img { height: 200px; }
+}
+</style>

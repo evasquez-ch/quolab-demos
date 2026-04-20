@@ -1,0 +1,69 @@
+<!-- CTA C: Imagen fondo oscura con CTA centrado grande -->
+<section class="cta cta-c" style="background-image:url('{{img_cta_url}}');">
+  <div class="cta-c__overlay"></div>
+  <div class="container cta-c__inner">
+    <div class="cta-c__accent-line"></div>
+    <h2 class="cta-c__title">Da el siguiente paso<br>para tu negocio en <span>{{ciudad}}</span></h2>
+    <p class="cta-c__sub">Nuestro equipo esta listo para ayudarte a crecer. Sin costos ocultos, sin letra chica.</p>
+    <div class="cta-c__btns">
+      <a href="https://wa.me/{{telefono_limpio}}?text=Hola%2C%20vi%20su%20pagina%20y%20quiero%20saber%20mas" class="cta-c__btn-main" target="_blank">
+        Contactar ahora &rarr;
+      </a>
+      <a href="#servicios" class="cta-c__btn-sec">Ver nuestros servicios</a>
+    </div>
+    <div class="cta-c__stats">
+      <div class="cta-c__stat"><strong>+10</strong><span>Anos de experiencia</span></div>
+      <div class="cta-c__stat-sep"></div>
+      <div class="cta-c__stat"><strong>100%</strong><span>Satisfaccion garantizada</span></div>
+      <div class="cta-c__stat-sep"></div>
+      <div class="cta-c__stat"><strong>{{ciudad}}</strong><span>Ubicacion</span></div>
+    </div>
+  </div>
+</section>
+<style>
+.cta-c {
+  position: relative; padding: 7rem 1.5rem;
+  background-size: cover; background-position: center; text-align: center; overflow: hidden;
+}
+.cta-c__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(5,8,18,0.75) 0%, rgba(5,8,18,0.88) 100%);
+}
+.cta-c__inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-c__accent-line {
+  width: 48px; height: 4px; background: var(--color-acento);
+  border-radius: 4px; margin: 0 auto 2rem;
+}
+.cta-c__title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; color: #fff;
+  line-height: 1.1; letter-spacing: -0.025em; margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+}
+.cta-c__title span { color: var(--color-acento); }
+.cta-c__sub { color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.7; margin: 0 0 2.5rem; }
+.cta-c__btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+.cta-c__btn-main {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-acento); color: #fff;
+  padding: 1rem 2.25rem; border-radius: 8px; font-weight: 700;
+  font-size: 1rem; text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.cta-c__btn-main:hover { opacity: 0.9; transform: translateY(-2px); }
+.cta-c__btn-sec {
+  display: inline-flex; align-items: center;
+  background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25);
+  padding: 1rem 2rem; border-radius: 8px; font-weight: 600;
+  font-size: 0.95rem; text-decoration: none; backdrop-filter: blur(8px);
+  transition: background 0.2s;
+}
+.cta-c__btn-sec:hover { background: rgba(255,255,255,0.18); }
+.cta-c__stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 2rem; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.12); padding-top: 2rem;
+}
+.cta-c__stat strong { display: block; font-size: 1.8rem; font-weight: 900; color: #fff; font-family: var(--font-display); }
+.cta-c__stat span { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+.cta-c__stat-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.12); }
+</style>

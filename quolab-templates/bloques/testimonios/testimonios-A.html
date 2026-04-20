@@ -1,0 +1,68 @@
+<!-- TESTIMONIOS VARIANTE A: Cards con imagen de ambiente de fondo -->
+<section class="testimonios testimonios-a">
+  <div class="test-a__bg" style="background-image: url('{{img_extra_url}}');"></div>
+  <div class="test-a__overlay"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="test-header">
+      <span class="section-label" style="color:rgba(255,255,255,0.6)">Testimonios</span>
+      <h2 class="section-title" style="color:#fff">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-a__grid">
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Excelente atencion y resultados. Muy profesionales en todo momento. Los recomiendo sin dudarlo."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">C</div>
+          <div><strong>Cliente verificado</strong><span>{{ciudad}}</span></div>
+        </div>
+      </div>
+      <div class="test-card test-card--accent">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"El mejor servicio de {{rubro}} que hemos encontrado. Atencion rapida y resultados reales."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">M</div>
+          <div><strong>Cliente frecuente</strong><span>{{ciudad}}</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Rapidos, confiables y con muy buenos precios. Seguiremos contratando sus servicios cada vez."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">R</div>
+          <div><strong>Cliente satisfecho</strong><span>{{ciudad}}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.testimonios-a { position: relative; padding: 5rem 1.5rem; overflow: hidden; }
+.test-a__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.test-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(8,12,20,0.88), color-mix(in srgb, var(--color-primario) 70%, black));
+}
+.test-header { text-align: center; margin-bottom: 3rem; }
+.test-a__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.test-card {
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 2rem;
+}
+.test-card--accent { background: var(--color-primario); border-color: var(--color-primario); }
+.test-card__stars { color: #f59e0b; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.test-card__texto { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+.test-card__autor { display: flex; align-items: center; gap: 0.85rem; }
+.test-card__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-acento); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800;
+}
+.test-card--accent .test-card__avatar { background: rgba(255,255,255,0.25); }
+.test-card__autor strong { display: block; font-size: 0.88rem; color: #fff; }
+.test-card__autor span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+@media(max-width:768px) { .test-a__grid { grid-template-columns: 1fr; } }
+</style>

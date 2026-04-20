@@ -1,0 +1,81 @@
+<!-- SERVICIOS C: Cards oscuras verticales, imagen con degradado de arriba transparente a abajo oscuro -->
+<section id="servicios" class="servicios servicios-c">
+  <div class="container">
+    <div class="servicios-c__header">
+      <span class="section-label" style="color:rgba(255,255,255,0.45)">Servicios</span>
+      <h2 class="section-title" style="color:#fff">Lo que ofrecemos</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.5)">Profesionales dedicados a darte el mejor resultado en {{ciudad}}.</p>
+    </div>
+    <div class="servicios-c__grid">
+      <div class="sc-card">
+        <div class="sc-card__img" style="background-image:url('{{img_servicios_1_url}}')">
+          <div class="sc-card__img-overlay"></div>
+          <div class="sc-card__bottom">
+            <div class="sc-card__ico">{{servicio_1_icono}}</div>
+            <h3 class="sc-card__title">{{servicio_1_titulo}}</h3>
+            <p class="sc-card__desc">{{servicio_1_desc}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="sc-card sc-card--accent">
+        <div class="sc-card__img" style="background-image:url('{{img_servicios_2_url}}')">
+          <div class="sc-card__img-overlay sc-card__img-overlay--accent"></div>
+          <div class="sc-card__bottom">
+            <div class="sc-card__ico">{{servicio_2_icono}}</div>
+            <h3 class="sc-card__title">{{servicio_2_titulo}}</h3>
+            <p class="sc-card__desc">{{servicio_2_desc}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="sc-card">
+        <div class="sc-card__img" style="background-image:url('{{img_servicios_3_url}}')">
+          <div class="sc-card__img-overlay"></div>
+          <div class="sc-card__bottom">
+            <div class="sc-card__ico">{{servicio_3_icono}}</div>
+            <h3 class="sc-card__title">{{servicio_3_titulo}}</h3>
+            <p class="sc-card__desc">{{servicio_3_desc}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.servicios-c { background: #080c14; }
+.servicios-c__header { text-align: center; margin-bottom: 3rem; }
+.servicios-c__header .section-sub { margin: 0 auto; }
+.servicios-c__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.sc-card { border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07); }
+.sc-card__img {
+  height: 420px; background-size: cover; background-position: center;
+  position: relative; display: flex; align-items: flex-end;
+  transition: transform 0.4s;
+}
+.sc-card:hover .sc-card__img { transform: scale(1.02); }
+/* Degradado: arriba transparente → abajo oscuro */
+.sc-card__img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(8,12,20,0) 0%,
+    rgba(8,12,20,0.3) 40%,
+    rgba(8,12,20,0.92) 75%,
+    rgba(8,12,20,0.98) 100%
+  );
+}
+.sc-card__img-overlay--accent {
+  background: linear-gradient(to bottom,
+    rgba(8,12,20,0) 0%,
+    color-mix(in srgb, var(--color-primario) 20%, transparent) 40%,
+    color-mix(in srgb, var(--color-primario) 85%, black) 80%,
+    color-mix(in srgb, var(--color-primario) 95%, black) 100%
+  );
+}
+.sc-card__bottom {
+  position: relative; z-index: 1;
+  padding: 1.75rem; width: 100%;
+}
+.sc-card__ico { font-size: 2rem; line-height: 1; margin-bottom: 0.75rem; display: block; }
+.sc-card__title { font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; font-family: var(--font-display); }
+.sc-card__desc { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+@media(max-width:768px) { .servicios-c__grid { grid-template-columns: 1fr; } .sc-card__img { height: 300px; } }
+</style>

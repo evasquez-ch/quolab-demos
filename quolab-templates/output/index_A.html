@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafeteria ñoñoa &mdash; Cafetería en Santiago</title>
+  <meta name="description" content="La cafetería geek de ñuñoa">
+  <meta property="og:type"         content="website">
+  <meta property="og:url"          content="https://quolab.pages.dev/demo-cafeteriañoñoa">
+  <meta property="og:title"        content="Cafeteria ñoñoa &mdash; La cafetería geek de ñuñoa">
+  <meta property="og:description"  content="Somos la cafetería geek de ñuñoa, ambientada completamente con lo mejor del mundo anime y gamer. Atendemos de lunes a viernes de 8:00 a 18:00.">
+  <meta property="og:image"        content="https://quolab.pages.dev/demo-cafeteriañoñoa/og.jpg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale"       content="es_CL">
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:image"       content="https://quolab.pages.dev/demo-cafeteriañoñoa/og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario:   #3B82F6;
+      --color-secundario: #2563EB;
+      --color-acento:     #60A5FA;
+      --font-display: 'Playfair Display', serif;
+      --font-body:    'Source Sans 3', sans-serif;
+    }
+  </style>
+  <style>/* ============================================================
+   QUOLAB TEMPLATE SYSTEM — BASE CSS
+   Compartido por todos los bloques. No modificar por bloque.
+   ============================================================ */
+
+/* Variables — se sobreescriben con los colores del prospecto */
+:root {
+  --color-primario:   #1A56DB;
+  --color-secundario: #0E3A9E;
+  --color-acento:     #F97316;
+  --color-texto:      #0a0a0a;
+  --color-suave:      #555;
+  --color-fondo:      #ffffff;
+  --radius:           10px;
+  --shadow-md:        0 4px 24px rgba(0,0,0,0.10);
+  --shadow-lg:        0 8px 48px rgba(0,0,0,0.14);
+  --container:        1160px;
+  --font-principal:   var(--font-body, 'Plus Jakarta Sans', sans-serif);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body, var(--font-principal));
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; }
+
+/* Contenedor */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Secciones */
+section { padding: 5rem 1.5rem; }
+
+/* Tipografía base */
+h1, h2, h3, h4 { line-height: 1.15; font-family: var(--font-display, var(--font-principal)); }
+
+/* Botones globales */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: none;
+}
+.btn--primary {
+  background: var(--color-acento);
+  color: #fff;
+}
+.btn--primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.btn--ghost {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.2); }
+
+.btn--outline-dark {
+  background: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+}
+.btn--outline-dark:hover {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+/* Animaciones globales */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Section label */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin-bottom: 0.75rem;
+}
+
+/* Section title */
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Section subtitle */
+.section-sub {
+  font-size: 1rem;
+  color: var(--color-suave);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1.25rem; }
+  .container { padding: 0 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO A: Imagen fondo completa, overlay reducido, elementos mas grandes y ocupados -->
+<section class="hero hero-a" style="background-image:url('https://images.unsplash.com/photo-1612126624141-3bacdc071959?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=1080');">
+  <div class="hero-a__overlay"></div>
+  <div class="hero-a__inner container">
+    <div class="hero-a__content">
+      <div class="hero-a__badge">
+        <span class="hero-a__badge-dot"></span>
+        Cafetería &middot; Santiago
+      </div>
+      <h1 class="hero-a__titulo">Cafeteria ñoñoa</h1>
+      <p class="hero-a__slogan">La cafetería geek de ñuñoa</p>
+      <p class="hero-a__desc">Somos la cafetería geek de ñuñoa, ambientada completamente con lo mejor del mundo anime y gamer. Atendemos de lunes a viernes de 8:00 a 18:00.</p>
+      <div class="hero-a__ctas">
+        <a href="https://wa.me/56987654323?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas" class="btn btn--primary" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn btn--ghost">Ver servicios &darr;</a>
+      </div>
+    </div>
+    <div class="hero-a__stats">
+      <div class="hero-a__stat">
+        <strong>+10</strong><span>Anos de experiencia</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong>100%</strong><span>Clientes satisfechos</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong>Santiago</strong><span>Ubicacion</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-a__scroll"><span></span></div>
+</section>
+<style>
+.hero-a {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; overflow: hidden;
+  background-size: cover; background-position: center; padding: 2rem 0;
+}
+.hero-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    rgba(5,8,18,0.85) 0%,
+    rgba(5,8,18,0.6) 55%,
+    rgba(5,8,18,0.3) 100%);
+}
+.hero-a__inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 3.5rem;
+  padding-top: 5rem; padding-bottom: 5rem;
+}
+.hero-a__badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 1.1rem;
+  border-radius: 999px; width: fit-content;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(8px);
+}
+.hero-a__badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--color-acento); flex-shrink: 0;
+  box-shadow: 0 0 8px var(--color-acento);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+.hero-a__content { max-width: 680px; }
+.hero-a__titulo {
+  font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900;
+  color: #fff; line-height: 1.0; margin: 1rem 0 1.25rem; letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+.hero-a__slogan {
+  font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--color-acento);
+  font-weight: 600; margin: 0 0 0.75rem;
+}
+.hero-a__desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75;
+  margin: 0 0 2.25rem; max-width: 520px;
+}
+.hero-a__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-a__stats {
+  display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 2rem; flex-wrap: wrap;
+}
+.hero-a__stat {
+  padding: 0 2.5rem 0 0; flex: 1; min-width: 120px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.hero-a__stat:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
+.hero-a__stat:first-child { padding-left: 0; }
+.hero-a__stat strong {
+  display: block; font-size: 2.2rem; font-weight: 900;
+  color: #fff; line-height: 1; font-family: var(--font-display);
+}
+.hero-a__stat span { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; display: block; }
+.hero-a__scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1;
+}
+.hero-a__scroll span {
+  display: block; width: 1.5px; height: 52px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  margin: 0 auto; animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine { 0% { opacity:1; transform:scaleY(1) translateY(0); } 100% { opacity:0; transform:scaleY(0.3) translateY(24px); } }
+@media(max-width:768px) {
+  .hero-a__stat:first-child { padding-left:0; }
+  .hero-a__stat:last-child { padding-left:0; padding-right:0; border-right:none; border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem; margin-top:1.25rem; width:100%; }
+}
+</style>
+
+
+<!-- SERVICIOS A: Cards con imagen, icono flotante corregido (sin corte) -->
+<section id="servicios" class="servicios servicios-a">
+  <div class="container">
+    <div class="servicios-a__header">
+      <span class="section-label">Nuestros servicios</span>
+      <h2 class="section-title">En que te podemos ayudar</h2>
+      <p class="section-sub">Todo lo que necesitas en un solo lugar, atendido por profesionales en Santiago.</p>
+    </div>
+    <div class="servicios-a__grid">
+      <div class="serv-card">
+        <div class="serv-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1660583886196-885975624699?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=400" alt="Cafés y bebidas" loading="lazy">
+        </div>
+        <div class="serv-card__ico">☕</div>
+        <div class="serv-card__body">
+          <h3 class="serv-card__title">Cafés y bebidas</h3>
+          <p class="serv-card__desc">Cafés, Jugos naturales, cócteles, smoothies, etc.</p>
+        </div>
+      </div>
+      <div class="serv-card serv-card--featured">
+        <div class="serv-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1663176933714-297b0d10b505?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=400" alt="Comida" loading="lazy">
+        </div>
+        <div class="serv-card__ico serv-card__ico--accent">🍔</div>
+        <div class="serv-card__body">
+          <h3 class="serv-card__title">Comida</h3>
+          <p class="serv-card__desc">Hamburguesas, pizzas, ensaladas, etc.</p>
+        </div>
+      </div>
+      <div class="serv-card">
+        <div class="serv-card__img-wrap">
+          <img src="https://images.unsplash.com/photo-1695886856055-b8b0a0a00981?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=400" alt="Postres" loading="lazy">
+        </div>
+        <div class="serv-card__ico">�</div>
+        <div class="serv-card__body">
+          <h3 class="serv-card__title">Postres</h3>
+          <p class="serv-card__desc">Helados, pasteles, etc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.servicios-a { background: #f8faff; }
+.servicios-a__header { text-align: center; margin-bottom: 3.5rem; }
+.servicios-a__header .section-sub { margin: 0 auto; }
+.servicios-a__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+.serv-card {
+  background: #fff; border-radius: 18px; overflow: visible;
+  border: 1px solid #eef0f5; transition: box-shadow 0.25s, transform 0.25s;
+  display: flex; flex-direction: column;
+}
+.serv-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.11); transform: translateY(-4px); }
+.serv-card__img-wrap {
+  height: 200px; overflow: hidden; border-radius: 18px 18px 0 0; flex-shrink: 0;
+}
+.serv-card__img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.4s;
+}
+.serv-card:hover .serv-card__img-wrap img { transform: scale(1.05); }
+/* Icono DENTRO del body, no entre imagen y body — sin corte */
+.serv-card__ico {
+  font-size: 2rem; line-height: 1;
+  width: 52px; height: 52px; border-radius: 12px;
+  background: var(--color-primario);
+  display: flex; align-items: center; justify-content: center;
+  margin: 1.25rem 1.5rem -0.25rem; /* dentro del card, sobre el body */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;
+}
+.serv-card__ico--accent { background: var(--color-acento); }
+.serv-card__body { padding: 0.75rem 1.5rem 1.75rem; flex: 1; }
+.serv-card__title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; font-family: var(--font-display); }
+.serv-card__desc { font-size: 0.88rem; color: #666; line-height: 1.7; }
+.serv-card--featured { border-color: var(--color-primario); box-shadow: 0 4px 24px rgba(26,86,219,0.12); }
+@media(max-width:768px) { .servicios-a__grid { grid-template-columns: 1fr; } }
+</style>
+
+
+<!-- TESTIMONIOS VARIANTE A: Cards con imagen de ambiente de fondo -->
+<section class="testimonios testimonios-a">
+  <div class="test-a__bg" style="background-image: url('https://images.unsplash.com/photo-1695886856009-0a264696ea2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=1080');"></div>
+  <div class="test-a__overlay"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="test-header">
+      <span class="section-label" style="color:rgba(255,255,255,0.6)">Testimonios</span>
+      <h2 class="section-title" style="color:#fff">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-a__grid">
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Excelente atencion y resultados. Muy profesionales en todo momento. Los recomiendo sin dudarlo."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">C</div>
+          <div><strong>Cliente verificado</strong><span>Santiago</span></div>
+        </div>
+      </div>
+      <div class="test-card test-card--accent">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"El mejor servicio de Cafetería que hemos encontrado. Atencion rapida y resultados reales."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">M</div>
+          <div><strong>Cliente frecuente</strong><span>Santiago</span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Rapidos, confiables y con muy buenos precios. Seguiremos contratando sus servicios cada vez."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">R</div>
+          <div><strong>Cliente satisfecho</strong><span>Santiago</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.testimonios-a { position: relative; padding: 5rem 1.5rem; overflow: hidden; }
+.test-a__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.test-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(8,12,20,0.88), color-mix(in srgb, var(--color-primario) 70%, black));
+}
+.test-header { text-align: center; margin-bottom: 3rem; }
+.test-a__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.test-card {
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 2rem;
+}
+.test-card--accent { background: var(--color-primario); border-color: var(--color-primario); }
+.test-card__stars { color: #f59e0b; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.test-card__texto { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+.test-card__autor { display: flex; align-items: center; gap: 0.85rem; }
+.test-card__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-acento); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800;
+}
+.test-card--accent .test-card__avatar { background: rgba(255,255,255,0.25); }
+.test-card__autor strong { display: block; font-size: 0.88rem; color: #fff; }
+.test-card__autor span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+@media(max-width:768px) { .test-a__grid { grid-template-columns: 1fr; } }
+</style>
+
+
+<!-- NOSOTROS VARIANTE A: Split texto + imagen real -->
+<section class="nosotros nosotros-a">
+  <div class="container">
+    <div class="nos-a__layout">
+      <div class="nos-a__text">
+        <span class="section-label">Quienes somos</span>
+        <h2 class="section-title">Cafeteria ñoñoa</h2>
+        <p>Somos la cafetería geek de ñuñoa, ambientada completamente con lo mejor del mundo anime y gamer. Atendemos de lunes a viernes de 8:00 a 18:00.</p>
+        <div class="nos-a__stats">
+          <div class="nos-stat"><strong>+10</strong><span>Anos de experiencia</span></div>
+          <div class="nos-stat"><strong>100%</strong><span>Clientes satisfechos</span></div>
+          <div class="nos-stat"><strong>Santiago</strong><span>Siempre cerca de ti</span></div>
+        </div>
+        <a href="https://wa.me/56987654323?text=Hola%2C%20quiero%20saber%20mas" class="btn btn--outline-dark" target="_blank" style="margin-top:2rem;display:inline-flex;">Contactar ahora</a>
+      </div>
+      <div class="nos-a__visual">
+        <img src="https://images.unsplash.com/photo-1618174140177-2af769804e45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=1080" alt="people sitting on chair in restaurant" class="nos-a__img" loading="lazy">
+        <div class="nos-a__badge-float">
+          <span>☕</span>
+          <div>
+            <strong>Cafés y bebidas</strong>
+            <small>Santiago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.nosotros-a { background: #fff; }
+.nos-a__layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
+.nos-a__text p { font-size: 1rem; color: #555; line-height: 1.75; margin: 1rem 0 2.5rem; }
+.nos-a__stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.nos-stat strong { display: block; font-size: 2rem; font-weight: 900; color: var(--color-primario); }
+.nos-stat span { font-size: 0.8rem; color: #888; margin-top: 0.2rem; display: block; }
+.nos-a__visual { position: relative; }
+.nos-a__img {
+  width: 100%; height: 480px; object-fit: cover;
+  border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.nos-a__badge-float {
+  position: absolute; bottom: -1.25rem; right: -1.25rem;
+  background: #fff; border-radius: 12px; padding: 1rem 1.25rem;
+  display: flex; align-items: center; gap: 0.85rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.nos-a__badge-float span { font-size: 1.75rem; }
+.nos-a__badge-float strong { display: block; font-size: 0.88rem; color: #0a0a0a; }
+.nos-a__badge-float small { font-size: 0.75rem; color: #888; }
+@media (max-width: 768px) {
+  .nos-a__layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .nos-a__visual { display: none; }
+}
+</style>
+
+
+<!-- CTA A: Imagen de fondo, copy transversal, grande y llamativo -->
+<section class="cta cta-a" style="background-image:url('https://images.unsplash.com/photo-1695886856099-021673fc2582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzY1ODA0NTN8&ixlib=rb-4.1.0&q=80&w=1080');">
+  <div class="cta-a__overlay"></div>
+  <div class="container cta-a__inner">
+    <div class="cta-a__left">
+      <span class="cta-a__label">Hablemos hoy</span>
+      <h2 class="cta-a__title">Tu negocio merece una presencia digital que genere resultados reales.</h2>
+    </div>
+    <div class="cta-a__right">
+      <p>Estamos en Santiago y listos para ayudarte. Sin compromiso, sin letra chica.</p>
+      <div class="cta-a__actions">
+        <a href="https://wa.me/56987654323?text=Hola%2C%20vi%20su%20pagina%20y%20quiero%20saber%20mas" class="cta-a__btn-main" target="_blank">
+          Contactar por WhatsApp &rarr;
+        </a>
+        <span class="cta-a__tel">+56 9 8765 4323</span>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.cta-a {
+  position: relative; padding: 6rem 1.5rem;
+  background-size: cover; background-position: center; overflow: hidden;
+}
+.cta-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(5,8,20,0.92) 0%, color-mix(in srgb, var(--color-primario) 80%, black) 100%);
+}
+.cta-a__inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;
+}
+.cta-a__label {
+  display: inline-block; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-acento); margin-bottom: 1rem;
+}
+.cta-a__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff;
+  line-height: 1.15; letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+.cta-a__right p { color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 2rem; font-size: 1rem; }
+.cta-a__actions { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+.cta-a__btn-main {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-acento); color: #fff;
+  padding: 1rem 2.25rem; border-radius: 8px; font-weight: 700;
+  font-size: 1rem; text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.cta-a__btn-main:hover { opacity: 0.9; transform: translateY(-2px); }
+.cta-a__tel { font-size: 0.88rem; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; }
+@media(max-width:768px) {
+  .cta-a__inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>
+
+
+<!-- CONTACTO VARIANTE A: Formulario + info lateral -->
+<section id="contacto" class="contacto contacto-a">
+  <div class="container">
+    <div class="con-a__layout">
+      <div class="con-a__info">
+        <span class="section-label">Contacto</span>
+        <h2 class="section-title">Estamos aquí para ayudarte</h2>
+        <p>Cuéntanos qué necesitas y te respondemos a la brevedad.</p>
+        <div class="con-a__items">
+          <div class="con-item"><span>📍</span><div><strong>Dirección</strong><p>Av. Irarrázaval 456, Ñoñoa, Santiago</p></div></div>
+          <div class="con-item"><span>📱</span><div><strong>WhatsApp</strong><p>+56 9 8765 4323</p></div></div>
+          <div class="con-item"><span>✉️</span><div><strong>Email</strong><p>contacto@cafeteriañoñoa.cl</p></div></div>
+        </div>
+      </div>
+      <form class="con-a__form" onsubmit="handleForm(event)">
+        <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+56 9 ..."></div>
+        <div class="form-group"><label>Mensaje</label><textarea rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
+        <button type="submit" class="btn btn--primary" style="width:100%">Enviar mensaje</button>
+        <p class="con-a__wa">O escríbenos directo por <a href="https://wa.me/56987654323?text=Hola%2C%20quiero%20más%20información" target="_blank">WhatsApp →</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.contacto-a{background:#fff;}
+.con-a__layout{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;}
+.con-a__info p{color:#666;margin:0.75rem 0 2rem;font-size:0.95rem;line-height:1.7;}
+.con-a__items{display:flex;flex-direction:column;gap:1.5rem;}
+.con-item{display:flex;gap:1rem;align-items:flex-start;}
+.con-item span{font-size:1.4rem;margin-top:0.1rem;}
+.con-item strong{display:block;font-size:0.85rem;font-weight:700;margin-bottom:0.2rem;}
+.con-item p{font-size:0.88rem;color:#666;margin:0;}
+.con-a__form{background:#f8faff;border-radius:16px;padding:2.25rem;border:1px solid #eef0f5;}
+.form-group{margin-bottom:1.25rem;}
+.form-group label{display:block;font-size:0.82rem;font-weight:700;margin-bottom:0.45rem;color:#333;}
+.form-group input,.form-group textarea{width:100%;padding:0.8rem 1rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.92rem;font-family:inherit;transition:border-color 0.2s;background:#fff;}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-primario);}
+.form-group textarea{resize:vertical;}
+.con-a__wa{text-align:center;margin-top:1rem;font-size:0.82rem;color:#888;}
+.con-a__wa a{color:var(--color-primario);font-weight:600;}
+@media(max-width:768px){.con-a__layout{grid-template-columns:1fr;gap:2.5rem;}}
+</style>
+<script>
+function handleForm(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✅ Mensaje enviado';
+  btn.disabled = true;
+  setTimeout(()=>{btn.textContent='Enviar mensaje';btn.disabled=false;e.target.reset();},3000);
+}
+</script>
+
+
+
+<footer class="ql-footer">
+  <div class="ql-footer__inner">
+    <span>&copy; 2026 <strong>Cafeteria ñoñoa</strong> &mdash; Todos los derechos reservados</span>
+    <span>Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a> &middot; Dise&ntilde;o <a href="https://quolab.cl" target="_blank" rel="noopener">Enrique V&aacute;squez</a></span>
+  </div>
+</footer>
+
+<div class="unsplash-credits">Fotografias: <a href="https://unsplash.com/@jr_photos?utm_source=quolab&utm_medium=referral" target="_blank">Jael Rodriguez</a>, <a href="https://unsplash.com/@babak20?utm_source=quolab&utm_medium=referral" target="_blank">Babak Habibi</a>, <a href="https://unsplash.com/@camaranegra?utm_source=quolab&utm_medium=referral" target="_blank">Camara Negra</a> via <a href="https://unsplash.com?utm_source=quolab&utm_medium=referral" target="_blank">Unsplash</a></div>
+
+<a href="https://wa.me/56987654323?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas"
+   class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<style>
+.wa-float {
+  position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 999;
+  background: #25D366; color: #fff; width: 58px; height: 58px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45); transition: transform 0.2s, box-shadow 0.2s;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+.ql-footer {
+  background: #080c14; border-top: 1px solid rgba(255,255,255,0.07); padding: 1rem 2rem;
+}
+.ql-footer__inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+  font-size: 0.7rem; color: rgba(255,255,255,0.28); font-family: var(--font-body);
+}
+.ql-footer__inner strong { color: rgba(255,255,255,0.45); }
+.ql-footer__inner a { color: rgba(255,255,255,0.38); text-decoration: underline; }
+.ql-footer__inner a:hover { color: rgba(255,255,255,0.65); }
+.unsplash-credits {
+  text-align: center; padding: 0.45rem 1rem;
+  font-size: 0.67rem; color: #bbb; background: #f0f0f0; border-top: 1px solid #e5e5e5;
+}
+.unsplash-credits a { color: #999; text-decoration: underline; }
+@media(max-width:600px) { .ql-footer__inner { flex-direction:column; text-align:center; } }
+</style>
+
+</body>
+</html>

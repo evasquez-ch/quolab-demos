@@ -1,0 +1,110 @@
+<!-- HERO A: Imagen fondo completa, overlay reducido, elementos mas grandes y ocupados -->
+<section class="hero hero-a" style="background-image:url('{{img_hero_url}}');">
+  <div class="hero-a__overlay"></div>
+  <div class="hero-a__inner container">
+    <div class="hero-a__content">
+      <div class="hero-a__badge">
+        <span class="hero-a__badge-dot"></span>
+        {{rubro}} &middot; {{ciudad}}
+      </div>
+      <h1 class="hero-a__titulo">{{nombre_negocio}}</h1>
+      <p class="hero-a__slogan">{{slogan}}</p>
+      <p class="hero-a__desc">{{descripcion}}</p>
+      <div class="hero-a__ctas">
+        <a href="https://wa.me/{{telefono_limpio}}?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas" class="btn btn--primary" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn btn--ghost">Ver servicios &darr;</a>
+      </div>
+    </div>
+    <div class="hero-a__stats">
+      <div class="hero-a__stat">
+        <strong>+10</strong><span>Anos de experiencia</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong>100%</strong><span>Clientes satisfechos</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong>{{ciudad}}</strong><span>Ubicacion</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-a__scroll"><span></span></div>
+</section>
+<style>
+.hero-a {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; overflow: hidden;
+  background-size: cover; background-position: center; padding: 2rem 0;
+}
+.hero-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    rgba(5,8,18,0.85) 0%,
+    rgba(5,8,18,0.6) 55%,
+    rgba(5,8,18,0.3) 100%);
+}
+.hero-a__inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 3.5rem;
+  padding-top: 5rem; padding-bottom: 5rem;
+}
+.hero-a__badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 1.1rem;
+  border-radius: 999px; width: fit-content;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(8px);
+}
+.hero-a__badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--color-acento); flex-shrink: 0;
+  box-shadow: 0 0 8px var(--color-acento);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+.hero-a__content { max-width: 680px; }
+.hero-a__titulo {
+  font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900;
+  color: #fff; line-height: 1.0; margin: 1rem 0 1.25rem; letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+.hero-a__slogan {
+  font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--color-acento);
+  font-weight: 600; margin: 0 0 0.75rem;
+}
+.hero-a__desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75;
+  margin: 0 0 2.25rem; max-width: 520px;
+}
+.hero-a__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-a__stats {
+  display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 2rem; flex-wrap: wrap;
+}
+.hero-a__stat {
+  padding: 0 2.5rem 0 0; flex: 1; min-width: 120px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.hero-a__stat:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
+.hero-a__stat:first-child { padding-left: 0; }
+.hero-a__stat strong {
+  display: block; font-size: 2.2rem; font-weight: 900;
+  color: #fff; line-height: 1; font-family: var(--font-display);
+}
+.hero-a__stat span { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; display: block; }
+.hero-a__scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1;
+}
+.hero-a__scroll span {
+  display: block; width: 1.5px; height: 52px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  margin: 0 auto; animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine { 0% { opacity:1; transform:scaleY(1) translateY(0); } 100% { opacity:0; transform:scaleY(0.3) translateY(24px); } }
+@media(max-width:768px) {
+  .hero-a__stat:first-child { padding-left:0; }
+  .hero-a__stat:last-child { padding-left:0; padding-right:0; border-right:none; border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem; margin-top:1.25rem; width:100%; }
+}
+</style>

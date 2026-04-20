@@ -1,0 +1,102 @@
+<!-- HERO B: Texto izquierda, imagen ocupa mitad completa derecha. Card flotante centrada en la union -->
+<section class="hero hero-b">
+  <div class="hero-b__text">
+    <div class="hero-b__text-inner">
+      <span class="hero-b__badge">{{rubro}} &middot; {{ciudad}}</span>
+      <h1 class="hero-b__titulo">{{nombre_negocio}}</h1>
+      <p class="hero-b__slogan">{{slogan}}</p>
+      <p class="hero-b__desc">{{descripcion}}</p>
+      <div class="hero-b__ctas">
+        <a href="https://wa.me/{{telefono_limpio}}?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas" class="btn btn--primary" target="_blank">Escribenos ahora</a>
+        <a href="#servicios" class="btn btn--outline-dark">Ver servicios</a>
+      </div>
+      <div class="hero-b__trust">
+        <div class="trust-item"><strong>&#10003;</strong> Atencion profesional</div>
+        <div class="trust-item"><strong>&#10003;</strong> Respuesta rapida</div>
+        <div class="trust-item"><strong>&#10003;</strong> En {{ciudad}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-b__img-half">
+    <img src="{{img_hero_url}}" alt="{{img_hero_alt}}" class="hero-b__img">
+    <div class="hero-b__img-overlay"></div>
+  </div>
+  <!-- Card centrada en la union de los dos paneles, parte baja -->
+  <a href="#contacto" class="hero-b__card">
+    <div class="hero-b__card-icon">{{servicio_1_icono}}</div>
+    <div class="hero-b__card-info">
+      <div class="hero-b__card-title">{{servicio_1_titulo}}</div>
+      <div class="hero-b__card-sub">Ir a contacto &rarr;</div>
+    </div>
+    <div class="hero-b__card-arrow">&#8599;</div>
+  </a>
+</section>
+<style>
+.hero-b {
+  min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-b__text {
+  background: #fff; display: flex; align-items: center;
+  padding: 7rem 3rem 7rem 5vw; position: relative; z-index: 2;
+}
+.hero-b__text-inner { max-width: 480px; }
+.hero-b__badge {
+  display: inline-block; background: var(--color-primario); color: #fff;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.25rem;
+}
+.hero-b__titulo {
+  font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 900; color: #0a0a0a;
+  line-height: 1.05; margin: 0 0 1rem; letter-spacing: -0.025em;
+  font-family: var(--font-display);
+}
+.hero-b__slogan { font-size: 1.05rem; font-weight: 600; color: var(--color-primario); margin: 0 0 0.75rem; }
+.hero-b__desc { font-size: 0.95rem; color: #555; line-height: 1.7; margin: 0 0 2rem; }
+.hero-b__ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.hero-b__trust { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.trust-item { font-size: 0.82rem; color: #666; display: flex; align-items: center; gap: 0.3rem; }
+.trust-item strong { color: var(--color-primario); }
+.hero-b__img-half { position: relative; overflow: hidden; }
+.hero-b__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-b__img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.15) 0%, transparent 30%);
+}
+/* Card centrada horizontalmente en el borde entre los dos paneles, parte baja */
+.hero-b__card {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  background: #fff; border-radius: 14px;
+  padding: 1.1rem 1.5rem; display: flex; align-items: center; gap: 1rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  text-decoration: none; color: inherit;
+  min-width: 280px;
+  border: 2px solid var(--color-primario);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: floatCard 4s ease-in-out infinite;
+}
+.hero-b__card:hover { transform: translateX(-50%) translateY(-4px); box-shadow: 0 18px 48px rgba(0,0,0,0.22); }
+@keyframes floatCard { 0%,100% { bottom:3rem; } 50% { bottom:3.6rem; } }
+.hero-b__card-icon { font-size: 2rem; flex-shrink: 0; }
+.hero-b__card-info { flex: 1; }
+.hero-b__card-title { font-weight: 700; font-size: 0.92rem; color: #0a0a0a; }
+.hero-b__card-sub { font-size: 0.75rem; color: var(--color-primario); font-weight: 600; margin-top: 0.15rem; }
+.hero-b__card-arrow {
+  font-size: 1.1rem; color: var(--color-primario); font-weight: 700;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(26,86,219,0.08); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+@media(max-width:900px) {
+  .hero-b { grid-template-columns: 1fr; min-height: auto; }
+  .hero-b__text { padding: 5rem 2rem 3rem; }
+  .hero-b__img-half { height: 320px; }
+  .hero-b__card { position: relative; bottom: auto; left: auto; transform: none;
+    margin: -2rem auto 0; width: calc(100% - 4rem); animation: floatCard2 4s ease-in-out infinite; }
+  .hero-b__card:hover { transform: translateY(-4px); }
+  @keyframes floatCard2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+}
+</style>

@@ -1,0 +1,57 @@
+<!-- CTA B: Oscuro prominente, texto grande a la izquierda, accion derecha -->
+<section class="cta cta-b">
+  <div class="container cta-b__inner">
+    <div class="cta-b__left">
+      <div class="cta-b__tag">&#9654; Siguente paso</div>
+      <h2 class="cta-b__title">Transformemos<br>tu presencia<br><span>digital.</span></h2>
+    </div>
+    <div class="cta-b__right">
+      <div class="cta-b__card">
+        <p class="cta-b__card-text">Respondemos en menos de 24 horas. Atendemos en <strong>{{ciudad}}</strong> y alrededores.</p>
+        <a href="https://wa.me/{{telefono_limpio}}?text=Hola%2C%20vi%20su%20pagina%20y%20quiero%20saber%20mas" class="cta-b__btn" target="_blank">
+          Escribir por WhatsApp
+        </a>
+        <div class="cta-b__divider"></div>
+        <div class="cta-b__extras">
+          <div class="cta-b__extra"><span>&#10003;</span> Sin compromiso</div>
+          <div class="cta-b__extra"><span>&#10003;</span> Respuesta rapida</div>
+          <div class="cta-b__extra"><span>&#10003;</span> Atencion personalizada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.cta-b { background: #080c14; padding: 6rem 1.5rem; }
+.cta-b__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.cta-b__tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--color-acento); margin-bottom: 1.5rem;
+}
+.cta-b__title {
+  font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: #fff;
+  line-height: 1.0; letter-spacing: -0.03em; margin: 0;
+  font-family: var(--font-display);
+}
+.cta-b__title span { color: var(--color-acento); }
+.cta-b__card {
+  background: #13182a; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 2.5rem;
+}
+.cta-b__card-text { color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.75rem; font-size: 0.95rem; }
+.cta-b__card-text strong { color: rgba(255,255,255,0.85); }
+.cta-b__btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 1rem; border-radius: 10px;
+  background: var(--color-primario); color: #fff; font-weight: 700;
+  font-size: 0.95rem; text-decoration: none;
+  transition: filter 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.cta-b__btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+.cta-b__divider { height: 1px; background: rgba(255,255,255,0.08); margin: 1.75rem 0; }
+.cta-b__extras { display: flex; flex-direction: column; gap: 0.6rem; }
+.cta-b__extra { font-size: 0.85rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 0.6rem; }
+.cta-b__extra span { color: var(--color-acento); font-weight: 700; }
+@media(max-width:768px) { .cta-b__inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+</style>
