@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podologia Clinica Jireh —  en </title>
+  <meta name="description" content="Cuidamos tus pies con profesionalismo y calidad">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quolab-demos.pages.dev/demos/podologia-clinica-jireh-11547537">
+  <meta property="og:title" content="Podologia Clinica Jireh — Cuidamos tus pies con profesionalismo y calidad">
+  <meta property="og:description" content="Clinica podologica especializada en salud de los pies. Brindamos atencion profesional y tratamientos especializados en La Florida.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1559123633-d373e3384f08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=1080">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1559123633-d373e3384f08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=1080">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario:   #1A56DB;
+      --color-secundario: #0E3A9E;
+      --color-acento:     #F97316;
+      --font-display: 'Bricolage Grotesque', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+  </style>
+  <style>/* ============================================================
+   QUOLAB TEMPLATE SYSTEM — BASE CSS
+   Compartido por todos los bloques. No modificar por bloque.
+   ============================================================ */
+
+/* Variables — se sobreescriben con los colores del prospecto */
+:root {
+  --color-primario:   #1A56DB;
+  --color-secundario: #0E3A9E;
+  --color-acento:     #F97316;
+  --color-texto:      #0a0a0a;
+  --color-suave:      #555;
+  --color-fondo:      #ffffff;
+  --radius:           10px;
+  --shadow-md:        0 4px 24px rgba(0,0,0,0.10);
+  --shadow-lg:        0 8px 48px rgba(0,0,0,0.14);
+  --container:        1160px;
+  --font-principal:   var(--font-body, 'Plus Jakarta Sans', sans-serif);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body, var(--font-principal));
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; }
+
+/* Contenedor */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Secciones */
+section { padding: 5rem 1.5rem; }
+
+/* Tipografía base */
+h1, h2, h3, h4 { line-height: 1.15; font-family: var(--font-display, var(--font-principal)); }
+
+/* Botones globales */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: none;
+}
+.btn--primary {
+  background: var(--color-acento);
+  color: #fff;
+}
+.btn--primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.btn--ghost {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+}
+.btn--ghost:hover { background: rgba(255,255,255,0.2); }
+
+.btn--outline-dark {
+  background: transparent;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+}
+.btn--outline-dark:hover {
+  background: var(--color-primario);
+  color: #fff;
+}
+
+/* Animaciones globales */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Section label */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primario);
+  margin-bottom: 0.75rem;
+}
+
+/* Section title */
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Section subtitle */
+.section-sub {
+  font-size: 1rem;
+  color: var(--color-suave);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1.25rem; }
+  .container { padding: 0 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO A: Imagen fondo completa, overlay reducido, elementos mas grandes y ocupados -->
+<section class="hero hero-a" style="background-image:url('https://images.unsplash.com/photo-1559123633-d373e3384f08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=1080');">
+  <div class="hero-a__overlay"></div>
+  <div class="hero-a__inner container">
+    <div class="hero-a__content">
+      <div class="hero-a__badge">
+        <span class="hero-a__badge-dot"></span>
+         &middot; 
+      </div>
+      <h1 class="hero-a__titulo">Podologia Clinica Jireh</h1>
+      <p class="hero-a__slogan">Cuidamos tus pies con profesionalismo y calidad</p>
+      <p class="hero-a__desc">Clinica podologica especializada en salud de los pies. Brindamos atencion profesional y tratamientos especializados en La Florida.</p>
+      <div class="hero-a__ctas">
+        <a href="https://wa.me/973717860?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas" class="btn btn--primary" target="_blank">
+          Contactar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn btn--ghost">Ver servicios &darr;</a>
+      </div>
+    </div>
+    <div class="hero-a__stats">
+      <div class="hero-a__stat">
+        <strong>+10</strong><span>Anos de experiencia</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong>100%</strong><span>Clientes satisfechos</span>
+      </div>
+      <div class="hero-a__stat">
+        <strong></strong><span>Ubicacion</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-a__scroll"><span></span></div>
+</section>
+<style>
+.hero-a {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; overflow: hidden;
+  background-size: cover; background-position: center; padding: 2rem 0;
+}
+.hero-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    rgba(5,8,18,0.85) 0%,
+    rgba(5,8,18,0.6) 55%,
+    rgba(5,8,18,0.3) 100%);
+}
+.hero-a__inner {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 3.5rem;
+  padding-top: 5rem; padding-bottom: 5rem;
+}
+.hero-a__badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.25); padding: 0.4rem 1.1rem;
+  border-radius: 999px; width: fit-content;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(8px);
+}
+.hero-a__badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--color-acento); flex-shrink: 0;
+  box-shadow: 0 0 8px var(--color-acento);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+.hero-a__content { max-width: 680px; }
+.hero-a__titulo {
+  font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900;
+  color: #fff; line-height: 1.0; margin: 1rem 0 1.25rem; letter-spacing: -0.03em;
+  font-family: var(--font-display);
+}
+.hero-a__slogan {
+  font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--color-acento);
+  font-weight: 600; margin: 0 0 0.75rem;
+}
+.hero-a__desc {
+  font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75;
+  margin: 0 0 2.25rem; max-width: 520px;
+}
+.hero-a__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-a__stats {
+  display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 2rem; flex-wrap: wrap;
+}
+.hero-a__stat {
+  padding: 0 2.5rem 0 0; flex: 1; min-width: 120px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.hero-a__stat:last-child { border-right: none; padding-right: 0; padding-left: 2.5rem; }
+.hero-a__stat:first-child { padding-left: 0; }
+.hero-a__stat strong {
+  display: block; font-size: 2.2rem; font-weight: 900;
+  color: #fff; line-height: 1; font-family: var(--font-display);
+}
+.hero-a__stat span { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; display: block; }
+.hero-a__scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 1;
+}
+.hero-a__scroll span {
+  display: block; width: 1.5px; height: 52px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  margin: 0 auto; animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine { 0% { opacity:1; transform:scaleY(1) translateY(0); } 100% { opacity:0; transform:scaleY(0.3) translateY(24px); } }
+@media(max-width:768px) {
+  .hero-a__stat:first-child { padding-left:0; }
+  .hero-a__stat:last-child { padding-left:0; padding-right:0; border-right:none; border-top:1px solid rgba(255,255,255,0.12); padding-top:1.25rem; margin-top:1.25rem; width:100%; }
+}
+</style>
+
+
+<!-- SERVICIOS B: Layout alternado imagen/texto, uno por fila -->
+<section id="servicios" class="servicios servicios-b">
+  <div class="container">
+    <div class="servicios-b__header">
+      <span class="section-label">Servicios</span>
+      <h2 class="section-title">Lo que hacemos por ti</h2>
+    </div>
+    <div class="servicios-b__list">
+      <div class="sb-item">
+        <div class="sb-item__img"><img src="https://images.unsplash.com/photo-1643834534240-75aee14ecdc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=400" alt="Pedicuria Medica" loading="lazy"></div>
+        <div class="sb-item__text">
+          <div class="sb-item__num">01</div>
+          <div class="sb-item__ico">🦶</div>
+          <h3 class="sb-item__title">Pedicuria Medica</h3>
+          <p class="sb-item__desc">Tratamiento profesional de unas encarnadas, callos y durezas</p>
+        </div>
+      </div>
+      <div class="sb-item sb-item--reverse">
+        <div class="sb-item__img"><img src="https://images.unsplash.com/photo-1659019479941-1fd644624339?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=400" alt="Tratamiento de Onicomicosis" loading="lazy"></div>
+        <div class="sb-item__text sb-item__text--dark">
+          <div class="sb-item__num sb-item__num--light">02</div>
+          <div class="sb-item__ico">🔬</div>
+          <h3 class="sb-item__title sb-item__title--light">Tratamiento de Onicomicosis</h3>
+          <p class="sb-item__desc sb-item__desc--light">Eliminacion de hongos en unas con tecnologia avanzada</p>
+        </div>
+      </div>
+      <div class="sb-item">
+        <div class="sb-item__img"><img src="https://images.unsplash.com/photo-1662132090867-57a37fa1edf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=400" alt="Evaluacion Biomecánica" loading="lazy"></div>
+        <div class="sb-item__text">
+          <div class="sb-item__num">03</div>
+          <div class="sb-item__ico">📋</div>
+          <h3 class="sb-item__title">Evaluacion Biomecánica</h3>
+          <p class="sb-item__desc">Analisis completo de la pisada y postura corporal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.servicios-b { background: #fff; }
+.servicios-b__header { text-align: center; margin-bottom: 4rem; }
+.servicios-b__list { display: flex; flex-direction: column; gap: 1.5rem; }
+.sb-item {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid #eef0f5; min-height: 320px;
+}
+.sb-item--reverse .sb-item__img { order: 2; }
+.sb-item--reverse .sb-item__text { order: 1; }
+.sb-item__img { overflow: hidden; }
+.sb-item__img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+.sb-item:hover .sb-item__img img { transform: scale(1.04); }
+.sb-item__text {
+  padding: 2.5rem; background: #f8faff;
+  display: flex; flex-direction: column; justify-content: center; gap: 0.6rem;
+}
+.sb-item__text--dark { background: #080c14; }
+.sb-item__num { font-size: 0.7rem; font-weight: 800; color: var(--color-primario); letter-spacing: 0.15em; }
+.sb-item__num--light { color: rgba(255,255,255,0.3); }
+.sb-item__ico { font-size: 2.2rem; line-height: 1; margin-bottom: 0.25rem; }
+.sb-item__title { font-size: 1.4rem; font-weight: 800; color: #0a0a0a; line-height: 1.2; font-family: var(--font-display); }
+.sb-item__title--light { color: #fff; }
+.sb-item__desc { font-size: 0.92rem; color: #666; line-height: 1.7; }
+.sb-item__desc--light { color: rgba(255,255,255,0.55); }
+@media(max-width:768px) {
+  .sb-item { grid-template-columns: 1fr; min-height: auto; }
+  .sb-item--reverse .sb-item__img { order: 0; }
+  .sb-item--reverse .sb-item__text { order: 1; }
+  .sb-item__img { height: 200px; }
+}
+</style>
+
+
+<!-- TESTIMONIOS VARIANTE A: Cards con imagen de ambiente de fondo -->
+<section class="testimonios testimonios-a">
+  <div class="test-a__bg" style="background-image: url('https://images.unsplash.com/photo-1746806942507-a7e93fdd6dd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=1080');"></div>
+  <div class="test-a__overlay"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="test-header">
+      <span class="section-label" style="color:rgba(255,255,255,0.6)">Testimonios</span>
+      <h2 class="section-title" style="color:#fff">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div class="test-a__grid">
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Excelente atencion y resultados. Muy profesionales en todo momento. Los recomiendo sin dudarlo."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">C</div>
+          <div><strong>Cliente verificado</strong><span></span></div>
+        </div>
+      </div>
+      <div class="test-card test-card--accent">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"El mejor servicio de  que hemos encontrado. Atencion rapida y resultados reales."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">M</div>
+          <div><strong>Cliente frecuente</strong><span></span></div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="test-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-card__texto">"Rapidos, confiables y con muy buenos precios. Seguiremos contratando sus servicios cada vez."</p>
+        <div class="test-card__autor">
+          <div class="test-card__avatar">R</div>
+          <div><strong>Cliente satisfecho</strong><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.testimonios-a { position: relative; padding: 5rem 1.5rem; overflow: hidden; }
+.test-a__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.test-a__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(8,12,20,0.88), color-mix(in srgb, var(--color-primario) 70%, black));
+}
+.test-header { text-align: center; margin-bottom: 3rem; }
+.test-a__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.test-card {
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 2rem;
+}
+.test-card--accent { background: var(--color-primario); border-color: var(--color-primario); }
+.test-card__stars { color: #f59e0b; font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.test-card__texto { font-size: 0.92rem; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+.test-card__autor { display: flex; align-items: center; gap: 0.85rem; }
+.test-card__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-acento); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800;
+}
+.test-card--accent .test-card__avatar { background: rgba(255,255,255,0.25); }
+.test-card__autor strong { display: block; font-size: 0.88rem; color: #fff; }
+.test-card__autor span { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+@media(max-width:768px) { .test-a__grid { grid-template-columns: 1fr; } }
+</style>
+
+
+<!-- NOSOTROS C: Oscuro, imagen a la derecha, texto grande a la izquierda -->
+<section class="nosotros nosotros-c">
+  <div class="nos-c__layout">
+    <div class="nos-c__text">
+      <div class="container">
+        <span class="section-label" style="color:rgba(255,255,255,0.4)">Nosotros</span>
+        <h2 class="nos-c__title">Podologia Clinica Jireh, referentes en  en </h2>
+        <p class="nos-c__desc">Clinica podologica especializada en salud de los pies. Brindamos atencion profesional y tratamientos especializados en La Florida.</p>
+        <div class="nos-c__stats">
+          <div class="nos-c__stat"><strong>+10</strong><span>Anos de experiencia</span></div>
+          <div class="nos-c__stat"><strong>100%</strong><span>Satisfaccion</span></div>
+        </div>
+        <div class="nos-c__tags">
+          <span>Pedicuria Medica</span>
+          <span>Tratamiento de Onicomicosis</span>
+          <span>Evaluacion Biomecánica</span>
+        </div>
+      </div>
+    </div>
+    <div class="nos-c__img-wrap">
+      <img src="https://images.unsplash.com/photo-1631035729110-99459b5fbea4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzczMDU1NDl8&ixlib=rb-4.1.0&q=80&w=1080" alt="" class="nos-c__img" loading="lazy">
+      <div class="nos-c__img-overlay"></div>
+    </div>
+  </div>
+</section>
+<style>
+.nosotros-c { background: #080c14; overflow: hidden; }
+.nos-c__layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+.nos-c__text {
+  display: flex; align-items: center;
+  padding: 5rem 0 5rem;
+}
+.nos-c__title {
+  font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 900; color: #fff;
+  margin: 0.75rem 0 1.25rem; line-height: 1.15; letter-spacing: -0.02em;
+  font-family: var(--font-display);
+}
+.nos-c__desc { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin: 0 0 2rem; }
+.nos-c__stats { display: flex; gap: 2.5rem; margin-bottom: 2rem; }
+.nos-c__stat strong { display: block; font-size: 2.2rem; font-weight: 900; color: var(--color-primario); font-family: var(--font-display); }
+.nos-c__stat span { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+.nos-c__tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.nos-c__tags span {
+  background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 1rem;
+  border-radius: 999px; font-size: 0.82rem;
+}
+.nos-c__img-wrap { position: relative; overflow: hidden; }
+.nos-c__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nos-c__img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(8,12,20,0.6) 0%, transparent 50%);
+}
+@media(max-width:768px) {
+  .nos-c__layout { grid-template-columns: 1fr; }
+  .nos-c__img-wrap { height: 280px; }
+  .nos-c__img-overlay { background: linear-gradient(to bottom, rgba(8,12,20,0.3) 0%, rgba(8,12,20,0.7) 100%); }
+}
+</style>
+
+
+<!-- CTA B: Oscuro prominente, texto grande a la izquierda, accion derecha -->
+<section class="cta cta-b">
+  <div class="container cta-b__inner">
+    <div class="cta-b__left">
+      <div class="cta-b__tag">&#9654; Siguente paso</div>
+      <h2 class="cta-b__title">Transformemos<br>tu presencia<br><span>digital.</span></h2>
+    </div>
+    <div class="cta-b__right">
+      <div class="cta-b__card">
+        <p class="cta-b__card-text">Respondemos en menos de 24 horas. Atendemos en <strong></strong> y alrededores.</p>
+        <a href="https://wa.me/973717860?text=Hola%2C%20vi%20su%20pagina%20y%20quiero%20saber%20mas" class="cta-b__btn" target="_blank">
+          Escribir por WhatsApp
+        </a>
+        <div class="cta-b__divider"></div>
+        <div class="cta-b__extras">
+          <div class="cta-b__extra"><span>&#10003;</span> Sin compromiso</div>
+          <div class="cta-b__extra"><span>&#10003;</span> Respuesta rapida</div>
+          <div class="cta-b__extra"><span>&#10003;</span> Atencion personalizada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.cta-b { background: #080c14; padding: 6rem 1.5rem; }
+.cta-b__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.cta-b__tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--color-acento); margin-bottom: 1.5rem;
+}
+.cta-b__title {
+  font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: #fff;
+  line-height: 1.0; letter-spacing: -0.03em; margin: 0;
+  font-family: var(--font-display);
+}
+.cta-b__title span { color: var(--color-acento); }
+.cta-b__card {
+  background: #13182a; border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 2.5rem;
+}
+.cta-b__card-text { color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.75rem; font-size: 0.95rem; }
+.cta-b__card-text strong { color: rgba(255,255,255,0.85); }
+.cta-b__btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 1rem; border-radius: 10px;
+  background: var(--color-primario); color: #fff; font-weight: 700;
+  font-size: 0.95rem; text-decoration: none;
+  transition: filter 0.2s, transform 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.cta-b__btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+.cta-b__divider { height: 1px; background: rgba(255,255,255,0.08); margin: 1.75rem 0; }
+.cta-b__extras { display: flex; flex-direction: column; gap: 0.6rem; }
+.cta-b__extra { font-size: 0.85rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 0.6rem; }
+.cta-b__extra span { color: var(--color-acento); font-weight: 700; }
+@media(max-width:768px) { .cta-b__inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+</style>
+
+
+<!-- CONTACTO VARIANTE A: Formulario + info lateral -->
+<section id="contacto" class="contacto contacto-a">
+  <div class="container">
+    <div class="con-a__layout">
+      <div class="con-a__info">
+        <span class="section-label">Contacto</span>
+        <h2 class="section-title">Estamos aquí para ayudarte</h2>
+        <p>Cuéntanos qué necesitas y te respondemos a la brevedad.</p>
+        <div class="con-a__items">
+          <div class="con-item"><span>📍</span><div><strong>Dirección</strong><p>Serafín Zamora 127, 10, 8240452 La Florida, Región Metropolitana</p></div></div>
+          <div class="con-item"><span>📱</span><div><strong>WhatsApp</strong><p>9 7371 7860</p></div></div>
+          <div class="con-item"><span>✉️</span><div><strong>Email</strong><p></p></div></div>
+        </div>
+      </div>
+      <form class="con-a__form" onsubmit="handleForm(event)">
+        <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+        <div class="form-group"><label>Teléfono</label><input type="tel" placeholder="+56 9 ..."></div>
+        <div class="form-group"><label>Mensaje</label><textarea rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
+        <button type="submit" class="btn btn--primary" style="width:100%">Enviar mensaje</button>
+        <p class="con-a__wa">O escríbenos directo por <a href="https://wa.me/973717860?text=Hola%2C%20quiero%20más%20información" target="_blank">WhatsApp →</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+<style>
+.contacto-a{background:#fff;}
+.con-a__layout{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start;}
+.con-a__info p{color:#666;margin:0.75rem 0 2rem;font-size:0.95rem;line-height:1.7;}
+.con-a__items{display:flex;flex-direction:column;gap:1.5rem;}
+.con-item{display:flex;gap:1rem;align-items:flex-start;}
+.con-item span{font-size:1.4rem;margin-top:0.1rem;}
+.con-item strong{display:block;font-size:0.85rem;font-weight:700;margin-bottom:0.2rem;}
+.con-item p{font-size:0.88rem;color:#666;margin:0;}
+.con-a__form{background:#f8faff;border-radius:16px;padding:2.25rem;border:1px solid #eef0f5;}
+.form-group{margin-bottom:1.25rem;}
+.form-group label{display:block;font-size:0.82rem;font-weight:700;margin-bottom:0.45rem;color:#333;}
+.form-group input,.form-group textarea{width:100%;padding:0.8rem 1rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.92rem;font-family:inherit;transition:border-color 0.2s;background:#fff;}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--color-primario);}
+.form-group textarea{resize:vertical;}
+.con-a__wa{text-align:center;margin-top:1rem;font-size:0.82rem;color:#888;}
+.con-a__wa a{color:var(--color-primario);font-weight:600;}
+@media(max-width:768px){.con-a__layout{grid-template-columns:1fr;gap:2.5rem;}}
+</style>
+<script>
+function handleForm(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✅ Mensaje enviado';
+  btn.disabled = true;
+  setTimeout(()=>{btn.textContent='Enviar mensaje';btn.disabled=false;e.target.reset();},3000);
+}
+</script>
+
+
+<footer class="ql-footer">
+  <div class="ql-footer__inner">
+    <span>&copy; 2026 <strong>Podologia Clinica Jireh</strong> &mdash; Todos los derechos reservados</span>
+    <span>Desarrollado por <a href="https://quolab.cl" target="_blank">Quolab</a></span>
+  </div>
+</footer>
+
+<a href="https://wa.me/973717860?text=Hola%2C%20vi%20su%20pagina%20y%20me%20interesa%20saber%20mas" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<style>
+.wa-float { position:fixed; bottom:1.75rem; right:1.75rem; z-index:999; background:#25D366; color:#fff; width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.45); transition:transform 0.2s,box-shadow 0.2s; }
+.wa-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,0.55); }
+.ql-footer { background:#080c14; border-top:1px solid rgba(255,255,255,0.07); padding:1rem 2rem; }
+.ql-footer__inner { max-width:1160px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; font-size:0.7rem; color:rgba(255,255,255,0.28); }
+.ql-footer__inner strong { color:rgba(255,255,255,0.45); }
+.ql-footer__inner a { color:rgba(255,255,255,0.38); text-decoration:underline; }
+</style>
+
+</body>
+</html>
