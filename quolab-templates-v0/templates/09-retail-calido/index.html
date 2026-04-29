@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{nombre_negocio}} — {{rubro}}</title>
+  <meta name="description" content="{{descripcion}}">
+  <!--QL_HEAD_FONTS-->
+  <!--QL_HEAD_BASE_RESET-->
+  <!--QL_HEAD_VARS-->
+  <!--QL_HEAD_WA_CSS-->
+  <!--QL_HEAD_STRIP_CSS-->
+  <!--QL_TEMPLATE_CSS-->
+</head>
+<body>
+
+<header class="t09-header" role="banner">
+  <div class="t09-wrap t09-header__inner">
+    <a href="#" class="t09-logo" aria-label="{{nombre_negocio}}">
+      <span class="t09-logo__mark" aria-hidden="true"></span>
+      <span class="t09-logo__name">{{nombre_negocio}}</span>
+    </a>
+    <nav class="t09-nav" aria-label="Menu">
+      <a href="#productos">Productos</a>
+      <a href="#historia">Historia</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="https://wa.me/{{telefono_limpio}}" class="t09-btn t09-btn--primary t09-header__cta" target="_blank" rel="noopener noreferrer">Consultar</a>
+  </div>
+</header>
+
+<!-- HERO full-bleed — foto con overlay cálido y texto centrado -->
+<section class="t09-hero" aria-label="Portada">
+  <div class="t09-hero__bg" style="background-image: url('{{img_hero_url}}');" role="img" aria-label="{{img_hero_alt}}"></div>
+  <div class="t09-hero__overlay" aria-hidden="true"></div>
+  <div class="t09-wrap t09-hero__content ql-hero-stagger">
+    {{? <span class="t09-hero__badge">{{badge_hero}}</span> ?}}
+    <h1 class="t09-hero__h1">{{slogan}}</h1>
+    <p class="t09-hero__desc">{{descripcion}}</p>
+    <div class="t09-hero__actions">
+      <a href="https://wa.me/{{telefono_limpio}}" class="t09-btn t09-btn--primary" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      <a href="#productos" class="t09-btn t09-btn--ghost">Ver productos</a>
+    </div>
+    {{? <p class="t09-hero__rating">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+  </div>
+</section>
+
+<!-- PRODUCTOS / SERVICIOS -->
+<section class="t09-productos ql-anim" id="productos">
+  <div class="t09-wrap">
+    <header class="t09-section-header t09-section-header--center">
+      <p class="t09-eyebrow">Lo que ofrecemos</p>
+      <h2 class="t09-section-title">Nuestros productos</h2>
+    </header>
+    <div class="t09-productos__grid">
+      <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_1_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_1_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_1_desc}}</p>
+      </article>
+      <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_2_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_2_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_2_desc}}</p>
+      </article>
+      <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_3_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_3_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_3_desc}}</p>
+      </article>
+      {{? <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_4_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_4_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_4_desc}}</p>
+      </article> ?}}
+      {{? <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_5_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_5_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_5_desc}}</p>
+      </article> ?}}
+      {{? <article class="t09-prod-card">
+        <div class="t09-prod-card__icon" aria-hidden="true">{{servicio_6_icono_svg}}</div>
+        <h3 class="t09-prod-card__title">{{servicio_6_titulo}}</h3>
+        <p class="t09-prod-card__desc">{{servicio_6_desc}}</p>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA / NOSOTROS -->
+<section class="t09-historia ql-anim" id="historia">
+  <div class="t09-wrap t09-historia__inner">
+    <div class="t09-historia__media" aria-hidden="true">
+      <img src="{{img_nosotros_url}}" alt="Nuestra historia" loading="lazy">
+    </div>
+    <div class="t09-historia__text">
+      <p class="t09-eyebrow">Nuestra historia</p>
+      <h2 class="t09-section-title">Hecho con dedicacion y amor por lo artesanal</h2>
+      <p class="t09-historia__desc">{{descripcion}}</p>
+      {{? <p class="t09-historia__rating">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+      {{? <p class="t09-historia__horario">&#128336; {{horarios}}</p> ?}}
+      {{? <p class="t09-historia__ciudad">&#128205; {{ciudad}}</p> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA masonry cálida -->
+<section class="t09-galeria ql-anim" id="galeria">
+  <div class="t09-wrap">
+    <header class="t09-section-header">
+      <p class="t09-eyebrow">Nuestros productos</p>
+      <h2 class="t09-section-title">Galeria</h2>
+    </header>
+    <div class="t09-galeria__masonry">
+      <img src="{{img_galeria_1_url}}" alt="Galeria 1" loading="lazy">
+      <img src="{{img_galeria_2_url}}" alt="Galeria 2" loading="lazy">
+      <img src="{{img_galeria_3_url}}" alt="Galeria 3" loading="lazy">
+      <img src="{{img_galeria_4_url}}" alt="Galeria 4" loading="lazy">
+      <img src="{{img_cta_url}}" alt="Galeria 5" loading="lazy">
+      <img src="{{img_extra_url}}" alt="Galeria 6" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t09-testimonios ql-anim" id="testimonios">
+  <div class="t09-wrap">
+    <header class="t09-section-header t09-section-header--center">
+      <p class="t09-eyebrow">Resenas</p>
+      <h2 class="t09-section-title">Lo que dicen nuestros clientes</h2>
+    </header>
+    <div class="t09-testimonios__grid">
+      {{? <article class="t09-testi">
+        <p class="t09-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</p>
+        <footer class="t09-testi__footer">
+          <span class="t09-testi__avatar" aria-hidden="true">{{testimonio_1_inicial}}</span>
+          <div>
+            <strong class="t09-testi__autor">{{testimonio_1_autor}}</strong>
+            <span class="t09-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t09-testi">
+        <p class="t09-testi__texto">&#8220;{{testimonio_2_texto}}&#8221;</p>
+        <footer class="t09-testi__footer">
+          <span class="t09-testi__avatar" aria-hidden="true">{{testimonio_2_inicial}}</span>
+          <div>
+            <strong class="t09-testi__autor">{{testimonio_2_autor}}</strong>
+            <span class="t09-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t09-testi">
+        <p class="t09-testi__texto">&#8220;{{testimonio_3_texto}}&#8221;</p>
+        <footer class="t09-testi__footer">
+          <span class="t09-testi__avatar" aria-hidden="true">{{testimonio_3_inicial}}</span>
+          <div>
+            <strong class="t09-testi__autor">{{testimonio_3_autor}}</strong>
+            <span class="t09-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="t09-cta" id="contacto">
+  <div class="t09-wrap t09-cta__inner">
+    <div class="t09-cta__copy">
+      <h2 class="t09-cta__titulo">{{cta_fuerte_titulo}}</h2>
+      {{? <p class="t09-cta__sub">{{cta_fuerte_subtitulo}}</p> ?}}
+    </div>
+    <div class="t09-cta__actions">
+      <a href="https://wa.me/{{telefono_limpio}}" class="t09-btn t09-btn--dark" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      {{? <a href="tel:{{telefono}}" class="t09-btn t09-btn--dark-outline">{{telefono}}</a> ?}}
+    </div>
+  </div>
+</section>
+
+<!--QL_BODY_STRIP-->
+<!--QL_BODY_WA-->
+
+<footer class="t09-foot">
+  <div class="t09-wrap t09-foot__inner">
+    <div class="t09-foot__brand">
+      <p class="t09-foot__name">{{nombre_negocio}}</p>
+      {{? <p class="t09-foot__rubro">{{rubro}} &middot; {{ciudad}}</p> ?}}
+    </div>
+    <nav class="t09-foot__nav">
+      <a href="#productos">Productos</a>
+      <a href="#historia">Historia</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="t09-foot__contact">
+      {{? <p>&#128336; {{horarios}}</p> ?}}
+      {{? <p>&#128205; {{ciudad}}</p> ?}}
+      {{? <p><a href="tel:{{telefono}}">{{telefono}}</a></p> ?}}
+    </div>
+  </div>
+  <div class="t09-foot__bottom">
+    <p>&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+  </div>
+</footer>
+
+<!--QL_BODY_ANIM_JS-->
+</body>
+</html>

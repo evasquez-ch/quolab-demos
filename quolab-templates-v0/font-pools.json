@@ -1,0 +1,188 @@
+{
+  "_comment": "Pool de pares tipograficos por template. Cada par tiene URL Google Fonts + nombres de familia para CSS. El assembler elige uno al azar e inyecta el link y las CSS variables --font-display y --font-body. La fuente Quolab (Neulis Neue via Adobe Typekit) se carga aparte y se usa SOLO en el footer.",
+  "01-tecnico": [
+    {
+      "id": "inter-ibm",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+      "display": "'Inter', sans-serif",
+      "body":    "'Inter', sans-serif",
+      "mono":    "'IBM Plex Mono', monospace"
+    },
+    {
+      "id": "jakarta-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Plus Jakarta Sans', sans-serif",
+      "body":    "'Inter', sans-serif",
+      "mono":    "'Plus Jakarta Sans', sans-serif"
+    },
+    {
+      "id": "manrope-jetbrains",
+      "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap",
+      "display": "'Manrope', sans-serif",
+      "body":    "'Manrope', sans-serif",
+      "mono":    "'JetBrains Mono', monospace"
+    }
+  ],
+  "02-belleza-oscuro": [
+    {
+      "id": "fraunces-manrope",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'Manrope', sans-serif"
+    },
+    {
+      "id": "playfair-source",
+      "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600&display=swap",
+      "display": "'Playfair Display', serif",
+      "body":    "'Source Sans 3', sans-serif"
+    }
+  ],
+  "03-belleza-claro": [
+    {
+      "id": "cormorant-outfit",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap",
+      "display": "'Cormorant Garamond', serif",
+      "body":    "'Outfit', sans-serif"
+    },
+    {
+      "id": "bricolage-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Bricolage Grotesque', sans-serif",
+      "body":    "'DM Sans', sans-serif"
+    },
+    {
+      "id": "fraunces-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'Inter', sans-serif"
+    }
+  ],
+  "04-salud": [
+    {
+      "id": "jakarta-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Plus Jakarta Sans', sans-serif",
+      "body":    "'Inter', sans-serif"
+    },
+    {
+      "id": "dm-source",
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap",
+      "display": "'DM Sans', sans-serif",
+      "body":    "'Source Sans 3', sans-serif"
+    }
+  ],
+  "05-gastro-oscuro": [
+    {
+      "id": "fraunces-manrope",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'Manrope', sans-serif"
+    },
+    {
+      "id": "playfair-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Playfair Display', serif",
+      "body":    "'DM Sans', sans-serif"
+    }
+  ],
+  "06-gastro-claro": [
+    {
+      "id": "bricolage-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Bricolage Grotesque', sans-serif",
+      "body":    "'DM Sans', sans-serif"
+    },
+    {
+      "id": "fraunces-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'Inter', sans-serif"
+    },
+    {
+      "id": "cormorant-manrope",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap",
+      "display": "'Cormorant Garamond', serif",
+      "body":    "'Manrope', sans-serif"
+    }
+  ],
+  "07-street-food": [
+    {
+      "id": "bricolage-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800;12..96,900&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Bricolage Grotesque', sans-serif",
+      "body":    "'DM Sans', sans-serif"
+    },
+    {
+      "id": "space-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Space Grotesk', sans-serif",
+      "body":    "'Inter', sans-serif"
+    },
+    {
+      "id": "archivo-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Archivo', sans-serif",
+      "body":    "'DM Sans', sans-serif"
+    }
+  ],
+  "08-retail-claro": [
+    {
+      "id": "jakarta-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Plus Jakarta Sans', sans-serif",
+      "body":    "'Inter', sans-serif"
+    },
+    {
+      "id": "bricolage-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Bricolage Grotesque', sans-serif",
+      "body":    "'DM Sans', sans-serif"
+    },
+    {
+      "id": "manrope-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Manrope', sans-serif",
+      "body":    "'Inter', sans-serif"
+    }
+  ],
+  "09-retail-calido": [
+    {
+      "id": "fraunces-dm",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'DM Sans', sans-serif"
+    },
+    {
+      "id": "cormorant-outfit",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap",
+      "display": "'Cormorant Garamond', serif",
+      "body":    "'Outfit', sans-serif"
+    },
+    {
+      "id": "bricolage-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Bricolage Grotesque', sans-serif",
+      "body":    "'Inter', sans-serif"
+    }
+  ],
+  "10-profesional": [
+    {
+      "id": "playfair-source",
+      "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600&display=swap",
+      "display": "'Playfair Display', serif",
+      "body":    "'Source Sans 3', sans-serif"
+    },
+    {
+      "id": "cormorant-inter",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
+      "display": "'Cormorant Garamond', serif",
+      "body":    "'Inter', sans-serif"
+    },
+    {
+      "id": "fraunces-manrope",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600&display=swap",
+      "display": "'Fraunces', serif",
+      "body":    "'Manrope', sans-serif"
+    }
+  ]
+}

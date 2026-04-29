@@ -1,0 +1,137 @@
+{
+  "_comment": "Mapeo rubro -> template. Reglas: 1) normalizar rubro (lowercase, sin tildes). 2) buscar keywords en cualquier cluster. 3) si hay multiples matches, gana la keyword mas larga (mas especifica). 4) si no hay match, usar default_template.",
+  "default_template": "10-profesional",
+  "clusters": [
+    {
+      "id": "01-tecnico",
+      "label": "Servicios tecnicos",
+      "keywords": [
+        "gasfiter", "gasfiteria", "plomero", "plomeria",
+        "electricista", "instalacion electrica",
+        "cerrajero", "cerrajeria",
+        "mecanico", "taller mecanico", "automotriz",
+        "climatizacion", "aire acondicionado", "calefaccion",
+        "alarmas", "camaras de seguridad", "seguridad domiciliaria",
+        "vidrieria", "vidriero",
+        "tecnico de electrodomesticos", "reparacion electrodomesticos",
+        "construccion", "albanil", "albanileria", "remodelacion", "pintor de casas"
+      ]
+    },
+    {
+      "id": "02-belleza-oscuro",
+      "label": "Belleza editorial oscuro",
+      "keywords": [
+        "barberia", "barber shop", "barbero",
+        "peluqueria de autor", "peluqueria masculina",
+        "salon unisex premium", "salon premium",
+        "spa de gama alta", "spa premium", "spa masculino"
+      ]
+    },
+    {
+      "id": "03-belleza-claro",
+      "label": "Belleza moderno claro",
+      "keywords": [
+        "peluqueria", "salon de belleza", "salon femenino",
+        "manicure", "pedicure", "manos y pies",
+        "depilacion", "depilacion laser",
+        "estetica", "centro de estetica",
+        "tratamientos faciales", "facial",
+        "cejas", "pestanas", "lash", "extension de pestanas",
+        "spa", "spa femenino"
+      ]
+    },
+    {
+      "id": "04-salud",
+      "label": "Salud",
+      "keywords": [
+        "dental", "dentista", "odontologia", "ortodoncia",
+        "podologia", "podologo",
+        "kinesiologia", "kinesiologo", "fisioterapia", "fisioterapeuta",
+        "nutricionista", "nutricion",
+        "psicologia", "psicologo", "terapia",
+        "oftalmologia", "oftalmologo",
+        "fonoaudiologia", "fonoaudiologo",
+        "medico general", "medicina general", "consulta medica",
+        "ginecologo", "pediatra", "dermatologo"
+      ]
+    },
+    {
+      "id": "05-gastro-oscuro",
+      "label": "Gastronomia premium oscuro",
+      "keywords": [
+        "restaurante", "restaurant",
+        "parrilla", "parrillada", "asador",
+        "sushi", "sushi tradicional", "japones",
+        "cocina de autor", "alta cocina",
+        "trattoria", "ristorante", "italiana"
+      ]
+    },
+    {
+      "id": "06-gastro-claro",
+      "label": "Gastronomia calido claro",
+      "keywords": [
+        "panaderia", "panaderia artesanal",
+        "cafeteria", "cafe", "coffee shop",
+        "pasteleria", "pasteleria artesanal", "tortas",
+        "fuente de soda",
+        "comida casera", "almuerzos", "comida al paso",
+        "picada", "picada tradicional",
+        "heladeria", "helados artesanales"
+      ]
+    },
+    {
+      "id": "07-street-food",
+      "label": "Street food moderno",
+      "keywords": [
+        "food truck", "foodtruck", "food cart",
+        "carrito de comida", "pop-up", "popup",
+        "smash burger", "smash burgers", "hamburguesas",
+        "papas locas", "papas rellenas",
+        "pizza de masa madre", "pizza artesanal",
+        "comida callejera", "street food",
+        "tacos", "burritos"
+      ]
+    },
+    {
+      "id": "08-retail-claro",
+      "label": "Retail moderno claro",
+      "keywords": [
+        "optica", "lentes",
+        "libreria", "libros",
+        "deportes", "tienda deportiva", "articulos deportivos",
+        "ferreteria", "ferreteria moderna",
+        "electrodomesticos", "tienda de electrodomesticos",
+        "tecnologia", "computacion", "celulares", "tienda de tecnologia",
+        "papeleria"
+      ]
+    },
+    {
+      "id": "09-retail-calido",
+      "label": "Retail amigable calido",
+      "keywords": [
+        "boutique", "boutique de ropa", "tienda de ropa",
+        "mascotas", "tienda de mascotas", "petshop", "pet shop",
+        "jugueteria", "juguetes",
+        "bazar", "almacen",
+        "decoracion", "tienda de decoracion", "muebles",
+        "productos artesanales", "artesania",
+        "florista", "floreria"
+      ]
+    },
+    {
+      "id": "10-profesional",
+      "label": "Profesional / oficina",
+      "keywords": [
+        "abogado", "abogados", "estudio juridico", "juridico",
+        "contador", "contabilidad", "contador auditor",
+        "inmobiliaria", "corredor de propiedades",
+        "arquitecto", "estudio de arquitectura",
+        "consultor", "consultoria",
+        "notaria", "notario",
+        "asesor financiero", "asesoria financiera",
+        "agencia de seguros", "seguros", "corredor de seguros",
+        "ingeniero", "ingenieria", "estudio de ingenieria"
+      ]
+    }
+  ]
+}

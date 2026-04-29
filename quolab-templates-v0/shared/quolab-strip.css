@@ -1,0 +1,60 @@
+/* QUOLAB STRIP — franja final identica en los 10 templates.
+   Refuerza el branding Quolab usando la identidad de marca real:
+   - Fondo negro principal #0a0a0c
+   - Tipografia Neulis Sans (Adobe Typekit) cargada en el <head>
+   - Azul Quolab #2a3df4 en el link "Quolab"
+   Sirve de cierre comun: el cliente ve el branding sin importar el template
+   que le toco a su rubro. */
+
+.ql-strip {
+  background: #0a0a0c;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "neulis-sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ql-strip__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ql-strip__copy strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+}
+.ql-strip__brand {
+  color: rgba(255, 255, 255, 0.45);
+}
+.ql-strip__brand a {
+  color: #2a3df4;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.ql-strip__brand a:hover,
+.ql-strip__brand a:focus-visible {
+  color: #f4622a;
+}
+.ql-strip__brand a:focus-visible {
+  outline: 2px solid #2a3df4;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .ql-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    gap: 0.4rem;
+  }
+  .ql-strip { font-size: 0.74rem; }
+}

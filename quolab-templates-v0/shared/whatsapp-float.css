@@ -1,0 +1,62 @@
+/* QUOLAB WHATSAPP FLOAT — comun a los 10 templates.
+   Diseno fijo: circulo verde oficial WhatsApp #25D366, icono blanco, sombra suave,
+   pulso sutil en reposo, escala leve en hover. Sigue siendo accesible con teclado. */
+
+.ql-wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45),
+              0 2px 6px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ql-wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: ql-wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.ql-wa-float:hover,
+.ql-wa-float:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55),
+              0 3px 8px rgba(0, 0, 0, 0.14);
+}
+.ql-wa-float:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+.ql-wa-float svg { display: block; }
+
+@keyframes ql-wa-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 480px) {
+  .ql-wa-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .ql-wa-float svg { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ql-wa-float::before { animation: none; }
+  .ql-wa-float { transition: none; }
+}

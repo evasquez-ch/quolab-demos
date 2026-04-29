@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{nombre_negocio}} — {{rubro}}</title>
+  <meta name="description" content="{{descripcion}}">
+  <!--QL_HEAD_FONTS-->
+  <!--QL_HEAD_BASE_RESET-->
+  <!--QL_HEAD_VARS-->
+  <!--QL_HEAD_WA_CSS-->
+  <!--QL_HEAD_STRIP_CSS-->
+  <!--QL_TEMPLATE_CSS-->
+</head>
+<body>
+
+<header class="t10-header" role="banner">
+  <div class="t10-wrap t10-header__inner">
+    <a href="#" class="t10-logo" aria-label="{{nombre_negocio}}">
+      <span class="t10-logo__mark" aria-hidden="true"></span>
+      <span class="t10-logo__name">{{nombre_negocio}}</span>
+    </a>
+    <nav class="t10-nav" aria-label="Menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Como trabajamos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="https://wa.me/{{telefono_limpio}}" class="t10-btn t10-btn--primary t10-header__cta" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+  </div>
+</header>
+
+<!-- HERO — dos columnas: texto izquierda | foto derecha contenida -->
+<section class="t10-hero" aria-label="Portada">
+  <div class="t10-wrap t10-hero__inner ql-hero-stagger">
+    <div class="t10-hero__text">
+      {{? <span class="t10-hero__badge">{{badge_hero}}</span> ?}}
+      <h1 class="t10-hero__h1">{{slogan}}</h1>
+      <p class="t10-hero__desc">{{descripcion}}</p>
+      <div class="t10-hero__actions">
+        <a href="https://wa.me/{{telefono_limpio}}" class="t10-btn t10-btn--primary" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+        <a href="#servicios" class="t10-btn t10-btn--outline">Ver servicios</a>
+      </div>
+      {{? <p class="t10-hero__rating">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+    </div>
+    <div class="t10-hero__media" aria-hidden="true">
+      <img class="t10-hero__img" src="{{img_hero_url}}" alt="{{img_hero_alt}}" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- CREDENCIALES / STRIP -->
+<div class="t10-credenciales">
+  <div class="t10-wrap t10-credenciales__inner">
+    <div class="t10-cred-item">
+      <span class="t10-cred-item__num">+10</span>
+      <span class="t10-cred-item__label">Anos de experiencia</span>
+    </div>
+    <span class="t10-cred-sep" aria-hidden="true"></span>
+    <div class="t10-cred-item">
+      {{? <span class="t10-cred-item__num">{{rating_value}}</span> ?}}
+      <span class="t10-cred-item__label">Calificacion promedio</span>
+    </div>
+    <span class="t10-cred-sep" aria-hidden="true"></span>
+    <div class="t10-cred-item">
+      <span class="t10-cred-item__num">100%</span>
+      <span class="t10-cred-item__label">Compromiso con el cliente</span>
+    </div>
+    <span class="t10-cred-sep" aria-hidden="true"></span>
+    <div class="t10-cred-item">
+      <span class="t10-cred-item__num">&#128274;</span>
+      <span class="t10-cred-item__label">Confidencialidad garantizada</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="t10-servicios ql-anim" id="servicios">
+  <div class="t10-wrap">
+    <header class="t10-section-header">
+      <p class="t10-eyebrow">Areas de practica</p>
+      <h2 class="t10-section-title">Servicios profesionales</h2>
+    </header>
+    <div class="t10-servicios__grid">
+      <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">01</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_1_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_1_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_1_desc}}</p>
+      </article>
+      <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">02</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_2_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_2_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_2_desc}}</p>
+      </article>
+      <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">03</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_3_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_3_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_3_desc}}</p>
+      </article>
+      {{? <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">04</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_4_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_4_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_4_desc}}</p>
+      </article> ?}}
+      {{? <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">05</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_5_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_5_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_5_desc}}</p>
+      </article> ?}}
+      {{? <article class="t10-serv-card">
+        <div class="t10-serv-card__num" aria-hidden="true">06</div>
+        <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_6_icono_svg}}</div>
+        <h3 class="t10-serv-card__title">{{servicio_6_titulo}}</h3>
+        <p class="t10-serv-card__desc">{{servicio_6_desc}}</p>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS / PROCESO -->
+<section class="t10-proceso ql-anim" id="proceso">
+  <div class="t10-wrap">
+    <header class="t10-section-header t10-section-header--center">
+      <p class="t10-eyebrow">Metodologia</p>
+      <h2 class="t10-section-title">Como trabajamos</h2>
+    </header>
+    <ol class="t10-steps ql-stagger" aria-label="Pasos del proceso">
+      <li class="t10-step">
+        <div class="t10-step__num" aria-hidden="true">01</div>
+        <h3 class="t10-step__title">{{paso_1_titulo}}</h3>
+        <p class="t10-step__desc">{{paso_1_desc}}</p>
+      </li>
+      <li class="t10-step">
+        <div class="t10-step__num" aria-hidden="true">02</div>
+        <h3 class="t10-step__title">{{paso_2_titulo}}</h3>
+        <p class="t10-step__desc">{{paso_2_desc}}</p>
+      </li>
+      <li class="t10-step">
+        <div class="t10-step__num" aria-hidden="true">03</div>
+        <h3 class="t10-step__title">{{paso_3_titulo}}</h3>
+        <p class="t10-step__desc">{{paso_3_desc}}</p>
+      </li>
+      <li class="t10-step">
+        <div class="t10-step__num" aria-hidden="true">04</div>
+        <h3 class="t10-step__title">{{paso_4_titulo}}</h3>
+        <p class="t10-step__desc">{{paso_4_desc}}</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- NOSOTROS — foto + texto -->
+<section class="t10-nosotros ql-anim">
+  <div class="t10-wrap t10-nosotros__inner">
+    <div class="t10-nosotros__media" aria-hidden="true">
+      <img src="{{img_nosotros_url}}" alt="{{nombre_negocio}}" loading="lazy">
+    </div>
+    <div class="t10-nosotros__text">
+      <p class="t10-eyebrow">Quienes somos</p>
+      <h2 class="t10-section-title">Profesionales con trayectoria comprobada</h2>
+      <p class="t10-nosotros__desc">{{descripcion}}</p>
+      {{? <p class="t10-nosotros__rating">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+      {{? <p class="t10-nosotros__ciudad">&#128205; {{ciudad}}</p> ?}}
+      {{? <p class="t10-nosotros__horario">&#128336; {{horarios}}</p> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t10-testimonios ql-anim" id="testimonios">
+  <div class="t10-wrap">
+    <header class="t10-section-header t10-section-header--center">
+      <p class="t10-eyebrow">Testimonios</p>
+      <h2 class="t10-section-title">Lo que dicen nuestros clientes</h2>
+      {{? <p class="t10-section-sub">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+    </header>
+    <div class="t10-testimonios__grid">
+      {{? <article class="t10-testi">
+        <p class="t10-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</p>
+        <footer class="t10-testi__footer">
+          <span class="t10-testi__avatar" aria-hidden="true">{{testimonio_1_inicial}}</span>
+          <div>
+            <strong class="t10-testi__autor">{{testimonio_1_autor}}</strong>
+            <span class="t10-testi__stars">&#9733; {{testimonio_1_rating}}</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t10-testi">
+        <p class="t10-testi__texto">&#8220;{{testimonio_2_texto}}&#8221;</p>
+        <footer class="t10-testi__footer">
+          <span class="t10-testi__avatar" aria-hidden="true">{{testimonio_2_inicial}}</span>
+          <div>
+            <strong class="t10-testi__autor">{{testimonio_2_autor}}</strong>
+            <span class="t10-testi__stars">&#9733; {{testimonio_2_rating}}</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t10-testi">
+        <p class="t10-testi__texto">&#8220;{{testimonio_3_texto}}&#8221;</p>
+        <footer class="t10-testi__footer">
+          <span class="t10-testi__avatar" aria-hidden="true">{{testimonio_3_inicial}}</span>
+          <div>
+            <strong class="t10-testi__autor">{{testimonio_3_autor}}</strong>
+            <span class="t10-testi__stars">&#9733; {{testimonio_3_rating}}</span>
+          </div>
+        </footer>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="t10-cta" id="contacto">
+  <div class="t10-wrap t10-cta__inner">
+    <div class="t10-cta__copy">
+      <h2 class="t10-cta__titulo">{{cta_fuerte_titulo}}</h2>
+      {{? <p class="t10-cta__sub">{{cta_fuerte_subtitulo}}</p> ?}}
+    </div>
+    <div class="t10-cta__actions">
+      <a href="https://wa.me/{{telefono_limpio}}" class="t10-btn t10-btn--white" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+      {{? <a href="tel:{{telefono}}" class="t10-btn t10-btn--white-outline">{{telefono}}</a> ?}}
+    </div>
+  </div>
+</section>
+
+<!--QL_BODY_STRIP-->
+<!--QL_BODY_WA-->
+
+<footer class="t10-foot" aria-label="Pie de pagina">
+  <div class="t10-wrap t10-foot__inner">
+    <div class="t10-foot__brand">
+      <p class="t10-foot__name">{{nombre_negocio}}</p>
+      {{? <p class="t10-foot__rubro">{{rubro}} &middot; {{ciudad}}</p> ?}}
+    </div>
+    <nav class="t10-foot__nav" aria-label="Navegacion">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Como trabajamos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="t10-foot__contact">
+      {{? <p>&#128336; {{horarios}}</p> ?}}
+      {{? <p>&#128205; {{ciudad}}</p> ?}}
+      {{? <p><a href="tel:{{telefono}}">{{telefono}}</a></p> ?}}
+    </div>
+  </div>
+  <div class="t10-foot__bottom">
+    <p>&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+  </div>
+</footer>
+
+<!--QL_BODY_ANIM_JS-->
+</body>
+</html>

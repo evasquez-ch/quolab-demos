@@ -1,0 +1,50 @@
+{
+  "_comment": "Prospecto El Rincon Barberia — usado para validar Template 02-belleza-oscuro en Fase 4.",
+  "nombre_negocio": "El Rincon Barberia",
+  "rubro": "Barberia",
+  "ciudad": "Providencia",
+  "telefono": "+56 9 7654 3210",
+  "direccion": "Av. Providencia 1850, Providencia, Santiago",
+  "rating": 4.8,
+  "total_resenas": 87,
+
+  "slogan": "El corte que siempre quisiste.",
+  "descripcion": "Barberia de autor en Providencia, especializada en cortes modernos, afeitado con navaja y tratamientos capilares para el hombre de hoy.",
+  "frase_aspiracional": "Tu mejor version empieza aqui",
+  "badge_hero": "Reservas disponibles",
+  "unsplash_keywords": "barber shop grooming dark interior masculine",
+
+  "servicio_1_titulo": "Corte de cabello",
+  "servicio_1_desc": "Corte clasico o moderno a tu gusto. Technica precisa, resultado limpio.",
+  "servicio_1_icono": "scissors",
+
+  "servicio_2_titulo": "Afeitado con navaja",
+  "servicio_2_desc": "Ritual completo con toallas calientes, crema artesanal y navaja afilada.",
+  "servicio_2_icono": "scissors",
+
+  "servicio_3_titulo": "Arreglo de barba",
+  "servicio_3_desc": "Diseno personalizado y mantencion de barba segun tu estilo.",
+  "servicio_3_icono": "scissors",
+
+  "servicio_4_titulo": "Tratamientos capilares",
+  "servicio_4_desc": "Hidratacion profunda y tonico para cabello y cuero cabelludo.",
+  "servicio_4_icono": "sparkles",
+
+  "testimonio_1_autor": "Andres R.",
+  "testimonio_1_texto": "El mejor corte que he tenido en anos. Ambiente unico, atencion de primer nivel. Ya no voy a ningun otro lado.",
+  "testimonio_1_rating": 5,
+
+  "testimonio_2_autor": "Felipe M.",
+  "testimonio_2_texto": "Vine por el afeitado con navaja y me conquisto. El ritual completo es una experiencia. Lo recomiendo sin dudar.",
+  "testimonio_2_rating": 5,
+
+  "testimonio_3_autor": "Sebastian V.",
+  "testimonio_3_texto": "Llevo 6 meses viniendo cada mes. La consistencia y el cuidado al detalle son lo que mas valoro.",
+  "testimonio_3_rating": 5,
+
+  "cta_fuerte_titulo": "Reserva tu hora hoy",
+  "cta_fuerte_subtitulo": "Sin costo de agendamiento, cancelacion libre hasta 2 horas antes",
+
+  "demo_url": "https://quolab-demos.pages.dev/el-rincon-barberia",
+  "og_image_url": ""
+}

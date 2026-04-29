@@ -1,0 +1,191 @@
+{
+  "_comment": "Pool de colores signature por template. El primero es el default. El assembler elige uno al azar (o usa el indicado por el flujo N8N) y lo aplica como --color-signature en el CSS del template.",
+  "01-tecnico": {
+    "neutrals": {
+      "bg":          "#FAFAFA",
+      "bg_alt":      "#F2F2F2",
+      "text":        "#0F1419",
+      "text_muted":  "#5A6470",
+      "border":      "#E1E4E8",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#1E5BC6", "name": "Azul confianza" },
+      { "hex": "#0066FF", "name": "Azul electrico" },
+      { "hex": "#E85D2C", "name": "Naranja servicio" },
+      { "hex": "#D63838", "name": "Rojo emergencia" },
+      { "hex": "#0F7B5A", "name": "Verde tecnico" },
+      { "hex": "#1A1A1A", "name": "Negro industrial" },
+      { "hex": "#2D4A8B", "name": "Azul marino solido" }
+    ]
+  },
+  "02-belleza-oscuro": {
+    "neutrals": {
+      "bg":               "#0E0E10",
+      "bg_alt":           "#13131A",
+      "text":             "#F5F5F2",
+      "text_muted":       "#8A8A92",
+      "border":           "#26262B",
+      "surface":          "#17171A",
+      "text_on_signature": "#0D0D0D"
+    },
+    "signature_pool": [
+      { "hex": "#C9A961", "name": "Dorado champagne" },
+      { "hex": "#B85C38", "name": "Cobre calido" },
+      { "hex": "#A87E5C", "name": "Caramelo" },
+      { "hex": "#8B6F47", "name": "Bronce tabaco" },
+      { "hex": "#3D4A5C", "name": "Azul acero profundo" },
+      { "hex": "#6B4F3F", "name": "Cafe tabaco" }
+    ]
+  },
+  "03-belleza-claro": {
+    "neutrals": {
+      "bg":          "#FAF7F2",
+      "bg_alt":      "#F2EDE5",
+      "text":        "#2A1F1A",
+      "text_muted":  "#7A6B60",
+      "border":      "#E8DFD3",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#D4738A", "name": "Rosa coral" },
+      { "hex": "#A85D87", "name": "Magenta apagado" },
+      { "hex": "#7B8B5C", "name": "Verde matcha" },
+      { "hex": "#C99961", "name": "Mostaza suave" },
+      { "hex": "#8B5A7F", "name": "Ciruela" },
+      { "hex": "#D4574A", "name": "Terracota" },
+      { "hex": "#5C6B8A", "name": "Azul polvo" }
+    ]
+  },
+  "04-salud": {
+    "neutrals": {
+      "bg":          "#FFFFFF",
+      "bg_alt":      "#F4F8FB",
+      "text":        "#0D1F2D",
+      "text_muted":  "#5A7080",
+      "border":      "#DCE4EA",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#1A6FB5", "name": "Azul clinico" },
+      { "hex": "#0A8754", "name": "Verde salud" },
+      { "hex": "#2D7A8B", "name": "Teal sereno" },
+      { "hex": "#5B6DAA", "name": "Azul lavanda" },
+      { "hex": "#1F4D8C", "name": "Azul marino institucional" },
+      { "hex": "#0EA882", "name": "Verde menta medico" }
+    ]
+  },
+  "05-gastro-oscuro": {
+    "neutrals": {
+      "bg":          "#1A1612",
+      "bg_alt":      "#1F1B16",
+      "text":        "#F5EFE6",
+      "text_muted":  "#A89784",
+      "border":      "#332E26",
+      "surface":     "#23201B"
+    },
+    "signature_pool": [
+      { "hex": "#D4A547", "name": "Dorado mostaza" },
+      { "hex": "#C44536", "name": "Rojo terracota" },
+      { "hex": "#8B6F47", "name": "Bronce tostado" },
+      { "hex": "#7A8B3F", "name": "Verde oliva" },
+      { "hex": "#B85C2D", "name": "Naranja especiado" },
+      { "hex": "#6B4226", "name": "Cafe oscuro" }
+    ]
+  },
+  "06-gastro-claro": {
+    "neutrals": {
+      "bg":          "#FBF6EE",
+      "bg_alt":      "#F4ECDE",
+      "text":        "#2D1F12",
+      "text_muted":  "#7A6450",
+      "border":      "#E8DAC3",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#C44536", "name": "Tomate" },
+      { "hex": "#D4842B", "name": "Naranja pan" },
+      { "hex": "#7A8B3F", "name": "Verde hierba" },
+      { "hex": "#A8512D", "name": "Cobrizo" },
+      { "hex": "#5C7A4D", "name": "Verde campo" },
+      { "hex": "#8B4A6B", "name": "Frambuesa" },
+      { "hex": "#3D5A8C", "name": "Azul taller" }
+    ]
+  },
+  "07-street-food": {
+    "neutrals": {
+      "bg":          "#F8F8F4",
+      "bg_alt":      "#FFFFFF",
+      "text":        "#0F0F0F",
+      "text_muted":  "#4A4A4A",
+      "border":      "#E0E0DA",
+      "surface":     "#FFFFFF",
+      "text_on_signature": "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#FF3D00", "name": "Naranja electrico" },
+      { "hex": "#FFB400", "name": "Amarillo mostaza vivo" },
+      { "hex": "#E91E63", "name": "Rosa fucsia" },
+      { "hex": "#00BFA6", "name": "Turquesa" },
+      { "hex": "#7C4DFF", "name": "Violeta moderno" },
+      { "hex": "#FF5252", "name": "Rojo coral" },
+      { "hex": "#1DE9B6", "name": "Verde menta vivo" }
+    ]
+  },
+  "08-retail-claro": {
+    "neutrals": {
+      "bg":          "#FFFFFF",
+      "bg_alt":      "#F6F6F6",
+      "text":        "#0A0A0A",
+      "text_muted":  "#666666",
+      "border":      "#E5E5E5",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#FF4D14", "name": "Naranja retail" },
+      { "hex": "#0066FF", "name": "Azul confianza" },
+      { "hex": "#1A1A1A", "name": "Negro premium" },
+      { "hex": "#D62842", "name": "Rojo energico" },
+      { "hex": "#0F7B3A", "name": "Verde fresco" },
+      { "hex": "#7E22CE", "name": "Purpura distintivo" },
+      { "hex": "#0891B2", "name": "Cian moderno" }
+    ]
+  },
+  "09-retail-calido": {
+    "neutrals": {
+      "bg":          "#FBFAF7",
+      "bg_alt":      "#F0EDE5",
+      "text":        "#1F1A14",
+      "text_muted":  "#6B6155",
+      "border":      "#E5DFD3",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#D4738A", "name": "Rosa coral" },
+      { "hex": "#7A8B3F", "name": "Verde matcha" },
+      { "hex": "#C44536", "name": "Tomate" },
+      { "hex": "#5C7A8B", "name": "Azul pizarra" },
+      { "hex": "#A85D87", "name": "Magenta apagado" },
+      { "hex": "#D4842B", "name": "Naranja calido" },
+      { "hex": "#8B6F47", "name": "Bronce" }
+    ]
+  },
+  "10-profesional": {
+    "neutrals": {
+      "bg":          "#FFFFFF",
+      "bg_alt":      "#F3F3F1",
+      "text":        "#0F1419",
+      "text_muted":  "#4A5563",
+      "border":      "#D6D9DC",
+      "surface":     "#FFFFFF"
+    },
+    "signature_pool": [
+      { "hex": "#1F4D8C", "name": "Azul corporativo profundo" },
+      { "hex": "#6B2737", "name": "Borgona ejecutivo" },
+      { "hex": "#1A3D2E", "name": "Verde forestal" },
+      { "hex": "#0F1F3D", "name": "Azul casi negro" },
+      { "hex": "#7A5C2E", "name": "Bronce institucional" },
+      { "hex": "#4A4A4A", "name": "Gris ejecutivo", "accent": "#C9A961" }
+    ]
+  }
+}

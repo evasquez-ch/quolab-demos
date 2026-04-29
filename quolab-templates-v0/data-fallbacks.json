@@ -1,0 +1,375 @@
+{
+  "_comment": "Datos genericos plausibles por cluster y por rubro. Reglas: (1) cifras y hechos concretos NO se inventan, solo se usan si vienen del prospecto. (2) categorias genericas del rubro SI se rellenan desde aqui cuando faltan. (3) Claude API en N8N idealmente genera estos datos por prospecto; este archivo es la red de seguridad cuando Claude falla o no hay generacion.",
+
+  "by_cluster": {
+    "01-tecnico": {
+      "badges_hero": ["Cotizacion sin costo", "Atencion a domicilio", "Servicio profesional", "Respuesta rapida"],
+      "strip_confianza": [
+        { "value": "+10 anos", "label": "de experiencia" },
+        { "value": "100%",     "label": "trabajos garantizados" },
+        { "value": "Sin costo","label": "cotizacion inicial" },
+        { "value": "24h",      "label": "tiempo de respuesta" }
+      ],
+      "proceso": [
+        { "n": 1, "titulo": "Cotizacion",      "desc": "Te enviamos el presupuesto sin compromiso." },
+        { "n": 2, "titulo": "Visita tecnica",  "desc": "Acudimos al lugar en el horario acordado." },
+        { "n": 3, "titulo": "Trabajo realizado","desc": "Resolvemos el problema con materiales de calidad." },
+        { "n": 4, "titulo": "Garantia",         "desc": "Respaldamos cada trabajo con garantia escrita." }
+      ],
+      "comunas_default": "Region Metropolitana",
+      "cta_principal": "Cotizar por WhatsApp",
+      "cta_secundario": "Llamar ahora",
+      "cta_fuerte_titulo": "Necesitas atencion hoy?",
+      "cta_fuerte_subtitulo": "Cotizamos sin costo y te respondemos en menos de 24 horas",
+      "horarios_default": "Lunes a sabado, 8:00 a 20:00"
+    },
+
+    "02-belleza-oscuro": {
+      "badges_hero": [],
+      "frase_aspiracional": "Tu mejor version empieza aqui",
+      "cta_principal": "Reservar hora",
+      "cta_secundario": "Ver servicios",
+      "cta_fuerte_titulo": "Listos para el siguiente nivel?",
+      "cta_fuerte_subtitulo": "Reserva tu hora y vive la experiencia",
+      "horarios_default": "Consultar disponibilidad por WhatsApp"
+    },
+
+    "03-belleza-claro": {
+      "badges_hero": ["Reservas disponibles", "Atencion personalizada"],
+      "cta_principal": "Reservar hora",
+      "cta_secundario": "Ver servicios",
+      "valores_alternativos": [
+        { "titulo": "Atencion personalizada", "desc": "Cada cliente recibe un servicio pensado para su tipo de cabello y piel." },
+        { "titulo": "Productos profesionales","desc": "Trabajamos solo con marcas reconocidas del rubro." },
+        { "titulo": "Ambiente acogedor",      "desc": "Un espacio pensado para que disfrutes el momento." }
+      ]
+    },
+
+    "04-salud": {
+      "badges_hero": ["Atencion particular", "Agenda disponible"],
+      "tranquilidad": [
+        { "titulo": "Profesionales certificados", "desc": "Equipo con titulos validados y formacion continua." },
+        { "titulo": "Equipamiento moderno",       "desc": "Tecnologia actualizada para diagnosticos precisos." },
+        { "titulo": "Atencion personalizada",     "desc": "Tiempo dedicado a cada paciente sin apuros." }
+      ],
+      "proceso": [
+        { "n": 1, "titulo": "Agendar",      "desc": "Reserva tu hora por WhatsApp o telefono." },
+        { "n": 2, "titulo": "Llegar",       "desc": "Te recibimos en el horario acordado." },
+        { "n": 3, "titulo": "Tratamiento",  "desc": "Atencion profesional con plan claro." },
+        { "n": 4, "titulo": "Seguimiento",  "desc": "Acompanamos tu evolucion despues de la consulta." }
+      ],
+      "trayectoria_default": [
+        { "value": "+15 anos", "label": "de experiencia" },
+        { "value": "+1.000",   "label": "pacientes atendidos" },
+        { "value": "100%",     "label": "profesionales certificados" }
+      ],
+      "cta_fuerte_titulo": "Agenda tu hora hoy",
+      "cta_fuerte_subtitulo": "Te respondemos en menos de 24 horas"
+    },
+
+    "05-gastro-oscuro": {
+      "badges_hero": ["Reservas disponibles"],
+      "horarios_default": "Martes a domingo, 12:00 a 23:00",
+      "horarios_lista_default": [
+        { "dia": "Lunes",     "hrs": "Cerrado" },
+        { "dia": "Martes",    "hrs": "12:00 - 23:00" },
+        { "dia": "Miercoles", "hrs": "12:00 - 23:00" },
+        { "dia": "Jueves",    "hrs": "12:00 - 23:00" },
+        { "dia": "Viernes",   "hrs": "12:00 - 24:00" },
+        { "dia": "Sabado",    "hrs": "12:00 - 24:00" },
+        { "dia": "Domingo",   "hrs": "12:00 - 22:00" }
+      ],
+      "cta_principal": "Reservar mesa",
+      "cta_secundario": "Ver carta",
+      "frase_cocina_default": "Cocina pensada para disfrutar sin apuros"
+    },
+
+    "06-gastro-claro": {
+      "badges_hero": ["Pedidos por WhatsApp", "Atencion presencial"],
+      "horarios_default": "Lunes a sabado, 8:00 a 20:00",
+      "horarios_lista_default": [
+        { "dia": "Lunes",     "hrs": "08:00 - 20:00" },
+        { "dia": "Martes",    "hrs": "08:00 - 20:00" },
+        { "dia": "Miercoles", "hrs": "08:00 - 20:00" },
+        { "dia": "Jueves",    "hrs": "08:00 - 20:00" },
+        { "dia": "Viernes",   "hrs": "08:00 - 21:00" },
+        { "dia": "Sabado",    "hrs": "09:00 - 20:00" },
+        { "dia": "Domingo",   "hrs": "Cerrado" }
+      ],
+      "cta_principal": "Pedir por WhatsApp",
+      "cta_secundario": "Ver menu"
+    },
+
+    "07-street-food": {
+      "badges_hero": ["Sigue nuestra ubicacion"],
+      "horarios_default": "Horarios variables, consulta por Instagram",
+      "ubicacion_actual_default": "Siguenos en Instagram para saber donde estamos hoy",
+      "cta_principal": "Pedir ahora",
+      "cta_secundario": "Siguenos en Instagram"
+    },
+
+    "08-retail-claro": {
+      "badges_hero": ["Atencion presencial", "Despacho disponible"],
+      "razones_compra": [
+        { "titulo": "Despacho",  "desc": "Llevamos tus productos hasta la puerta." },
+        { "titulo": "Garantia",  "desc": "Todos nuestros productos cuentan con respaldo." },
+        { "titulo": "Atencion",  "desc": "Te asesoramos para que elijas lo correcto." },
+        { "titulo": "Stock",     "desc": "Variedad disponible todo el ano." }
+      ],
+      "horarios_default": "Lunes a sabado, 10:00 a 20:00",
+      "horarios_lista_default": [
+        { "dia": "Lunes",     "hrs": "10:00 - 20:00" },
+        { "dia": "Martes",    "hrs": "10:00 - 20:00" },
+        { "dia": "Miercoles", "hrs": "10:00 - 20:00" },
+        { "dia": "Jueves",    "hrs": "10:00 - 20:00" },
+        { "dia": "Viernes",   "hrs": "10:00 - 20:00" },
+        { "dia": "Sabado",    "hrs": "10:00 - 18:00" },
+        { "dia": "Domingo",   "hrs": "Cerrado" }
+      ],
+      "cta_principal": "Visitanos",
+      "cta_secundario": "Ver productos"
+    },
+
+    "09-retail-calido": {
+      "badges_hero": ["Atencion presencial"],
+      "horarios_default": "Lunes a sabado, 11:00 a 20:00",
+      "cta_principal": "Visitanos",
+      "cta_secundario": "Ver productos"
+    },
+
+    "10-profesional": {
+      "badges_hero": ["Primera consulta sin costo"],
+      "trayectoria_default": [
+        { "value": "+15 anos", "label": "de experiencia" },
+        { "value": "+500",     "label": "casos atendidos" },
+        { "value": "+200",     "label": "clientes satisfechos" }
+      ],
+      "proceso": [
+        { "n": 1, "titulo": "Primera reunion", "desc": "Conversamos tu caso sin compromiso." },
+        { "n": 2, "titulo": "Analisis",        "desc": "Estudiamos los antecedentes en detalle." },
+        { "n": 3, "titulo": "Propuesta",       "desc": "Definimos un plan de trabajo claro." },
+        { "n": 4, "titulo": "Ejecucion",       "desc": "Te acompanamos en cada paso del proceso." }
+      ],
+      "cta_principal": "Solicitar consulta",
+      "cta_secundario": "Conocer al equipo",
+      "cta_fuerte_subtitulo": "Primera consulta sin costo"
+    }
+  },
+
+  "by_rubro": {
+    "gasfiter": {
+      "servicios_default": [
+        { "titulo": "Reparacion de filtraciones", "desc": "Detectamos y reparamos filtraciones de agua en muros, pisos y techos." },
+        { "titulo": "Instalacion de artefactos",  "desc": "Lavaplatos, lavamanos, WC, calefont y mas." },
+        { "titulo": "Destape de canerias",        "desc": "Equipamiento profesional para canerias tapadas." },
+        { "titulo": "Revision de gas",            "desc": "Inspeccion y certificacion de instalaciones de gas." }
+      ],
+      "unsplash_keywords": "plumber plumbing pipe repair home"
+    },
+    "electricista": {
+      "servicios_default": [
+        { "titulo": "Instalaciones electricas", "desc": "Cableado completo para casas, locales y oficinas." },
+        { "titulo": "Reparacion de cortocircuitos", "desc": "Diagnostico y solucion de fallas electricas." },
+        { "titulo": "Tableros electricos",      "desc": "Instalacion y mantencion de tableros segun normativa." },
+        { "titulo": "Iluminacion",              "desc": "Instalacion de luminarias interiores y exteriores." }
+      ],
+      "unsplash_keywords": "electrician electrical work installation home"
+    },
+    "cerrajero": {
+      "servicios_default": [
+        { "titulo": "Apertura de puertas", "desc": "Apertura sin dano para puertas, autos y cajas fuertes." },
+        { "titulo": "Cambio de cerraduras","desc": "Cerraduras de seguridad de las mejores marcas." },
+        { "titulo": "Copia de llaves",     "desc": "Copias rapidas de llaves comunes y de alta seguridad." },
+        { "titulo": "Cerraduras electronicas","desc": "Instalacion de cerraduras digitales para casa o local." }
+      ],
+      "unsplash_keywords": "locksmith key door security"
+    },
+    "mecanico": {
+      "servicios_default": [
+        { "titulo": "Mantencion preventiva", "desc": "Cambio de aceite, filtros y revision general." },
+        { "titulo": "Reparacion de motor",   "desc": "Diagnostico y reparacion de fallas mecanicas." },
+        { "titulo": "Frenos y suspension",   "desc": "Cambio de pastillas, discos y amortiguadores." },
+        { "titulo": "Scanner electronico",   "desc": "Diagnostico computarizado del vehiculo." }
+      ],
+      "unsplash_keywords": "auto mechanic car repair workshop"
+    },
+    "barberia": {
+      "servicios_default": [
+        { "titulo": "Corte de cabello",      "desc": "Corte clasico o moderno segun tu estilo." },
+        { "titulo": "Afeitado tradicional",  "desc": "Afeitado con navaja, toallas calientes y aceites." },
+        { "titulo": "Arreglo de barba",      "desc": "Diseno y mantencion de barba a medida." },
+        { "titulo": "Tratamientos capilares","desc": "Hidratacion y tonico para cabello y cuero cabelludo." }
+      ],
+      "unsplash_keywords": "barber shop grooming interior dark"
+    },
+    "peluqueria": {
+      "servicios_default": [
+        { "titulo": "Corte y peinado", "desc": "Cortes femeninos y masculinos a medida." },
+        { "titulo": "Color y mechas",  "desc": "Coloracion, balayage y mechas californianas." },
+        { "titulo": "Tratamientos",    "desc": "Hidratacion profunda, botox capilar y nutricion." },
+        { "titulo": "Peinados de evento","desc": "Peinados para matrimonios, graduaciones y eventos." }
+      ],
+      "unsplash_keywords": "hair salon beauty modern interior"
+    },
+    "manicure": {
+      "servicios_default": [
+        { "titulo": "Manicure tradicional", "desc": "Corte, limado y esmaltado clasico." },
+        { "titulo": "Manicure semipermanente","desc": "Esmaltado de larga duracion." },
+        { "titulo": "Pedicure spa",         "desc": "Tratamiento completo para pies." },
+        { "titulo": "Nail art",             "desc": "Disenos personalizados y decoraciones." }
+      ],
+      "unsplash_keywords": "manicure nail salon beauty pink"
+    },
+    "dental": {
+      "servicios_default": [
+        { "titulo": "Limpieza dental",   "desc": "Higiene profesional y destartraje." },
+        { "titulo": "Tapaduras y caries","desc": "Restauraciones esteticas con resina." },
+        { "titulo": "Ortodoncia",        "desc": "Brackets metalicos y esteticos." },
+        { "titulo": "Blanqueamiento",    "desc": "Blanqueamiento dental profesional." },
+        { "titulo": "Endodoncia",        "desc": "Tratamiento de conducto cuando se requiere." },
+        { "titulo": "Implantes",         "desc": "Reposicion de piezas dentales." }
+      ],
+      "unsplash_keywords": "dental clinic modern interior"
+    },
+    "podologia": {
+      "servicios_default": [
+        { "titulo": "Podologia clinica",       "desc": "Tratamiento de unas encarnadas, callosidades y hongos." },
+        { "titulo": "Reflexologia podal",      "desc": "Masaje terapeutico de pies." },
+        { "titulo": "Quiropodia",              "desc": "Atencion completa de la salud del pie." },
+        { "titulo": "Cuidado del pie diabetico","desc": "Atencion especializada para pacientes diabeticos." }
+      ],
+      "unsplash_keywords": "podiatry feet care clinic"
+    },
+    "kinesiologia": {
+      "servicios_default": [
+        { "titulo": "Rehabilitacion deportiva", "desc": "Recuperacion tras lesiones deportivas." },
+        { "titulo": "Kinesiologia respiratoria","desc": "Tratamiento de patologias respiratorias." },
+        { "titulo": "Terapia manual",           "desc": "Tecnicas manuales para dolor muscular y articular." },
+        { "titulo": "Reeducacion postural",     "desc": "Correccion de posturas y dolor cronico." }
+      ],
+      "unsplash_keywords": "physical therapy rehabilitation clinic"
+    },
+    "restaurante": {
+      "platos_default": [
+        { "nombre": "Entrada de la casa", "desc": "Seleccion del chef del dia." },
+        { "nombre": "Plato principal",    "desc": "Especialidad de la cocina." },
+        { "nombre": "Postre artesanal",   "desc": "Postre del dia." }
+      ],
+      "unsplash_keywords": "restaurant fine dining interior dark elegant"
+    },
+    "parrilla": {
+      "platos_default": [
+        { "nombre": "Lomo vetado",      "desc": "Corte premium a la parrilla con guarnicion." },
+        { "nombre": "Asado de tira",    "desc": "Corte tradicional con coccion lenta." },
+        { "nombre": "Punta de paleta",  "desc": "Corte jugoso con sal de mar." },
+        { "nombre": "Entrana",          "desc": "Corte sabroso a las brasas." },
+        { "nombre": "Chorizo parrillero","desc": "Embutido artesanal a la brasa." },
+        { "nombre": "Papas rusticas",   "desc": "Guarnicion de papas al horno con romero." },
+        { "nombre": "Ensalada chilena", "desc": "Tomate, cebolla y cilantro con aceite de oliva." }
+      ],
+      "unsplash_keywords": "argentine grill steakhouse meat fire"
+    },
+    "sushi": {
+      "platos_default": [
+        { "nombre": "California roll",    "desc": "Palta, kanikama y pepino." },
+        { "nombre": "Salmon roll",        "desc": "Salmon fresco con queso crema." },
+        { "nombre": "Avocado roll",       "desc": "Roll envuelto en palta." },
+        { "nombre": "Acevichado",         "desc": "Roll con leche de tigre y cebolla morada." },
+        { "nombre": "Tempura roll",       "desc": "Camaron tempura y palta." },
+        { "nombre": "Sashimi de salmon",  "desc": "Cortes frescos de salmon." }
+      ],
+      "unsplash_keywords": "sushi japanese restaurant elegant"
+    },
+    "cafeteria": {
+      "platos_default": [
+        { "nombre": "Cafe de especialidad","desc": "Granos seleccionados y tueste artesanal." },
+        { "nombre": "Capuccino",           "desc": "Espresso con leche vaporizada." },
+        { "nombre": "Latte",               "desc": "Espresso con bastante leche cremosa." },
+        { "nombre": "Tortas del dia",      "desc": "Reposteria casera horneada cada manana." },
+        { "nombre": "Sandwiches",          "desc": "Sandwiches frescos con pan artesanal." },
+        { "nombre": "Jugos naturales",     "desc": "Frutas frescas exprimidas al momento." }
+      ],
+      "unsplash_keywords": "coffee shop cozy interior latte art"
+    },
+    "panaderia": {
+      "platos_default": [
+        { "nombre": "Pan amasado",      "desc": "Pan tradicional horneado cada manana." },
+        { "nombre": "Marraqueta",       "desc": "El pan de cada dia, recien salido del horno." },
+        { "nombre": "Hallulla",         "desc": "Hallulla crocante por fuera y suave por dentro." },
+        { "nombre": "Empanadas",        "desc": "De pino, queso y mariscos." },
+        { "nombre": "Pasteles",         "desc": "Variedad de pasteleria casera." },
+        { "nombre": "Pan de masa madre","desc": "Fermentacion lenta y miga aireada." }
+      ],
+      "unsplash_keywords": "bakery bread artisan warm"
+    },
+    "food truck": {
+      "platos_default": [
+        { "nombre": "Smash burger",   "desc": "Doble carne aplastada con queso cheddar." },
+        { "nombre": "Papas locas",    "desc": "Papas fritas con toppings al estilo de la casa." },
+        { "nombre": "Chicken bites",  "desc": "Trozos de pollo crocante con salsas." },
+        { "nombre": "Bebidas frias",  "desc": "Refrescos y limonadas naturales." }
+      ],
+      "unsplash_keywords": "food truck event street food modern"
+    },
+    "panaderia artesanal": {
+      "platos_default": [
+        { "nombre": "Pan de masa madre","desc": "Fermentacion natural de larga duracion." },
+        { "nombre": "Croissant",        "desc": "Hojaldre frances horneado cada manana." },
+        { "nombre": "Pan de chocolate", "desc": "Hojaldre con barra de chocolate." },
+        { "nombre": "Brioche",          "desc": "Pan brioche suave y mantequilloso." }
+      ],
+      "unsplash_keywords": "artisan bakery sourdough modern bright"
+    },
+    "optica": {
+      "categorias_default": [
+        { "titulo": "Lentes opticos",  "desc": "Marcos y cristales para tu graduacion." },
+        { "titulo": "Lentes de sol",   "desc": "Proteccion UV con estilo." },
+        { "titulo": "Examen visual",   "desc": "Diagnostico profesional de la vista." },
+        { "titulo": "Convenios",       "desc": "Atendemos las principales coberturas." }
+      ],
+      "unsplash_keywords": "eyewear optician glasses store"
+    },
+    "boutique": {
+      "categorias_default": [
+        { "titulo": "Vestidos",     "desc": "Coleccion temporada para ocasiones especiales." },
+        { "titulo": "Blusas",       "desc": "Variedad de cortes y telas." },
+        { "titulo": "Accesorios",   "desc": "Carteras, cinturones y joyeria seleccionada." },
+        { "titulo": "Promociones",  "desc": "Renovamos ofertas semana a semana." }
+      ],
+      "unsplash_keywords": "boutique clothing store warm"
+    },
+    "abogado": {
+      "areas_default": [
+        { "titulo": "Derecho civil",      "desc": "Contratos, herencias y reclamaciones civiles." },
+        { "titulo": "Derecho de familia", "desc": "Divorcios, pensiones y cuidado personal." },
+        { "titulo": "Derecho laboral",    "desc": "Despidos, finiquitos y juicios laborales." },
+        { "titulo": "Asesoria contractual","desc": "Revision y redaccion de contratos." }
+      ],
+      "unsplash_keywords": "law firm office professional"
+    },
+    "contador": {
+      "areas_default": [
+        { "titulo": "Contabilidad mensual", "desc": "Llevamos tu contabilidad al dia, mes a mes." },
+        { "titulo": "Declaracion de IVA",   "desc": "Declaracion mensual sin atrasos." },
+        { "titulo": "Declaracion de renta", "desc": "Tramite anual de impuestos." },
+        { "titulo": "Asesoria tributaria",  "desc": "Optimizacion de carga tributaria dentro de la ley." }
+      ],
+      "unsplash_keywords": "accounting office business finance"
+    }
+  },
+
+  "by_subrubro_horarios": {
+    "_comment": "Horarios genericos cuando no se conocen los del prospecto, indexados por palabra clave del rubro.",
+    "restaurante": "Martes a domingo, 12:00 a 23:00",
+    "parrilla":    "Martes a domingo, 12:00 a 23:00",
+    "sushi":       "Martes a domingo, 12:30 a 23:00",
+    "cafeteria":   "Lunes a sabado, 8:00 a 20:00",
+    "panaderia":   "Lunes a sabado, 7:30 a 20:00",
+    "pasteleria":  "Lunes a sabado, 9:00 a 20:00",
+    "fuente de soda":"Lunes a sabado, 9:00 a 22:00",
+    "comida casera":"Lunes a viernes, 12:00 a 16:00",
+    "food truck":  "Horarios variables, consulta por Instagram",
+    "boutique":    "Lunes a sabado, 11:00 a 20:00",
+    "optica":      "Lunes a viernes 10:00 a 19:30; sabado 10:00 a 14:00"
+  }
+}

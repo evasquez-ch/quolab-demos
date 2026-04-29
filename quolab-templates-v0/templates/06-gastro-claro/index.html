@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{nombre_negocio}} — {{rubro}}</title>
+  <meta name="description" content="{{descripcion}}">
+  <!--QL_HEAD_FONTS-->
+  <!--QL_HEAD_BASE_RESET-->
+  <!--QL_HEAD_VARS-->
+  <!--QL_HEAD_WA_CSS-->
+  <!--QL_HEAD_STRIP_CSS-->
+  <!--QL_TEMPLATE_CSS-->
+</head>
+<body>
+
+<header class="t06-header" role="banner">
+  <div class="t06-wrap t06-header__inner">
+    <a href="#" class="t06-logo" aria-label="{{nombre_negocio}}">
+      <span class="t06-logo__mark" aria-hidden="true"></span>
+      <span class="t06-logo__name">{{nombre_negocio}}</span>
+    </a>
+    <nav class="t06-nav" aria-label="Menu">
+      <a href="#carta">Carta</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="https://wa.me/{{telefono_limpio}}" class="t06-btn t06-btn--primary t06-header__cta" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+  </div>
+</header>
+
+<!-- HERO — dos columnas: texto izquierda | foto derecha contenida -->
+<section class="t06-hero" aria-label="Portada">
+  <div class="t06-wrap t06-hero__inner ql-hero-stagger">
+    <div class="t06-hero__text">
+      {{? <span class="t06-hero__badge">{{badge_hero}}</span> ?}}
+      <h1 class="t06-hero__h1">{{slogan}}</h1>
+      <p class="t06-hero__desc">{{descripcion}}</p>
+      <div class="t06-hero__actions">
+        <a href="https://wa.me/{{telefono_limpio}}" class="t06-btn t06-btn--primary" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+        <a href="#carta" class="t06-btn t06-btn--outline">Ver carta</a>
+      </div>
+      {{? <p class="t06-hero__meta">&#9733; {{rating_value}} &middot; {{rating_total_text}} &middot; {{ciudad}}</p> ?}}
+    </div>
+    <div class="t06-hero__media" aria-hidden="true">
+      <img class="t06-hero__img" src="{{img_hero_url}}" alt="{{img_hero_alt}}" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- STRIP INFO -->
+<div class="t06-strip">
+  <div class="t06-wrap t06-strip__inner">
+    {{? <span class="t06-strip__item">&#128336; {{horarios}}</span> ?}}
+    {{? <span class="t06-strip__sep" aria-hidden="true"></span>
+    <span class="t06-strip__item">&#128205; {{ciudad}}</span> ?}}
+    <span class="t06-strip__sep" aria-hidden="true"></span>
+    <span class="t06-strip__item">&#128241; Pedidos por WhatsApp</span>
+  </div>
+</div>
+
+<!-- CARTA -->
+<section class="t06-carta ql-anim" id="carta">
+  <div class="t06-wrap">
+    <header class="t06-section-header">
+      <p class="t06-eyebrow">Lo que preparamos</p>
+      <h2 class="t06-section-title">Nuestra carta</h2>
+    </header>
+    <div class="t06-carta__grid">
+      <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_1_url}}" alt="{{plato_1_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_1_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_1_desc}}</p>
+        </div>
+      </article>
+      <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_2_url}}" alt="{{plato_2_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_2_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_2_desc}}</p>
+        </div>
+      </article>
+      <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_3_url}}" alt="{{plato_3_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_3_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_3_desc}}</p>
+        </div>
+      </article>
+      {{? <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_4_url}}" alt="{{plato_4_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_4_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_4_desc}}</p>
+        </div>
+      </article> ?}}
+      {{? <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_5_url}}" alt="{{plato_5_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_5_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_5_desc}}</p>
+        </div>
+      </article> ?}}
+      {{? <article class="t06-item">
+        <div class="t06-item__img-wrap" aria-hidden="true">
+          <img src="{{img_galeria_6_url}}" alt="{{plato_6_nombre}}" loading="lazy">
+        </div>
+        <div class="t06-item__info">
+          <h3 class="t06-item__nombre">{{plato_6_nombre}}</h3>
+          <p class="t06-item__desc">{{plato_6_desc}}</p>
+        </div>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="t06-nosotros ql-anim" id="nosotros">
+  <div class="t06-wrap t06-nosotros__inner">
+    <div class="t06-nosotros__media" aria-hidden="true">
+      <img src="{{img_nosotros_url}}" alt="Nuestro local" loading="lazy">
+    </div>
+    <div class="t06-nosotros__text">
+      <p class="t06-eyebrow">Nuestra historia</p>
+      <h2 class="t06-section-title">Hechos con amor y dedicacion</h2>
+      <p class="t06-nosotros__desc">{{descripcion}}</p>
+      {{? <p class="t06-nosotros__rating">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
+      <a href="https://wa.me/{{telefono_limpio}}" class="t06-btn t06-btn--primary" target="_blank" rel="noopener noreferrer">Hacer un pedido</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="t06-galeria ql-anim" id="galeria">
+  <div class="t06-wrap">
+    <header class="t06-section-header t06-section-header--center">
+      <p class="t06-eyebrow">Nuestros productos</p>
+      <h2 class="t06-section-title">Galeria</h2>
+    </header>
+    <div class="t06-galeria__grid">
+      <img src="{{img_cta_url}}" alt="Galeria 1" loading="lazy">
+      <img src="{{img_extra_url}}" alt="Galeria 2" loading="lazy">
+      <img src="{{img_galeria_1_url}}" alt="Galeria 3" loading="lazy">
+      <img src="{{img_galeria_2_url}}" alt="Galeria 4" loading="lazy">
+      <img src="{{img_galeria_3_url}}" alt="Galeria 5" loading="lazy">
+      <img src="{{img_galeria_4_url}}" alt="Galeria 6" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t06-testimonios ql-anim" id="testimonios">
+  <div class="t06-wrap">
+    <header class="t06-section-header t06-section-header--center">
+      <p class="t06-eyebrow">Resenas</p>
+      <h2 class="t06-section-title">Lo que dicen nuestros clientes</h2>
+    </header>
+    <div class="t06-testimonios__grid">
+      {{? <article class="t06-testi">
+        <p class="t06-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</p>
+        <footer class="t06-testi__footer">
+          <span class="t06-testi__avatar" aria-hidden="true">{{testimonio_1_inicial}}</span>
+          <div>
+            <strong class="t06-testi__autor">{{testimonio_1_autor}}</strong>
+            <span class="t06-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t06-testi">
+        <p class="t06-testi__texto">&#8220;{{testimonio_2_texto}}&#8221;</p>
+        <footer class="t06-testi__footer">
+          <span class="t06-testi__avatar" aria-hidden="true">{{testimonio_2_inicial}}</span>
+          <div>
+            <strong class="t06-testi__autor">{{testimonio_2_autor}}</strong>
+            <span class="t06-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+      {{? <article class="t06-testi">
+        <p class="t06-testi__texto">&#8220;{{testimonio_3_texto}}&#8221;</p>
+        <footer class="t06-testi__footer">
+          <span class="t06-testi__avatar" aria-hidden="true">{{testimonio_3_inicial}}</span>
+          <div>
+            <strong class="t06-testi__autor">{{testimonio_3_autor}}</strong>
+            <span class="t06-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </footer>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="t06-cta" id="contacto">
+  <div class="t06-wrap t06-cta__inner">
+    <div class="t06-cta__copy">
+      <h2 class="t06-cta__titulo">Haz tu pedido ahora</h2>
+      {{? <p class="t06-cta__sub">{{horarios}}</p> ?}}
+    </div>
+    <div class="t06-cta__actions">
+      <a href="https://wa.me/{{telefono_limpio}}" class="t06-btn t06-btn--white" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+      {{? <a href="tel:{{telefono}}" class="t06-btn t06-btn--white-outline">{{telefono}}</a> ?}}
+    </div>
+  </div>
+</section>
+
+<!--QL_BODY_STRIP-->
+<!--QL_BODY_WA-->
+
+<footer class="t06-foot">
+  <div class="t06-wrap t06-foot__inner">
+    <div class="t06-foot__brand">
+      <p class="t06-foot__name">{{nombre_negocio}}</p>
+      {{? <p class="t06-foot__rubro">{{rubro}} &middot; {{ciudad}}</p> ?}}
+    </div>
+    <nav class="t06-foot__nav">
+      <a href="#carta">Carta</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="t06-foot__contact">
+      {{? <p>&#128336; {{horarios}}</p> ?}}
+      {{? <p>&#128205; {{ciudad}}</p> ?}}
+      {{? <p><a href="tel:{{telefono}}">{{telefono}}</a></p> ?}}
+    </div>
+  </div>
+  <div class="t06-foot__bottom">
+    <p>&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+  </div>
+</footer>
+
+<!--QL_BODY_ANIM_JS-->
+</body>
+</html>

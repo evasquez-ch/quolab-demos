@@ -1,0 +1,136 @@
+/* TEMPLATE 06 — GASTRO CLARO · Cafetería / Panadería / Brunch */
+body { background: var(--ql-bg); color: var(--ql-text); font-family: var(--ql-font-body); }
+.t06-wrap { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,2rem); }
+
+.ql-hero-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .75s ease, transform .75s ease; }
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 250ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 460ms; }
+
+/* BUTTONS */
+.t06-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.6rem; font-family: var(--ql-font-body); font-size: .875rem; font-weight: 600; border-radius: 100px; border: 1.5px solid transparent; cursor: pointer; transition: background .2s, opacity .2s, border-color .2s, color .2s; white-space: nowrap; text-decoration: none; }
+.t06-btn--primary { background: var(--ql-signature); color: var(--ql-text-on-signature); border-color: var(--ql-signature); }
+.t06-btn--primary:hover { opacity: .88; }
+.t06-btn--outline { background: transparent; color: var(--ql-signature); border-color: var(--ql-signature); }
+.t06-btn--outline:hover { background: color-mix(in srgb, var(--ql-signature) 8%, transparent); }
+.t06-btn--white { background: #fff; color: var(--ql-signature); border-color: #fff; }
+.t06-btn--white:hover { opacity: .9; }
+.t06-btn--white-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.t06-btn--white-outline:hover { background: rgba(255,255,255,.15); }
+
+/* LOGO */
+.t06-logo { display: flex; align-items: center; gap: .625rem; flex-shrink: 0; text-decoration: none; }
+.t06-logo__mark { width: 28px; height: 28px; border-radius: 8px; background: var(--ql-signature); flex-shrink: 0; }
+.t06-logo__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); letter-spacing: -.01em; }
+
+/* HEADER */
+.t06-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--ql-border); }
+.t06-header__inner { height: 68px; display: flex; align-items: center; gap: 2.5rem; }
+.t06-nav { display: flex; gap: 2rem; margin-left: auto; }
+.t06-nav a { font-size: .875rem; font-weight: 500; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t06-nav a:hover { color: var(--ql-signature); }
+
+/* HERO */
+.t06-hero { background: var(--ql-bg); padding-block: clamp(4rem,9vw,7rem); }
+.t06-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
+.t06-hero__text { display: flex; flex-direction: column; gap: 1.25rem; }
+.t06-hero__badge { display: inline-block; padding: .3rem 1rem; font-size: .72rem; font-weight: 700; letter-spacing: .08em; background: color-mix(in srgb, var(--ql-signature) 12%, transparent); color: var(--ql-signature); border-radius: 100px; align-self: flex-start; }
+.t06-hero__h1 { font-family: var(--ql-font-display); font-size: clamp(2.4rem,5vw,4rem); font-weight: 700; color: var(--ql-text); line-height: 1.1; letter-spacing: -.025em; }
+.t06-hero__desc { font-size: 1rem; color: var(--ql-text-muted); max-width: 440px; line-height: 1.7; }
+.t06-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.t06-hero__meta { font-size: .82rem; color: var(--ql-text-muted); }
+.t06-hero__img { width: 100%; height: clamp(360px,48vw,580px); object-fit: cover; border-radius: 24px; display: block; }
+
+/* STRIP */
+.t06-strip { background: var(--ql-bg-alt); border-top: 1px solid var(--ql-border); border-bottom: 1px solid var(--ql-border); }
+.t06-strip__inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .875rem; }
+.t06-strip__item { font-size: .82rem; color: var(--ql-text-muted); }
+.t06-strip__sep { display: inline-block; width: 1px; height: 14px; background: var(--ql-border); }
+
+/* EYEBROW + SECTION TITLE */
+.t06-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ql-signature); margin-bottom: .5rem; }
+.t06-section-title { font-family: var(--ql-font-display); font-size: clamp(1.8rem,3.5vw,2.75rem); font-weight: 700; color: var(--ql-text); line-height: 1.12; letter-spacing: -.02em; }
+.t06-section-header { margin-bottom: clamp(2rem,4vw,3rem); }
+.t06-section-header--center { text-align: center; }
+
+/* CARTA */
+.t06-carta { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t06-carta__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t06-item { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 16px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
+.t06-item:hover { box-shadow: 0 8px 28px rgba(0,0,0,.08); transform: translateY(-3px); }
+.t06-item__img-wrap img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.t06-item__info { padding: 1.125rem 1.25rem 1.375rem; }
+.t06-item__nombre { font-family: var(--ql-font-display); font-size: 1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .35rem; }
+.t06-item__desc { font-size: .83rem; color: var(--ql-text-muted); line-height: 1.6; }
+
+/* NOSOTROS */
+.t06-nosotros { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t06-nosotros__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,6rem); align-items: center; }
+.t06-nosotros__media img { width: 100%; height: clamp(320px,44vw,520px); object-fit: cover; border-radius: 20px; display: block; }
+.t06-nosotros__text { display: flex; flex-direction: column; gap: 1.1rem; }
+.t06-nosotros__desc { font-size: .975rem; color: var(--ql-text-muted); line-height: 1.75; }
+.t06-nosotros__rating { font-size: .85rem; color: var(--ql-signature); font-weight: 600; }
+
+/* GALERÍA */
+.t06-galeria { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t06-galeria__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .75rem; }
+.t06-galeria__grid img { width: 100%; height: 240px; object-fit: cover; border-radius: 12px; display: block; transition: opacity .25s; }
+.t06-galeria__grid img:hover { opacity: .88; }
+
+/* TESTIMONIOS */
+.t06-testimonios { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t06-testimonios__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t06-testi { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+.t06-testi__texto { font-size: .9rem; color: var(--ql-text); line-height: 1.75; font-style: italic; flex: 1; }
+.t06-testi__footer { display: flex; align-items: center; gap: .875rem; border-top: 1px solid var(--ql-border); padding-top: 1rem; }
+.t06-testi__avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--ql-signature); color: var(--ql-text-on-signature); font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .9rem; }
+.t06-testi__autor { font-size: .8rem; font-weight: 600; color: var(--ql-text); display: block; margin-bottom: .15rem; }
+.t06-testi__stars { font-size: .8rem; color: var(--ql-signature); }
+
+/* CTA */
+.t06-cta { background: var(--ql-signature); padding: clamp(3.5rem,7vw,6rem) 0; }
+.t06-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.t06-cta__copy { flex: 1; min-width: 240px; }
+.t06-cta__titulo { font-family: var(--ql-font-display); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.02em; }
+.t06-cta__sub { font-size: .95rem; color: rgba(255,255,255,.75); margin-top: .5rem; }
+.t06-cta__actions { display: flex; flex-wrap: wrap; gap: .75rem; flex-shrink: 0; }
+
+/* FOOTER */
+.t06-foot { background: var(--ql-bg-alt); border-top: 1px solid var(--ql-border); padding-block: 4rem 1.75rem; }
+.t06-foot__inner { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--ql-border); }
+.t06-foot__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .375rem; }
+.t06-foot__rubro { font-size: .8rem; color: var(--ql-text-muted); }
+.t06-foot__nav { display: flex; flex-direction: column; gap: .6rem; }
+.t06-foot__nav a { font-size: .875rem; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t06-foot__nav a:hover { color: var(--ql-signature); }
+.t06-foot__contact { display: flex; flex-direction: column; gap: .5rem; }
+.t06-foot__contact p { font-size: .875rem; color: var(--ql-text-muted); }
+.t06-foot__contact a { color: var(--ql-signature); text-decoration: none; }
+.t06-foot__bottom { padding-top: 1.75rem; text-align: center; }
+.t06-foot__bottom p { font-size: .78rem; color: var(--ql-text-muted); }
+.t06-foot__bottom a { color: var(--ql-signature); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .t06-carta__grid { grid-template-columns: repeat(2,1fr); }
+  .t06-testimonios__grid { grid-template-columns: repeat(2,1fr); }
+  .t06-galeria__grid { grid-template-columns: repeat(2,1fr); }
+  .t06-foot__inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .t06-foot__brand { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .t06-nav { display: none; }
+  .t06-header__cta { margin-left: auto; padding: .55rem 1rem; font-size: .82rem; }
+  .t06-hero__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t06-hero__img { height: 280px; border-radius: 16px; }
+  .t06-nosotros__inner { grid-template-columns: 1fr; }
+  .t06-carta__grid { grid-template-columns: 1fr; }
+  .t06-testimonios__grid { grid-template-columns: 1fr; }
+  .t06-galeria__grid { grid-template-columns: 1fr 1fr; }
+  .t06-cta__inner { flex-direction: column; align-items: flex-start; }
+  .t06-foot__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t06-foot__brand { grid-column: unset; }
+}

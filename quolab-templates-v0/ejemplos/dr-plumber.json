@@ -1,0 +1,46 @@
+{
+  "_comment": "Ejemplo del prospecto Dr Plumber Gasfiter — usado para validar el Template 1 en Fase 3. Los campos rating, total_resenas, direccion son inventados con datos plausibles hasta que se conecten los datos reales del Sheet.",
+  "nombre_negocio": "Dr Plumber Gasfiter",
+  "rubro": "Gasfiter",
+  "ciudad": "Pedro Aguirre Cerda",
+  "telefono": "+56 9 8765 4321",
+  "direccion": "Av. Departamental 1234, Pedro Aguirre Cerda, Santiago",
+  "rating": 4.7,
+  "total_resenas": 124,
+
+  "slogan": "Reparamos hoy, sin esperar.",
+  "descripcion": "Atendemos urgencias de gasfiteria en Santiago con cotizacion gratuita y trabajo garantizado.",
+  "badge_hero": "Cotizacion sin costo",
+  "unsplash_keywords": "plumber plumbing pipe repair home service",
+
+  "servicio_1_titulo": "Reparacion de filtraciones",
+  "servicio_1_desc": "Detectamos y reparamos filtraciones en muros, pisos y techos sin demoler de mas.",
+  "servicio_1_icono": "wrench",
+
+  "servicio_2_titulo": "Destape de canerias",
+  "servicio_2_desc": "Equipamiento profesional para canerias y desagues tapados.",
+  "servicio_2_icono": "wrench",
+
+  "servicio_3_titulo": "Instalacion de artefactos",
+  "servicio_3_desc": "Lavaplatos, lavamanos, WC, calefont y mas con instalacion certificada.",
+  "servicio_3_icono": "wrench",
+
+  "servicio_4_titulo": "Revision de gas",
+  "servicio_4_desc": "Inspeccion completa de instalaciones de gas para tu seguridad.",
+  "servicio_4_icono": "flame",
+
+  "testimonio_1_autor": "Carolina M.",
+  "testimonio_1_texto": "Llamamos un sabado por una filtracion en el bano y vinieron en menos de 2 horas. Trabajo limpio y precio justo.",
+  "testimonio_1_rating": 5,
+
+  "testimonio_2_autor": "Ricardo P.",
+  "testimonio_2_texto": "Cambiaron el calefont y dejaron todo funcionando perfecto. Explicaron cada paso del trabajo, muy profesionales.",
+  "testimonio_2_rating": 5,
+
+  "testimonio_3_autor": "Maria Elena",
+  "testimonio_3_texto": "Cotizaron sin compromiso y me ayudaron a entender que era lo mejor para mi presupuesto. Ya los recomende a mi hermana.",
+  "testimonio_3_rating": 4,
+
+  "demo_url": "https://quolab-demos.pages.dev/dr-plumber-gasfiter",
+  "og_image_url": ""
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{nombre_negocio}} — {{rubro}}</title>
+  <meta name="description" content="{{descripcion}}">
+  <!--QL_HEAD_FONTS-->
+  <!--QL_HEAD_BASE_RESET-->
+  <!--QL_HEAD_VARS-->
+  <!--QL_HEAD_WA_CSS-->
+  <!--QL_HEAD_STRIP_CSS-->
+  <!--QL_TEMPLATE_CSS-->
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="t02-header" role="banner">
+  <div class="t02-wrap t02-header__inner">
+    <a href="#" class="t02-logo" aria-label="{{nombre_negocio}}">
+      <span class="t02-logo__mark" aria-hidden="true"></span>
+      <span class="t02-logo__name">{{nombre_negocio}}</span>
+    </a>
+    <nav class="t02-nav" aria-label="Menu principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#testimonios">Resenas</a>
+      <a href="#contacto">Reservar</a>
+    </nav>
+    <a href="https://wa.me/{{telefono_limpio}}" class="t02-btn t02-btn--outline t02-header__cta" target="_blank" rel="noopener noreferrer">{{cta_principal}}</a>
+  </div>
+</header>
+
+<!-- HERO — dos columnas: texto izq | foto der contenida -->
+<section class="t02-hero" aria-label="Portada">
+  <div class="t02-wrap t02-hero__inner ql-hero-stagger">
+    <div class="t02-hero__text">
+      <h1 class="t02-hero__h1">{{slogan}}</h1>
+      {{? <p class="t02-hero__aspiracional">{{frase_aspiracional}}</p> ?}}
+      <p class="t02-hero__desc">{{descripcion}}</p>
+      <div class="t02-hero__actions">
+        <a href="https://wa.me/{{telefono_limpio}}" class="t02-btn t02-btn--primary" target="_blank" rel="noopener noreferrer">{{cta_principal}}</a>
+        <a href="#servicios" class="t02-btn t02-btn--ghost">{{cta_secundario}}</a>
+      </div>
+      {{? <p class="t02-hero__rating"><span class="t02-hero__rating-score">&#9733; {{rating_value}}</span>&ensp;<span class="t02-hero__rating-count">{{rating_total_text}}</span></p> ?}}
+    </div>
+    <div class="t02-hero__media" aria-hidden="true">
+      <img class="t02-hero__img" src="{{img_hero_url}}" alt="{{img_hero_alt}}" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="t02-servicios ql-anim" id="servicios">
+  <div class="t02-wrap">
+    <header class="t02-section-header">
+      <p class="t02-eyebrow">Nuestros servicios</p>
+      <h2 class="t02-section-title">Lo que hacemos</h2>
+    </header>
+    <div class="t02-servicios__grid">
+      <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_1_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_1_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_1_desc}}</p>
+      </article>
+      <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_2_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_2_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_2_desc}}</p>
+      </article>
+      <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_3_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_3_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_3_desc}}</p>
+      </article>
+      <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_4_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_4_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_4_desc}}</p>
+      </article>
+      {{? <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_5_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_5_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_5_desc}}</p>
+      </article> ?}}
+      {{? <article class="t02-servicio-card">
+        <div class="t02-servicio-card__icon" aria-hidden="true">{{servicio_6_icono_svg}}</div>
+        <h3 class="t02-servicio-card__title">{{servicio_6_titulo}}</h3>
+        <p class="t02-servicio-card__desc">{{servicio_6_desc}}</p>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="t02-galeria ql-anim" id="galeria" aria-label="Nuestro espacio">
+  <div class="t02-wrap">
+    <header class="t02-section-header">
+      <p class="t02-eyebrow">El ambiente</p>
+      <h2 class="t02-section-title">Nuestro espacio</h2>
+    </header>
+  </div>
+  <div class="t02-galeria__masonry">
+    <img class="t02-galeria__img" src="{{img_nosotros_url}}" alt="Nuestro espacio" loading="lazy">
+    <img class="t02-galeria__img" src="{{img_galeria_1_url}}" alt="Detalle 1" loading="lazy">
+    <img class="t02-galeria__img" src="{{img_galeria_2_url}}" alt="Detalle 2" loading="lazy">
+    <img class="t02-galeria__img" src="{{img_galeria_3_url}}" alt="Detalle 3" loading="lazy">
+    <img class="t02-galeria__img" src="{{img_galeria_4_url}}" alt="Detalle 4" loading="lazy">
+    <img class="t02-galeria__img" src="{{img_galeria_5_url}}" alt="Detalle 5" loading="lazy">
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t02-testimonios ql-anim" id="testimonios">
+  <div class="t02-wrap">
+    <header class="t02-section-header">
+      <p class="t02-eyebrow">La experiencia</p>
+      <h2 class="t02-section-title">Lo que dicen nuestros clientes</h2>
+      {{? <p class="t02-section-sub">&#9733; {{rating_value}} promedio &middot; {{rating_total_text}}</p> ?}}
+    </header>
+    <div class="t02-testimonios__grid">
+      {{? <article class="t02-testi">
+        <div class="t02-testi__avatar" aria-hidden="true">{{testimonio_1_inicial}}</div>
+        <blockquote class="t02-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</blockquote>
+        <footer class="t02-testi__footer">
+          <span class="t02-testi__autor">{{testimonio_1_autor}}</span>
+          <span class="t02-testi__rating" aria-label="{{testimonio_1_rating}} estrellas">{{testimonio_1_rating}} &#9733;</span>
+        </footer>
+      </article> ?}}
+      {{? <article class="t02-testi">
+        <div class="t02-testi__avatar" aria-hidden="true">{{testimonio_2_inicial}}</div>
+        <blockquote class="t02-testi__texto">&#8220;{{testimonio_2_texto}}&#8221;</blockquote>
+        <footer class="t02-testi__footer">
+          <span class="t02-testi__autor">{{testimonio_2_autor}}</span>
+          <span class="t02-testi__rating" aria-label="{{testimonio_2_rating}} estrellas">{{testimonio_2_rating}} &#9733;</span>
+        </footer>
+      </article> ?}}
+      {{? <article class="t02-testi">
+        <div class="t02-testi__avatar" aria-hidden="true">{{testimonio_3_inicial}}</div>
+        <blockquote class="t02-testi__texto">&#8220;{{testimonio_3_texto}}&#8221;</blockquote>
+        <footer class="t02-testi__footer">
+          <span class="t02-testi__autor">{{testimonio_3_autor}}</span>
+          <span class="t02-testi__rating" aria-label="{{testimonio_3_rating}} estrellas">{{testimonio_3_rating}} &#9733;</span>
+        </footer>
+      </article> ?}}
+    </div>
+  </div>
+</section>
+
+<!-- CTA FUERTE -->
+<section class="t02-cta" id="contacto" aria-label="Reservar">
+  <div class="t02-wrap t02-cta__inner">
+    <div class="t02-cta__copy">
+      <h2 class="t02-cta__titulo">{{cta_fuerte_titulo}}</h2>
+      {{? <p class="t02-cta__sub">{{cta_fuerte_subtitulo}}</p> ?}}
+    </div>
+    <div class="t02-cta__actions">
+      <a href="https://wa.me/{{telefono_limpio}}" class="t02-btn t02-btn--dark" target="_blank" rel="noopener noreferrer">{{cta_principal}}</a>
+      {{? <a href="tel:{{telefono}}" class="t02-btn t02-btn--dark-outline">{{telefono}}</a> ?}}
+    </div>
+  </div>
+</section>
+
+<!--QL_BODY_STRIP-->
+
+<!--QL_BODY_WA-->
+
+<!-- FOOTER -->
+<footer class="t02-foot" aria-label="Pie de pagina">
+  <div class="t02-wrap t02-foot__inner">
+    <div class="t02-foot__brand">
+      <div class="t02-foot__logo">
+        <span class="t02-logo__mark t02-logo__mark--sm" aria-hidden="true"></span>
+        <span class="t02-foot__logo-name">{{nombre_negocio}}</span>
+      </div>
+      {{? <p class="t02-foot__tagline">{{slogan}}</p> ?}}
+      {{? <p class="t02-foot__rubro">{{rubro}} &middot; {{ciudad}}</p> ?}}
+    </div>
+    <nav class="t02-foot__nav" aria-label="Navegacion">
+      <a href="#servicios">Servicios</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#testimonios">Resenas</a>
+      <a href="#contacto">Reservar</a>
+    </nav>
+    <div class="t02-foot__contact">
+      {{? <p class="t02-foot__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.5 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 013.4 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.29 6.29l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:{{telefono}}">{{telefono}}</a>
+      </p> ?}}
+      {{? <p class="t02-foot__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        {{ciudad}}
+      </p> ?}}
+      {{? <p class="t02-foot__contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        {{horarios}}
+      </p> ?}}
+    </div>
+  </div>
+  <div class="t02-foot__bottom">
+    <p class="t02-foot__copy">&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+  </div>
+</footer>
+
+<!--QL_BODY_ANIM_JS-->
+
+</body>
+</html>
