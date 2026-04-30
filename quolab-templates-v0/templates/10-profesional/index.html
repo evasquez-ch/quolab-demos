@@ -81,7 +81,7 @@
       <p class="t10-eyebrow">Areas de practica</p>
       <h2 class="t10-section-title">Servicios profesionales</h2>
     </header>
-    <div class="t10-servicios__grid">
+    <div class="t10-servicios__grid ql-stagger">
       <article class="t10-serv-card">
         <div class="t10-serv-card__num" aria-hidden="true">01</div>
         <div class="t10-serv-card__icon" aria-hidden="true">{{servicio_1_icono_svg}}</div>
@@ -179,7 +179,7 @@
       <h2 class="t10-section-title">Lo que dicen nuestros clientes</h2>
       {{? <p class="t10-section-sub">&#9733; {{rating_value}} &middot; {{rating_total_text}}</p> ?}}
     </header>
-    <div class="t10-testimonios__grid">
+    <div class="t10-testimonios__grid ql-stagger">
       {{? <article class="t10-testi">
         <p class="t10-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</p>
         <footer class="t10-testi__footer">
@@ -228,9 +228,6 @@
   </div>
 </section>
 
-<!--QL_BODY_STRIP-->
-<!--QL_BODY_WA-->
-
 <footer class="t10-foot" aria-label="Pie de pagina">
   <div class="t10-wrap t10-foot__inner">
     <div class="t10-foot__brand">
@@ -249,11 +246,10 @@
       {{? <p><a href="tel:{{telefono}}">{{telefono}}</a></p> ?}}
     </div>
   </div>
-  <div class="t10-foot__bottom">
-    <p>&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
-  </div>
 </footer>
 
+<!--QL_BODY_STRIP-->
+<!--QL_BODY_WA-->
 <!--QL_BODY_ANIM_JS-->
 </body>
 </html>

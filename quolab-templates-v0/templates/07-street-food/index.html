@@ -63,7 +63,7 @@
       <p class="t07-eyebrow">Nuestras especialidades</p>
       <h2 class="t07-section-title">El menu</h2>
     </header>
-    <div class="t07-menu__list">
+    <div class="t07-menu__list ql-stagger">
       <div class="t07-menu-item">
         <div class="t07-menu-item__img" aria-hidden="true">
           <img src="{{img_galeria_1_url}}" alt="{{plato_1_nombre}}" loading="lazy">
@@ -157,7 +157,7 @@
       <p class="t07-eyebrow">Resenas</p>
       <h2 class="t07-section-title">Lo que dicen de nosotros</h2>
     </header>
-    <div class="t07-resenas__grid">
+    <div class="t07-resenas__grid ql-stagger">
       {{? <article class="t07-testi">
         <p class="t07-testi__texto">&#8220;{{testimonio_1_texto}}&#8221;</p>
         <footer class="t07-testi__footer">
@@ -206,9 +206,6 @@
   </div>
 </section>
 
-<!--QL_BODY_STRIP-->
-<!--QL_BODY_WA-->
-
 <footer class="t07-foot">
   <div class="t07-wrap t07-foot__inner">
     <div class="t07-foot__brand">
@@ -227,11 +224,10 @@
       {{? <p><a href="tel:{{telefono}}">{{telefono}}</a></p> ?}}
     </div>
   </div>
-  <div class="t07-foot__bottom">
-    <p>&#169; {{anio}} {{nombre_negocio}} &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
-  </div>
 </footer>
 
+<!--QL_BODY_STRIP-->
+<!--QL_BODY_WA-->
 <!--QL_BODY_ANIM_JS-->
 </body>
 </html>

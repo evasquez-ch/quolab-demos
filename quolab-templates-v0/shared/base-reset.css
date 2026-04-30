@@ -71,18 +71,23 @@ ul, ol { list-style: none; padding: 0; }
 
 /* Animaciones globales — usadas por todos los templates */
 @keyframes ql-fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(36px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 @keyframes ql-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+@keyframes ql-slide-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
 
+/* Secciones completas — fade + rise más pronunciado */
 .ql-anim {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(.22,.68,0,1.05), transform 0.75s cubic-bezier(.22,.68,0,1.05);
   will-change: opacity, transform;
 }
 .ql-anim.is-visible {
@@ -90,15 +95,33 @@ ul, ol { list-style: none; padding: 0; }
   transform: translateY(0);
 }
 
+/* Grids con hijos en cascada — stagger dramático */
 .ql-stagger > * {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(28px) scale(.96);
+  transition: opacity 0.65s cubic-bezier(.22,.68,0,1.1), transform 0.65s cubic-bezier(.22,.68,0,1.1);
+  will-change: opacity, transform;
 }
-.ql-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
-.ql-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
-.ql-stagger.is-visible > *:nth-child(2) { transition-delay: 100ms; }
-.ql-stagger.is-visible > *:nth-child(3) { transition-delay: 200ms; }
-.ql-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+.ql-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.ql-stagger.is-visible > *:nth-child(1) { transition-delay:  40ms; }
+.ql-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-stagger.is-visible > *:nth-child(3) { transition-delay: 220ms; }
+.ql-stagger.is-visible > *:nth-child(4) { transition-delay: 310ms; }
 .ql-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; }
-.ql-stagger.is-visible > *:nth-child(6) { transition-delay: 500ms; }
+.ql-stagger.is-visible > *:nth-child(6) { transition-delay: 490ms; }
+
+/* Hero stagger compartido — se activa al cargar (rAF via JS) */
+.ql-hero-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(.22,.68,0,1.05), transform 0.8s cubic-bezier(.22,.68,0,1.05);
+}
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay:   0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 120ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 240ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 350ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 450ms; }
