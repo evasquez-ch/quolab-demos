@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Vulcanizacion El Peñi — </title>
+ <meta name="description" content="Ofrecemos servicios de con la mejor atencion.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preconnect" href="https://use.typekit.net">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://use.typekit.net/rbc2plo.css">
+ <style>/* QUOLAB BASE RESET — comun a los 10 templates.
+   Mantiene un piso predecible para que cada template empiece igual.
+   No define paleta ni tipografia: eso lo pone cada template. */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+html, body { height: 100%; }
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select { font: inherit; color: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.15; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul, ol { list-style: none; padding: 0; }
+
+#root, #__next { isolation: isolate; }
+
+/* Accesibilidad — animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container { padding-inline: 2rem; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+  border: 0;
+}
+
+/* Animaciones globales — usadas por todos los templates */
+@keyframes ql-fade-up {
+  from { opacity: 0; transform: translateY(36px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes ql-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes ql-slide-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Secciones completas — fade + rise más pronunciado */
+.ql-anim {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(.22,.68,0,1.05), transform 0.75s cubic-bezier(.22,.68,0,1.05);
+  will-change: opacity, transform;
+}
+.ql-anim.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grids con hijos en cascada — stagger dramático */
+.ql-stagger > * {
+  opacity: 0;
+  transform: translateY(28px) scale(.96);
+  transition: opacity 0.65s cubic-bezier(.22,.68,0,1.1), transform 0.65s cubic-bezier(.22,.68,0,1.1);
+  will-change: opacity, transform;
+}
+.ql-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.ql-stagger.is-visible > *:nth-child(1) { transition-delay:  40ms; }
+.ql-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-stagger.is-visible > *:nth-child(3) { transition-delay: 220ms; }
+.ql-stagger.is-visible > *:nth-child(4) { transition-delay: 310ms; }
+.ql-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; }
+.ql-stagger.is-visible > *:nth-child(6) { transition-delay: 490ms; }
+
+/* Hero stagger compartido — se activa al cargar (rAF via JS) */
+.ql-hero-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(.22,.68,0,1.05), transform 0.8s cubic-bezier(.22,.68,0,1.05);
+}
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay:   0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 120ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 240ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 350ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 450ms; }
+</style>
+ <style>
+:root {
+  --ql-bg: #FFFFFF;
+  --ql-bg-alt: #F3F3F1;
+  --ql-surface: #FFFFFF;
+  --ql-text: #0F1419;
+  --ql-text-muted: #4A5563;
+  --ql-border: #D6D9DC;
+  --ql-signature: #4A4A4A;
+  --ql-accent: #4A4A4A;
+  --ql-text-on-signature: #FFFFFF;
+  --ql-font-display: 'Playfair Display', serif;
+  --ql-font-body: 'Source Sans 3', sans-serif;
+  --ql-font-mono: 'Source Sans 3', sans-serif;
+}
+</style>
+ <style>/* QUOLAB WHATSAPP FLOAT — comun a los 10 templates.
+   Diseno fijo: circulo verde oficial WhatsApp #25D366, icono blanco, sombra suave,
+   pulso sutil en reposo, escala leve en hover. Sigue siendo accesible con teclado. */
+
+.ql-wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45),
+              0 2px 6px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ql-wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: ql-wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.ql-wa-float:hover,
+.ql-wa-float:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55),
+              0 3px 8px rgba(0, 0, 0, 0.14);
+}
+.ql-wa-float:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+.ql-wa-float svg { display: block; }
+
+@keyframes ql-wa-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 480px) {
+  .ql-wa-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .ql-wa-float svg { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ql-wa-float::before { animation: none; }
+  .ql-wa-float { transition: none; }
+}
+</style>
+ <style>/* QUOLAB STRIP — franja final identica en los 10 templates.
+   Refuerza el branding Quolab usando la identidad de marca real:
+   - Fondo negro principal #0a0a0c
+   - Tipografia Neulis Sans (Adobe Typekit) cargada en el <head>
+   - Azul Quolab #2a3df4 en el link "Quolab"
+   Sirve de cierre comun: el cliente ve el branding sin importar el template
+   que le toco a su rubro. */
+
+.ql-strip {
+  background: #0a0a0c;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "neulis-sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ql-strip__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ql-strip__copy strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+}
+.ql-strip__brand {
+  color: rgba(255, 255, 255, 0.45);
+}
+.ql-strip__brand a {
+  color: #2a3df4;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.ql-strip__brand a:hover,
+.ql-strip__brand a:focus-visible {
+  color: #f4622a;
+}
+.ql-strip__brand a:focus-visible {
+  outline: 2px solid #2a3df4;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .ql-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    gap: 0.4rem;
+  }
+  .ql-strip { font-size: 0.74rem; }
+}
+</style>
+ <style>/* TEMPLATE 10 — PROFESIONAL · Abogado / Contador / Consultor */
+body { background: var(--ql-bg); color: var(--ql-text); font-family: var(--ql-font-body); }
+.t10-wrap { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,2rem); }
+
+.ql-hero-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .75s ease, transform .75s ease; }
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 250ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 460ms; }
+
+/* BUTTONS */
+.t10-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.6rem; font-family: var(--ql-font-body); font-size: .875rem; font-weight: 600; border-radius: 8px; border: 1.5px solid transparent; cursor: pointer; transition: background .2s, opacity .2s, border-color .2s, color .2s; white-space: nowrap; text-decoration: none; }
+.t10-btn--primary { background: var(--ql-signature); color: var(--ql-text-on-signature); border-color: var(--ql-signature); }
+.t10-btn--primary:hover { opacity: .88; }
+.t10-btn--outline { background: transparent; color: var(--ql-signature); border-color: var(--ql-signature); }
+.t10-btn--outline:hover { background: color-mix(in srgb, var(--ql-signature) 8%, transparent); }
+.t10-btn--white { background: #fff; color: var(--ql-signature); border-color: #fff; }
+.t10-btn--white:hover { opacity: .9; }
+.t10-btn--white-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.t10-btn--white-outline:hover { background: rgba(255,255,255,.15); }
+
+/* LOGO */
+.t10-logo { display: flex; align-items: center; gap: .625rem; flex-shrink: 0; text-decoration: none; }
+.t10-logo__mark { width: 28px; height: 28px; border-radius: 6px; background: var(--ql-signature); flex-shrink: 0; }
+.t10-logo__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); letter-spacing: -.01em; }
+
+/* HEADER */
+.t10-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--ql-border); }
+.t10-header__inner { height: 68px; display: flex; align-items: center; gap: 2.5rem; }
+.t10-nav { display: flex; gap: 2rem; margin-left: auto; }
+.t10-nav a { font-size: .875rem; font-weight: 500; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t10-nav a:hover { color: var(--ql-signature); }
+
+/* HERO */
+.t10-hero { background: var(--ql-bg); padding-block: clamp(4.5rem,9vw,7.5rem); }
+.t10-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
+.t10-hero__text { display: flex; flex-direction: column; gap: 1.25rem; }
+.t10-hero__badge { display: inline-block; padding: .3rem 1rem; font-size: .72rem; font-weight: 600; letter-spacing: .08em; background: color-mix(in srgb, var(--ql-signature) 10%, transparent); color: var(--ql-signature); border-radius: 6px; align-self: flex-start; }
+.t10-hero__h1 { font-family: var(--ql-font-display); font-size: clamp(2.4rem,5vw,4rem); font-weight: 700; color: var(--ql-text); line-height: 1.1; letter-spacing: -.025em; }
+.t10-hero__desc { font-size: 1rem; color: var(--ql-text-muted); max-width: 440px; line-height: 1.7; }
+.t10-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.t10-hero__rating { font-size: .82rem; color: var(--ql-text-muted); }
+.t10-hero__img { width: 100%; height: clamp(380px,50vw,580px); object-fit: cover; border-radius: 16px; display: block; }
+
+/* CREDENCIALES */
+.t10-credenciales { background: var(--ql-signature); padding-block: 1.5rem; }
+.t10-credenciales__inner { display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.t10-cred-item { text-align: center; }
+.t10-cred-item__num { display: block; font-family: var(--ql-font-display); font-size: 1.6rem; font-weight: 800; color: var(--ql-text-on-signature); line-height: 1.1; }
+.t10-cred-item__label { display: block; font-size: .72rem; color: color-mix(in srgb, var(--ql-text-on-signature) 70%, transparent); margin-top: .2rem; }
+.t10-cred-sep { display: inline-block; width: 1px; height: 40px; background: color-mix(in srgb, var(--ql-text-on-signature) 25%, transparent); }
+
+/* EYEBROW + SECTION TITLE */
+.t10-eyebrow { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ql-signature); margin-bottom: .5rem; }
+.t10-section-title { font-family: var(--ql-font-display); font-size: clamp(1.8rem,3.5vw,2.75rem); font-weight: 700; color: var(--ql-text); line-height: 1.12; letter-spacing: -.02em; }
+.t10-section-header { margin-bottom: clamp(2rem,4vw,3rem); }
+.t10-section-header--center { text-align: center; }
+.t10-section-sub { font-size: .9rem; color: var(--ql-text-muted); margin-top: .4rem; }
+
+/* SERVICIOS */
+.t10-servicios { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t10-servicios__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t10-serv-card { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 14px; padding: 1.875rem; position: relative; transition: box-shadow .2s; }
+.t10-serv-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,.07); }
+.t10-serv-card__num { position: absolute; top: 1.5rem; right: 1.5rem; font-family: var(--ql-font-display); font-size: 1.5rem; font-weight: 800; color: var(--ql-border); line-height: 1; }
+.t10-serv-card__icon { color: var(--ql-signature); margin-bottom: .875rem; }
+.t10-serv-card__title { font-family: var(--ql-font-display); font-size: 1.05rem; font-weight: 700; color: var(--ql-text); margin-bottom: .4rem; }
+.t10-serv-card__desc { font-size: .875rem; color: var(--ql-text-muted); line-height: 1.65; }
+
+/* PROCESO */
+.t10-proceso { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t10-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; list-style: none; position: relative; }
+.t10-steps::before { content: ''; position: absolute; top: 27px; left: 10%; right: 10%; height: 1px; background: var(--ql-border); z-index: 0; }
+.t10-step { position: relative; z-index: 1; text-align: center; }
+.t10-step__num { font-family: var(--ql-font-display); font-size: 1rem; font-weight: 700; color: var(--ql-signature); width: 54px; height: 54px; border-radius: 50%; border: 2px solid var(--ql-signature); background: var(--ql-bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.t10-step__title { font-family: var(--ql-font-display); font-size: 1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .375rem; }
+.t10-step__desc { font-size: .85rem; color: var(--ql-text-muted); line-height: 1.6; }
+
+/* NOSOTROS */
+.t10-nosotros { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t10-nosotros__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,6rem); align-items: center; }
+.t10-nosotros__media img { width: 100%; height: clamp(320px,44vw,520px); object-fit: cover; border-radius: 16px; display: block; }
+.t10-nosotros__text { display: flex; flex-direction: column; gap: 1rem; }
+.t10-nosotros__desc { font-size: .975rem; color: var(--ql-text-muted); line-height: 1.75; }
+.t10-nosotros__rating { font-size: .85rem; color: var(--ql-signature); font-weight: 600; }
+.t10-nosotros__ciudad, .t10-nosotros__horario { font-size: .875rem; color: var(--ql-text-muted); }
+
+/* TESTIMONIOS */
+.t10-testimonios { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t10-testimonios__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t10-testi { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 14px; padding: 1.875rem; display: flex; flex-direction: column; gap: 1rem; }
+.t10-testi__texto { font-size: .9rem; color: var(--ql-text); line-height: 1.75; font-style: italic; flex: 1; }
+.t10-testi__footer { display: flex; align-items: center; gap: .875rem; border-top: 1px solid var(--ql-border); padding-top: 1rem; }
+.t10-testi__avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--ql-signature); color: var(--ql-text-on-signature); font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .9rem; }
+.t10-testi__autor { font-size: .8rem; font-weight: 600; color: var(--ql-text); display: block; margin-bottom: .15rem; }
+.t10-testi__stars { font-size: .8rem; color: var(--ql-signature); font-weight: 600; }
+
+/* CTA */
+.t10-cta { background: var(--ql-signature); padding: clamp(3.5rem,7vw,6rem) 0; }
+.t10-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.t10-cta__copy { flex: 1; min-width: 240px; }
+.t10-cta__titulo { font-family: var(--ql-font-display); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.02em; }
+.t10-cta__sub { font-size: .95rem; color: rgba(255,255,255,.75); margin-top: .5rem; }
+.t10-cta__actions { display: flex; flex-wrap: wrap; gap: .75rem; flex-shrink: 0; }
+
+/* FOOTER */
+.t10-foot { background: var(--ql-bg-alt); border-top: 1px solid var(--ql-border); padding-block: 4rem 1.75rem; }
+.t10-foot__inner { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--ql-border); }
+.t10-foot__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .375rem; }
+.t10-foot__rubro { font-size: .8rem; color: var(--ql-text-muted); }
+.t10-foot__nav { display: flex; flex-direction: column; gap: .6rem; }
+.t10-foot__nav a { font-size: .875rem; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t10-foot__nav a:hover { color: var(--ql-signature); }
+.t10-foot__contact { display: flex; flex-direction: column; gap: .5rem; }
+.t10-foot__contact p { font-size: .875rem; color: var(--ql-text-muted); }
+.t10-foot__contact a { color: var(--ql-signature); text-decoration: none; }
+.t10-foot__bottom { padding-top: 1.75rem; text-align: center; }
+.t10-foot__bottom p { font-size: .78rem; color: var(--ql-text-muted); }
+.t10-foot__bottom a { color: var(--ql-signature); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .t10-servicios__grid { grid-template-columns: repeat(2,1fr); }
+  .t10-steps { grid-template-columns: repeat(2,1fr); }
+  .t10-steps::before { display: none; }
+  .t10-testimonios__grid { grid-template-columns: repeat(2,1fr); }
+  .t10-credenciales__inner { gap: 1.25rem; }
+  .t10-foot__inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .t10-foot__brand { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .t10-nav { display: none; }
+  .t10-header__cta { margin-left: auto; padding: .55rem 1rem; font-size: .82rem; }
+  .t10-hero__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t10-hero__img { height: 260px; border-radius: 12px; }
+  .t10-nosotros__inner { grid-template-columns: 1fr; }
+  .t10-servicios__grid { grid-template-columns: 1fr; }
+  .t10-steps { grid-template-columns: 1fr; }
+  .t10-testimonios__grid { grid-template-columns: 1fr; }
+  .t10-cta__inner { flex-direction: column; align-items: flex-start; }
+  .t10-foot__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t10-foot__brand { grid-column: unset; }
+}
+</style>
+</head>
+<body>
+
+<header class="t10-header" role="banner">
+ <div class="t10-wrap t10-header__inner">
+ <a href="#" class="t10-logo" aria-label="Vulcanizacion El Peñi">
+ <span class="t10-logo__mark" aria-hidden="true"></span>
+ <span class="t10-logo__name">Vulcanizacion El Peñi</span>
+ </a>
+ <nav class="t10-nav" aria-label="Menu">
+ <a href="#servicios">Servicios</a>
+ <a href="#proceso">Como trabajamos</a>
+ <a href="#testimonios">Testimonios</a>
+ <a href="#contacto">Contacto</a>
+ </nav>
+ <a href="https://wa.me/974701154" class="t10-btn t10-btn--primary t10-header__cta" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+ </div>
+</header>
+
+<!-- HERO — dos columnas: texto izquierda | foto derecha contenida -->
+<section class="t10-hero" aria-label="Portada">
+ <div class="t10-wrap t10-hero__inner ql-hero-stagger">
+ <div class="t10-hero__text">
+ <span class="t10-hero__badge">Servicio profesional</span> 
+ <h1 class="t10-hero__h1">Profesionales a tu servicio en </h1>
+ <p class="t10-hero__desc">Ofrecemos servicios de con la mejor atencion.</p>
+ <div class="t10-hero__actions">
+ <a href="https://wa.me/974701154" class="t10-btn t10-btn--primary" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+ <a href="#servicios" class="t10-btn t10-btn--outline">Ver servicios</a>
+ </div>
+ <p class="t10-hero__rating">&#9733; 4.8 &middot; 87 resenas</p> 
+ </div>
+ <div class="t10-hero__media" aria-hidden="true">
+ <img class="t10-hero__img" src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwxfHwlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDF8MHx8fDE3Nzc1MjkzNTN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="" loading="eager">
+ </div>
+ </div>
+</section>
+
+<!-- CREDENCIALES / STRIP -->
+<div class="t10-credenciales">
+ <div class="t10-wrap t10-credenciales__inner">
+ <div class="t10-cred-item">
+ <span class="t10-cred-item__num">+10</span>
+ <span class="t10-cred-item__label">Anos de experiencia</span>
+ </div>
+ <span class="t10-cred-sep" aria-hidden="true"></span>
+ <div class="t10-cred-item">
+ <span class="t10-cred-item__num">4.8</span> 
+ <span class="t10-cred-item__label">Calificacion promedio</span>
+ </div>
+ <span class="t10-cred-sep" aria-hidden="true"></span>
+ <div class="t10-cred-item">
+ <span class="t10-cred-item__num">100%</span>
+ <span class="t10-cred-item__label">Compromiso con el cliente</span>
+ </div>
+ <span class="t10-cred-sep" aria-hidden="true"></span>
+ <div class="t10-cred-item">
+ <span class="t10-cred-item__num">&#128274;</span>
+ <span class="t10-cred-item__label">Confidencialidad garantizada</span>
+ </div>
+ </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="t10-servicios ql-anim" id="servicios">
+ <div class="t10-wrap">
+ <header class="t10-section-header">
+ <p class="t10-eyebrow">Areas de practica</p>
+ <h2 class="t10-section-title">Servicios profesionales</h2>
+ </header>
+ <div class="t10-servicios__grid ql-stagger">
+ <article class="t10-serv-card">
+ <div class="t10-serv-card__num" aria-hidden="true">01</div>
+ <div class="t10-serv-card__icon" aria-hidden="true"></div>
+ <h3 class="t10-serv-card__title">Servicio principal</h3>
+ <p class="t10-serv-card__desc">Atencion profesional y de calidad.</p>
+ </article>
+ <article class="t10-serv-card">
+ <div class="t10-serv-card__num" aria-hidden="true">02</div>
+ <div class="t10-serv-card__icon" aria-hidden="true"></div>
+ <h3 class="t10-serv-card__title">Consultas</h3>
+ <p class="t10-serv-card__desc">Respondemos todas tus dudas.</p>
+ </article>
+ <article class="t10-serv-card">
+ <div class="t10-serv-card__num" aria-hidden="true">03</div>
+ <div class="t10-serv-card__icon" aria-hidden="true"></div>
+ <h3 class="t10-serv-card__title">Atencion personalizada</h3>
+ <p class="t10-serv-card__desc">Soluciones a medida para cada cliente.</p>
+ </article>
+ 
+ 
+ 
+ </div>
+ </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS / PROCESO -->
+<section class="t10-proceso ql-anim" id="proceso">
+ <div class="t10-wrap">
+ <header class="t10-section-header t10-section-header--center">
+ <p class="t10-eyebrow">Metodologia</p>
+ <h2 class="t10-section-title">Como trabajamos</h2>
+ </header>
+ <ol class="t10-steps ql-stagger" aria-label="Pasos del proceso">
+ <li class="t10-step">
+ <div class="t10-step__num" aria-hidden="true">01</div>
+ <h3 class="t10-step__title">Primera reunion</h3>
+ <p class="t10-step__desc">Conversamos tu caso sin compromiso.</p>
+ </li>
+ <li class="t10-step">
+ <div class="t10-step__num" aria-hidden="true">02</div>
+ <h3 class="t10-step__title">Analisis</h3>
+ <p class="t10-step__desc">Estudiamos los antecedentes en detalle.</p>
+ </li>
+ <li class="t10-step">
+ <div class="t10-step__num" aria-hidden="true">03</div>
+ <h3 class="t10-step__title">Propuesta</h3>
+ <p class="t10-step__desc">Definimos un plan de trabajo claro.</p>
+ </li>
+ <li class="t10-step">
+ <div class="t10-step__num" aria-hidden="true">04</div>
+ <h3 class="t10-step__title">Ejecucion</h3>
+ <p class="t10-step__desc">Te acompanamos en cada paso del proceso.</p>
+ </li>
+ </ol>
+ </div>
+</section>
+
+<!-- NOSOTROS — foto + texto -->
+<section class="t10-nosotros ql-anim">
+ <div class="t10-wrap t10-nosotros__inner">
+ <div class="t10-nosotros__media" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1771340012319-0b4fca008b54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwyfHwlMjBwcm9mZXNzaW9uYWwlMjBzZXJ2aWNlfGVufDF8MHx8fDE3Nzc1MjkzNTN8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Vulcanizacion El Peñi" loading="lazy">
+ </div>
+ <div class="t10-nosotros__text">
+ <p class="t10-eyebrow">Quienes somos</p>
+ <h2 class="t10-section-title">Profesionales con trayectoria comprobada</h2>
+ <p class="t10-nosotros__desc">Ofrecemos servicios de con la mejor atencion.</p>
+ <p class="t10-nosotros__rating">&#9733; 4.8 &middot; 87 resenas</p> 
+ 
+ <p class="t10-nosotros__horario">&#128336; Lun-Vie 9:00-18:00</p> 
+ </div>
+ </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t10-testimonios ql-anim" id="testimonios">
+ <div class="t10-wrap">
+ <header class="t10-section-header t10-section-header--center">
+ <p class="t10-eyebrow">Testimonios</p>
+ <h2 class="t10-section-title">Lo que dicen nuestros clientes</h2>
+ <p class="t10-section-sub">&#9733; 4.8 &middot; 87 resenas</p> 
+ </header>
+ <div class="t10-testimonios__grid ql-stagger">
+ <article class="t10-testi">
+ <p class="t10-testi__texto">&#8220;Excelente servicio, muy profesionales y rapidos.&#8221;</p>
+ <footer class="t10-testi__footer">
+ <span class="t10-testi__avatar" aria-hidden="true">M</span>
+ <div>
+ <strong class="t10-testi__autor">Maria G.</strong>
+ <span class="t10-testi__stars">&#9733; 5.0</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t10-testi">
+ <p class="t10-testi__texto">&#8220;Muy buena atencion, lo recomiendo ampliamente.&#8221;</p>
+ <footer class="t10-testi__footer">
+ <span class="t10-testi__avatar" aria-hidden="true">C</span>
+ <div>
+ <strong class="t10-testi__autor">Carlos V.</strong>
+ <span class="t10-testi__stars">&#9733; 5.0</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t10-testi">
+ <p class="t10-testi__texto">&#8220;Quede muy conforme con el trabajo realizado.&#8221;</p>
+ <footer class="t10-testi__footer">
+ <span class="t10-testi__avatar" aria-hidden="true">A</span>
+ <div>
+ <strong class="t10-testi__autor">Ana R.</strong>
+ <span class="t10-testi__stars">&#9733; 4.8</span>
+ </div>
+ </footer>
+ </article> 
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="t10-cta" id="contacto">
+ <div class="t10-wrap t10-cta__inner">
+ <div class="t10-cta__copy">
+ <h2 class="t10-cta__titulo">Listos para ayudarte</h2>
+ <p class="t10-cta__sub">Contactanos hoy y te respondemos rapido</p> 
+ </div>
+ <div class="t10-cta__actions">
+ <a href="https://wa.me/974701154" class="t10-btn t10-btn--white" target="_blank" rel="noopener noreferrer">Consulta gratuita</a>
+ <a href="tel:9 7470 1154" class="t10-btn t10-btn--white-outline">9 7470 1154</a> 
+ </div>
+ </div>
+</section>
+
+<footer class="t10-foot" aria-label="Pie de pagina">
+ <div class="t10-wrap t10-foot__inner">
+ <div class="t10-foot__brand">
+ <p class="t10-foot__name">Vulcanizacion El Peñi</p>
+ 
+ </div>
+ <nav class="t10-foot__nav" aria-label="Navegacion">
+ <a href="#servicios">Servicios</a>
+ <a href="#proceso">Como trabajamos</a>
+ <a href="#testimonios">Testimonios</a>
+ <a href="#contacto">Contacto</a>
+ </nav>
+ <div class="t10-foot__contact">
+ <p>&#128336; Lun-Vie 9:00-18:00</p> 
+ 
+ <p><a href="tel:9 7470 1154">9 7470 1154</a></p> 
+ </div>
+ </div>
+</footer>
+
+<!--
+ Franja final Quolab — comun e identica en los 10 templates.
+ Refuerza el branding de la agencia: fondo negro principal #0a0a0c,
+ tipografia Neulis (Adobe Typekit), azul #2a3df4 en el link "Quolab".
+ Variables que reemplaza el assembler:
+ 2026 -> ano actual
+ Vulcanizacion El Peñi -> nombre del negocio del prospecto
+-->
+<div class="ql-strip">
+ <div class="ql-strip__inner">
+ <span class="ql-strip__copy">
+ &copy; 2026 <strong>Vulcanizacion El Peñi</strong> &mdash; Todos los derechos reservados.
+ </span>
+ <span class="ql-strip__brand">
+ Desarrollado por
+ <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a>
+ </span>
+ </div>
+</div>
+
+<!--
+ Boton flotante de WhatsApp — comun a los 10 templates.
+ El assembler reemplaza 974701154 por el numero del prospecto sin caracteres no numericos.
+ Posicionado fixed bottom-right con animacion de pulso sutil.
+-->
+<a class="ql-wa-float"
+ href="https://wa.me/974701154?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s"
+ target="_blank" rel="noopener"
+ aria-label="Contactar por WhatsApp">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+ </svg>
+</a>
+
+<script>/* QUOLAB ANIM OBSERVER — script comun a los 10 templates.
+   - Activa las animaciones de tipo A (fade-in + slide leve) cuando el elemento entra al viewport.
+   - Una vez animado, queda visible: no se vuelve a ocultar al salir.
+   - Se inyecta inline en el HTML final por el assembler.
+   Uso en cualquier template:
+     <div class="ql-anim">...</div>
+     <ul class="ql-stagger">...</ul>     // anima los hijos en cascada
+   El hero usa animacion B (slide stagger desde abajo) que se dispara al cargar la pagina,
+   no por viewport. Esa logica vive en la clase .ql-hero-stagger inline del template. */
+(function () {
+  'use strict';
+
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  function init() {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      io.observe(el);
+    });
+    var hero = document.querySelector('.ql-hero-stagger');
+    if (hero) {
+      requestAnimationFrame(function () { hero.classList.add('is-visible'); });
+    }
+
+    // Safety net: si por algun motivo el IO no dispara (entornos headless,
+    // tabs en background, o algun error de paint), tras 2s marcamos todo
+    // como visible para que la pagina nunca quede en blanco.
+    setTimeout(function () {
+      document.querySelectorAll('.ql-anim:not(.is-visible), .ql-stagger:not(.is-visible)').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }, 2000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
