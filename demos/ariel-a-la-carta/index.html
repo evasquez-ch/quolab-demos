@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Ariel a la Carta — Food truck</title>
+ <meta name="description" content="Food truck con cocina de autor en la calle. Smash burgers artesanales, papas locas y salsas propias que no vas a encontrar en ningun otro lugar de Santiago.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preconnect" href="https://use.typekit.net">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap">
+ <link rel="stylesheet" href="https://use.typekit.net/rbc2plo.css">
+ <style>/* QUOLAB BASE RESET — comun a los 10 templates.
+   Mantiene un piso predecible para que cada template empiece igual.
+   No define paleta ni tipografia: eso lo pone cada template. */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+html, body { height: 100%; }
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select { font: inherit; color: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.15; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul, ol { list-style: none; padding: 0; }
+
+#root, #__next { isolation: isolate; }
+
+/* Accesibilidad — animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container { padding-inline: 2rem; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+  border: 0;
+}
+
+/* Animaciones globales — usadas por todos los templates */
+@keyframes ql-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ql-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.ql-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.ql-anim.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ql-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.ql-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.ql-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-stagger.is-visible > *:nth-child(2) { transition-delay: 100ms; }
+.ql-stagger.is-visible > *:nth-child(3) { transition-delay: 200ms; }
+.ql-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+.ql-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; }
+.ql-stagger.is-visible > *:nth-child(6) { transition-delay: 500ms; }
+</style>
+ <style>
+:root {
+  --ql-bg:               #F8F8F4;
+  --ql-bg-alt:           #FFFFFF;
+  --ql-surface:          #FFFFFF;
+  --ql-text:             #0F0F0F;
+  --ql-text-muted:       #4A4A4A;
+  --ql-border:           #E0E0DA;
+  --ql-signature:        #7C4DFF;
+  --ql-accent:           #7C4DFF;
+  --ql-text-on-signature:#FFFFFF;
+  --ql-font-display:     'Archivo', sans-serif;
+  --ql-font-body:        'DM Sans', sans-serif;
+  --ql-font-mono:        'DM Sans', sans-serif;
+}
+</style>
+ <style>/* QUOLAB WHATSAPP FLOAT — comun a los 10 templates.
+   Diseno fijo: circulo verde oficial WhatsApp #25D366, icono blanco, sombra suave,
+   pulso sutil en reposo, escala leve en hover. Sigue siendo accesible con teclado. */
+
+.ql-wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45),
+              0 2px 6px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ql-wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: ql-wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.ql-wa-float:hover,
+.ql-wa-float:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55),
+              0 3px 8px rgba(0, 0, 0, 0.14);
+}
+.ql-wa-float:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+.ql-wa-float svg { display: block; }
+
+@keyframes ql-wa-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 480px) {
+  .ql-wa-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .ql-wa-float svg { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ql-wa-float::before { animation: none; }
+  .ql-wa-float { transition: none; }
+}
+</style>
+ <style>/* QUOLAB STRIP — franja final identica en los 10 templates.
+   Refuerza el branding Quolab usando la identidad de marca real:
+   - Fondo negro principal #0a0a0c
+   - Tipografia Neulis Sans (Adobe Typekit) cargada en el <head>
+   - Azul Quolab #2a3df4 en el link "Quolab"
+   Sirve de cierre comun: el cliente ve el branding sin importar el template
+   que le toco a su rubro. */
+
+.ql-strip {
+  background: #0a0a0c;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "neulis-sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ql-strip__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ql-strip__copy strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+}
+.ql-strip__brand {
+  color: rgba(255, 255, 255, 0.45);
+}
+.ql-strip__brand a {
+  color: #2a3df4;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.ql-strip__brand a:hover,
+.ql-strip__brand a:focus-visible {
+  color: #f4622a;
+}
+.ql-strip__brand a:focus-visible {
+  outline: 2px solid #2a3df4;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .ql-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    gap: 0.4rem;
+  }
+  .ql-strip { font-size: 0.74rem; }
+}
+</style>
+ <style>/* TEMPLATE 07 — STREET FOOD · Food truck / Empanadas / Completos */
+body { background: var(--ql-bg); color: var(--ql-text); font-family: var(--ql-font-body); }
+.t07-wrap { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,2rem); }
+
+.ql-hero-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .75s ease, transform .75s ease; }
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 250ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 460ms; }
+
+/* BUTTONS */
+.t07-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.75rem; font-family: var(--ql-font-body); font-size: .9rem; font-weight: 700; border-radius: 8px; border: 2px solid transparent; cursor: pointer; transition: background .2s, opacity .2s, border-color .2s, color .2s; white-space: nowrap; text-decoration: none; letter-spacing: .01em; }
+.t07-btn--primary { background: var(--ql-signature); color: var(--ql-text-on-signature); border-color: var(--ql-signature); }
+.t07-btn--primary:hover { opacity: .88; }
+.t07-btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.5); }
+.t07-btn--ghost:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+.t07-btn--white { background: #fff; color: var(--ql-signature); border-color: #fff; }
+.t07-btn--white:hover { opacity: .9; }
+.t07-btn--white-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.t07-btn--white-outline:hover { background: rgba(255,255,255,.15); }
+
+/* LOGO */
+.t07-logo { display: flex; align-items: center; gap: .625rem; flex-shrink: 0; text-decoration: none; }
+.t07-logo__mark { width: 32px; height: 32px; border-radius: 6px; background: var(--ql-signature); flex-shrink: 0; transform: rotate(10deg); }
+.t07-logo__name { font-family: var(--ql-font-display); font-size: 1.2rem; font-weight: 900; color: var(--ql-text); letter-spacing: -.02em; text-transform: uppercase; }
+
+/* HEADER */
+.t07-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 2px solid var(--ql-border); }
+.t07-header__inner { height: 68px; display: flex; align-items: center; gap: 2.5rem; }
+.t07-nav { display: flex; gap: 2rem; margin-left: auto; }
+.t07-nav a { font-size: .875rem; font-weight: 600; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t07-nav a:hover { color: var(--ql-signature); }
+
+/* HERO — full-bleed centrado */
+.t07-hero { position: relative; min-height: 85vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; }
+.t07-hero__bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.t07-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.65) 100%); }
+.t07-hero__content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; max-width: 760px; padding-block: 5rem; }
+.t07-hero__badge { display: inline-block; padding: .35rem 1.1rem; font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; background: var(--ql-signature); color: var(--ql-text-on-signature); border-radius: 4px; }
+.t07-hero__h1 { font-family: var(--ql-font-display); font-size: clamp(3rem,8vw,6rem); font-weight: 900; color: #fff; line-height: 1; letter-spacing: -.03em; text-transform: uppercase; }
+.t07-hero__desc { font-size: 1.05rem; color: rgba(255,255,255,.82); max-width: 500px; line-height: 1.65; }
+.t07-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; padding-top: .5rem; }
+.t07-hero__rating { font-size: .85rem; color: rgba(255,255,255,.7); }
+
+/* STRIP */
+.t07-strip { background: var(--ql-signature); }
+.t07-strip__inner { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding-block: .875rem; }
+.t07-strip__item { font-size: .82rem; font-weight: 600; color: var(--ql-text-on-signature); }
+.t07-strip__sep { display: inline-block; width: 1px; height: 14px; background: color-mix(in srgb, var(--ql-text-on-signature) 30%, transparent); }
+
+/* EYEBROW + SECTION TITLE */
+.t07-eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--ql-signature); margin-bottom: .5rem; }
+.t07-section-title { font-family: var(--ql-font-display); font-size: clamp(1.9rem,3.5vw,2.9rem); font-weight: 900; color: var(--ql-text); line-height: 1.08; letter-spacing: -.025em; text-transform: uppercase; }
+.t07-section-header { margin-bottom: clamp(2rem,4vw,3rem); }
+.t07-section-header--center { text-align: center; }
+
+/* MENU */
+.t07-menu { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t07-menu__list { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--ql-border); border: 1px solid var(--ql-border); border-radius: 16px; overflow: hidden; }
+.t07-menu-item { background: var(--ql-surface); display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem; transition: background .2s; }
+.t07-menu-item:hover { background: color-mix(in srgb, var(--ql-surface) 80%, var(--ql-signature)); }
+.t07-menu-item__img { flex-shrink: 0; width: 90px; height: 90px; border-radius: 10px; overflow: hidden; }
+.t07-menu-item__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.t07-menu-item__body { flex: 1; }
+.t07-menu-item__nombre { font-family: var(--ql-font-display); font-size: 1rem; font-weight: 800; color: var(--ql-text); margin-bottom: .3rem; }
+.t07-menu-item__desc { font-size: .83rem; color: var(--ql-text-muted); line-height: 1.55; }
+
+/* DONDE ESTAMOS */
+.t07-donde { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t07-donde__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem,6vw,6rem); align-items: center; }
+.t07-donde__media img { width: 100%; height: clamp(320px,44vw,520px); object-fit: cover; border-radius: 16px; display: block; }
+.t07-donde__text { display: flex; flex-direction: column; gap: 1rem; }
+.t07-donde__desc { font-size: .975rem; color: var(--ql-text-muted); line-height: 1.75; }
+.t07-donde__horario, .t07-donde__ciudad { font-size: .875rem; font-weight: 600; color: var(--ql-text-muted); }
+
+/* COLLAGE */
+.t07-collage { padding: 0; background: var(--ql-bg); }
+.t07-collage__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 4px; }
+.t07-collage__grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .25s; }
+.t07-collage__grid img:hover { opacity: .88; }
+.t07-collage__grid img:first-child { grid-row: span 2; }
+
+/* RESENAS */
+.t07-resenas { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t07-resenas__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t07-testi { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 12px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+.t07-testi__texto { font-size: .9rem; color: var(--ql-text); line-height: 1.75; font-style: italic; flex: 1; }
+.t07-testi__footer { display: flex; align-items: center; gap: .875rem; border-top: 1px solid var(--ql-border); padding-top: 1rem; }
+.t07-testi__avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--ql-signature); color: var(--ql-text-on-signature); font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .9rem; }
+.t07-testi__autor { font-size: .8rem; font-weight: 700; color: var(--ql-text); display: block; margin-bottom: .15rem; }
+.t07-testi__stars { font-size: .8rem; color: var(--ql-signature); }
+
+/* CTA */
+.t07-cta { background: var(--ql-signature); padding: clamp(3.5rem,7vw,6rem) 0; }
+.t07-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.t07-cta__copy { flex: 1; min-width: 240px; }
+.t07-cta__titulo { font-family: var(--ql-font-display); font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -.025em; text-transform: uppercase; }
+.t07-cta__sub { font-size: .95rem; color: rgba(255,255,255,.75); margin-top: .5rem; }
+.t07-cta__actions { display: flex; flex-wrap: wrap; gap: .75rem; flex-shrink: 0; }
+
+/* FOOTER */
+.t07-foot { background: var(--ql-bg-alt); border-top: 1px solid var(--ql-border); padding-block: 4rem 1.75rem; }
+.t07-foot__inner { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--ql-border); }
+.t07-foot__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 900; color: var(--ql-text); margin-bottom: .375rem; text-transform: uppercase; }
+.t07-foot__rubro { font-size: .8rem; color: var(--ql-text-muted); }
+.t07-foot__nav { display: flex; flex-direction: column; gap: .6rem; }
+.t07-foot__nav a { font-size: .875rem; color: var(--ql-text-muted); transition: color .2s; text-decoration: none; }
+.t07-foot__nav a:hover { color: var(--ql-signature); }
+.t07-foot__contact { display: flex; flex-direction: column; gap: .5rem; }
+.t07-foot__contact p { font-size: .875rem; color: var(--ql-text-muted); }
+.t07-foot__contact a { color: var(--ql-signature); text-decoration: none; }
+.t07-foot__bottom { padding-top: 1.75rem; text-align: center; }
+.t07-foot__bottom p { font-size: .78rem; color: var(--ql-text-muted); }
+.t07-foot__bottom a { color: var(--ql-signature); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .t07-menu__list { grid-template-columns: 1fr; }
+  .t07-resenas__grid { grid-template-columns: repeat(2,1fr); }
+  .t07-collage__grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .t07-collage__grid img:first-child { grid-row: span 1; }
+  .t07-foot__inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .t07-foot__brand { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .t07-nav { display: none; }
+  .t07-header__cta { margin-left: auto; padding: .55rem 1rem; font-size: .82rem; }
+  .t07-hero { min-height: 70vh; }
+  .t07-hero__h1 { font-size: clamp(2.4rem,9vw,3.5rem); }
+  .t07-donde__inner { grid-template-columns: 1fr; }
+  .t07-resenas__grid { grid-template-columns: 1fr; }
+  .t07-collage__grid { grid-template-columns: 1fr 1fr; }
+  .t07-cta__inner { flex-direction: column; align-items: flex-start; }
+  .t07-foot__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t07-foot__brand { grid-column: unset; }
+}
+</style>
+</head>
+<body>
+
+<header class="t07-header" role="banner">
+ <div class="t07-wrap t07-header__inner">
+ <a href="#" class="t07-logo" aria-label="Ariel a la Carta">
+ <span class="t07-logo__mark" aria-hidden="true"></span>
+ <span class="t07-logo__name">Ariel a la Carta</span>
+ </a>
+ <nav class="t07-nav" aria-label="Menu">
+ <a href="#menu">Menu</a>
+ <a href="#donde">Donde estamos</a>
+ <a href="#resenas">Resenas</a>
+ </nav>
+ <a href="https://wa.me/56978901234" class="t07-btn t07-btn--primary t07-header__cta" target="_blank" rel="noopener noreferrer">Pedir ahora</a>
+ </div>
+</header>
+
+<!-- HERO — texto centrado sobre imagen con overlay fuerte -->
+<section class="t07-hero" aria-label="Portada">
+ <div class="t07-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1771554818662-a073af33a80e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwxfHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080');" role="img" aria-label="Two men working at a food truck window."></div>
+ <div class="t07-hero__overlay" aria-hidden="true"></div>
+ <div class="t07-wrap t07-hero__content ql-hero-stagger">
+ <span class="t07-hero__badge">Abierto hoy en Plaza Nunoa</span> 
+ <h1 class="t07-hero__h1">Cocina callejera con alma de chef.</h1>
+ <p class="t07-hero__desc">Food truck con cocina de autor en la calle. Smash burgers artesanales, papas locas y salsas propias que no vas a encontrar en ningun otro lugar de Santiago.</p>
+ <div class="t07-hero__actions">
+ <a href="https://wa.me/56978901234" class="t07-btn t07-btn--primary" target="_blank" rel="noopener noreferrer">Pedir ahora</a>
+ <a href="#menu" class="t07-btn t07-btn--ghost">Ver menu</a>
+ </div>
+ <p class="t07-hero__rating">&#9733; 4.9 &middot; 312 resenas</p> 
+ </div>
+</section>
+
+<!-- STRIP INFO -->
+<div class="t07-strip">
+ <div class="t07-wrap t07-strip__inner">
+ <span class="t07-strip__item">&#128336; Mie-Dom 13:00-22:00</span> 
+ <span class="t07-strip__sep" aria-hidden="true"></span>
+ <span class="t07-strip__item">&#128205; Nunoa</span> 
+ <span class="t07-strip__sep" aria-hidden="true"></span>
+ <span class="t07-strip__item">&#9993; Pedidos por WhatsApp</span>
+ </div>
+</div>
+
+<!-- MENU -->
+<section class="t07-menu ql-anim" id="menu">
+ <div class="t07-wrap">
+ <header class="t07-section-header">
+ <p class="t07-eyebrow">Nuestras especialidades</p>
+ <h2 class="t07-section-title">El menu</h2>
+ </header>
+ <div class="t07-menu__list">
+ <div class="t07-menu-item">
+ <div class="t07-menu-item__img" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1557818471-8a140ea11868?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwzfHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Smash burger" loading="lazy">
+ </div>
+ <div class="t07-menu-item__body">
+ <h3 class="t07-menu-item__nombre">Smash burger</h3>
+ <p class="t07-menu-item__desc">Doble carne aplastada con queso cheddar.</p>
+ </div>
+ </div>
+ <div class="t07-menu-item">
+ <div class="t07-menu-item__img" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1771554818662-ff7b431ff682?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw0fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Papas locas" loading="lazy">
+ </div>
+ <div class="t07-menu-item__body">
+ <h3 class="t07-menu-item__nombre">Papas locas</h3>
+ <p class="t07-menu-item__desc">Papas fritas con toppings al estilo de la casa.</p>
+ </div>
+ </div>
+ <div class="t07-menu-item">
+ <div class="t07-menu-item__img" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1709391672006-2cf95c441784?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw1fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Chicken bites" loading="lazy">
+ </div>
+ <div class="t07-menu-item__body">
+ <h3 class="t07-menu-item__nombre">Chicken bites</h3>
+ <p class="t07-menu-item__desc">Trozos de pollo crocante con salsas.</p>
+ </div>
+ </div>
+ <div class="t07-menu-item">
+ <div class="t07-menu-item__img" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1567129937968-cdad8f07e2f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw2fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Bebidas frias" loading="lazy">
+ </div>
+ <div class="t07-menu-item__body">
+ <h3 class="t07-menu-item__nombre">Bebidas frias</h3>
+ <p class="t07-menu-item__desc">Refrescos y limonadas naturales.</p>
+ </div>
+ </div> 
+ 
+ 
+ </div>
+ </div>
+</section>
+
+<!-- DONDE ESTAMOS / FOTO + TEXTO -->
+<section class="t07-donde ql-anim" id="donde">
+ <div class="t07-wrap t07-donde__inner">
+ <div class="t07-donde__media" aria-hidden="true">
+ <img src="https://images.unsplash.com/photo-1771554818649-b9c62ba28549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwyfHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Nuestro local" loading="lazy">
+ </div>
+ <div class="t07-donde__text">
+ <p class="t07-eyebrow">Encontranos</p>
+ <h2 class="t07-section-title">Siempre cerca de ti</h2>
+ <p class="t07-donde__desc">Food truck con cocina de autor en la calle. Smash burgers artesanales, papas locas y salsas propias que no vas a encontrar en ningun otro lugar de Santiago.</p>
+ <p class="t07-donde__horario">&#128336; Mie-Dom 13:00-22:00</p> 
+ <p class="t07-donde__ciudad">&#128205; Nunoa</p> 
+ <a href="https://wa.me/56978901234" class="t07-btn t07-btn--primary" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+ </div>
+ </div>
+</section>
+
+<!-- FOTO COLLAGE -->
+<section class="t07-collage ql-anim" aria-label="Fotos">
+ <div class="t07-collage__grid">
+ <img src="https://images.unsplash.com/photo-1636224601323-550e96f10d66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw5fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Foto 1" loading="lazy">
+ <img src="https://images.unsplash.com/photo-1771554818683-f01c7184c2d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwxMHx8Zm9vZCUyMHRydWNrJTIwc3RyZWV0JTIwZm9vZCUyMGJ1cmdlciUyMHNtYXNoJTIwYXJ0aXNhbnxlbnwxfDB8fHwxNzc3NTIzMDQwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Foto 2" loading="lazy">
+ <img src="https://images.unsplash.com/photo-1557818471-8a140ea11868?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwzfHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Foto 3" loading="lazy">
+ <img src="https://images.unsplash.com/photo-1771554818662-ff7b431ff682?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw0fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Foto 4" loading="lazy">
+ <img src="https://images.unsplash.com/photo-1709391672006-2cf95c441784?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHw1fHxmb29kJTIwdHJ1Y2slMjBzdHJlZXQlMjBmb29kJTIwYnVyZ2VyJTIwc21hc2glMjBhcnRpc2FufGVufDF8MHx8fDE3Nzc1MjMwNDB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Foto 5" loading="lazy">
+ </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t07-resenas ql-anim" id="resenas">
+ <div class="t07-wrap">
+ <header class="t07-section-header t07-section-header--center">
+ <p class="t07-eyebrow">Resenas</p>
+ <h2 class="t07-section-title">Lo que dicen de nosotros</h2>
+ </header>
+ <div class="t07-resenas__grid">
+ <article class="t07-testi">
+ <p class="t07-testi__texto">&#8220;La mejor smash burger de Santiago sin discusion. La salsa secreta es adictiva. Voy todas las semanas.&#8221;</p>
+ <footer class="t07-testi__footer">
+ <span class="t07-testi__avatar" aria-hidden="true">F</span>
+ <div>
+ <strong class="t07-testi__autor">Francisca O.</strong>
+ <span class="t07-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t07-testi">
+ <p class="t07-testi__texto">&#8220;Las papas locas son un nivel aparte. Porciones gigantes y precio justo. Ya lo recomende a todo mi trabajo.&#8221;</p>
+ <footer class="t07-testi__footer">
+ <span class="t07-testi__avatar" aria-hidden="true">D</span>
+ <div>
+ <strong class="t07-testi__autor">Diego L.</strong>
+ <span class="t07-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t07-testi">
+ <p class="t07-testi__texto">&#8220;Atención rapida, todo caliente y Ariel siempre con la mejor onda. Esto es street food de verdad.&#8221;</p>
+ <footer class="t07-testi__footer">
+ <span class="t07-testi__avatar" aria-hidden="true">V</span>
+ <div>
+ <strong class="t07-testi__autor">Valentina S.</strong>
+ <span class="t07-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+ </div>
+ </footer>
+ </article> 
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="t07-cta" id="contacto">
+ <div class="t07-wrap t07-cta__inner">
+ <div class="t07-cta__copy">
+ <h2 class="t07-cta__titulo">Pide ahora y lo preparamos al momento</h2>
+ <p class="t07-cta__sub">Mie-Dom 13:00-22:00</p> 
+ </div>
+ <div class="t07-cta__actions">
+ <a href="https://wa.me/56978901234" class="t07-btn t07-btn--white" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+ <a href="tel:+56 9 7890 1234" class="t07-btn t07-btn--white-outline">+56 9 7890 1234</a> 
+ </div>
+ </div>
+</section>
+
+<!--
+ Franja final Quolab — comun e identica en los 10 templates.
+ Refuerza el branding de la agencia: fondo negro principal #0a0a0c,
+ tipografia Neulis (Adobe Typekit), azul #2a3df4 en el link "Quolab".
+ Variables que reemplaza el assembler:
+ 2026 -> ano actual
+ Ariel a la Carta -> nombre del negocio del prospecto
+-->
+<div class="ql-strip">
+ <div class="ql-strip__inner">
+ <span class="ql-strip__copy">
+ &copy; 2026 <strong>Ariel a la Carta</strong> &mdash; Todos los derechos reservados.
+ </span>
+ <span class="ql-strip__brand">
+ Desarrollado
+ <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a>
+ </span>
+ </div>
+</div>
+
+<!--
+ Boton flotante de WhatsApp — comun a los 10 templates.
+ El assembler reemplaza 56978901234 por el numero del prospecto sin caracteres no numericos.
+ Posicionado fixed bottom-right con animacion de pulso sutil.
+-->
+<a class="ql-wa-float"
+ href="https://wa.me/56978901234?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s"
+ target="_blank" rel="noopener"
+ aria-label="Contactar por WhatsApp">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+ </svg>
+</a>
+
+<footer class="t07-foot">
+ <div class="t07-wrap t07-foot__inner">
+ <div class="t07-foot__brand">
+ <p class="t07-foot__name">Ariel a la Carta</p>
+ <p class="t07-foot__rubro">Food truck &middot; Nunoa</p> 
+ </div>
+ <nav class="t07-foot__nav">
+ <a href="#menu">Menu</a>
+ <a href="#donde">Donde estamos</a>
+ <a href="#resenas">Resenas</a>
+ <a href="#contacto">Contacto</a>
+ </nav>
+ <div class="t07-foot__contact">
+ <p>&#128336; Mie-Dom 13:00-22:00</p> 
+ <p>&#128205; Nunoa</p> 
+ <p><a href="tel:+56 9 7890 1234">+56 9 7890 1234</a></p> 
+ </div>
+ </div>
+ <div class="t07-foot__bottom">
+ <p>&#169; 2026 Ariel a la Carta &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+ </div>
+</footer>
+
+<script>/* QUOLAB ANIM OBSERVER — script comun a los 10 templates.
+   - Activa las animaciones de tipo A (fade-in + slide leve) cuando el elemento entra al viewport.
+   - Una vez animado, queda visible: no se vuelve a ocultar al salir.
+   - Se inyecta inline en el HTML final por el assembler.
+   Uso en cualquier template:
+     <div class="ql-anim">...</div>
+     <ul class="ql-stagger">...</ul>     // anima los hijos en cascada
+   El hero usa animacion B (slide stagger desde abajo) que se dispara al cargar la pagina,
+   no por viewport. Esa logica vive en la clase .ql-hero-stagger inline del template. */
+(function () {
+  'use strict';
+
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  function init() {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      io.observe(el);
+    });
+    var hero = document.querySelector('.ql-hero-stagger');
+    if (hero) {
+      requestAnimationFrame(function () { hero.classList.add('is-visible'); });
+    }
+
+    // Safety net: si por algun motivo el IO no dispara (entornos headless,
+    // tabs en background, o algun error de paint), tras 2s marcamos todo
+    // como visible para que la pagina nunca quede en blanco.
+    setTimeout(function () {
+      document.querySelectorAll('.ql-anim:not(.is-visible), .ql-stagger:not(.is-visible)').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }, 2000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>

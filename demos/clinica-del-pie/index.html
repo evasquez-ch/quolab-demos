@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Clinica del Pie — Podologia</title>
+ <meta name="description" content="Centro especializado en podologia y salud del pie en Las Condes. Tratamientos clinicos, unas encarnadas, hongos y ortopedia podologica con profesionales certificados.">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preconnect" href="https://use.typekit.net">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
+ <link rel="stylesheet" href="https://use.typekit.net/rbc2plo.css">
+ <style>/* QUOLAB BASE RESET — comun a los 10 templates.
+   Mantiene un piso predecible para que cada template empiece igual.
+   No define paleta ni tipografia: eso lo pone cada template. */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; -moz-text-size-adjust: 100%; text-size-adjust: 100%; }
+html, body { height: 100%; }
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select { font: inherit; color: inherit; }
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.15; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul, ol { list-style: none; padding: 0; }
+
+#root, #__next { isolation: isolate; }
+
+/* Accesibilidad — animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 768px) {
+  .container { padding-inline: 2rem; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+  border: 0;
+}
+
+/* Animaciones globales — usadas por todos los templates */
+@keyframes ql-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ql-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.ql-anim {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.ql-anim.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ql-stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.ql-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.ql-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-stagger.is-visible > *:nth-child(2) { transition-delay: 100ms; }
+.ql-stagger.is-visible > *:nth-child(3) { transition-delay: 200ms; }
+.ql-stagger.is-visible > *:nth-child(4) { transition-delay: 300ms; }
+.ql-stagger.is-visible > *:nth-child(5) { transition-delay: 400ms; }
+.ql-stagger.is-visible > *:nth-child(6) { transition-delay: 500ms; }
+</style>
+ <style>
+:root {
+  --ql-bg:               #FFFFFF;
+  --ql-bg-alt:           #F4F8FB;
+  --ql-surface:          #FFFFFF;
+  --ql-text:             #0D1F2D;
+  --ql-text-muted:       #5A7080;
+  --ql-border:           #DCE4EA;
+  --ql-signature:        #1A6FB5;
+  --ql-accent:           #1A6FB5;
+  --ql-text-on-signature:#FFFFFF;
+  --ql-font-display:     'DM Sans', sans-serif;
+  --ql-font-body:        'Source Sans 3', sans-serif;
+  --ql-font-mono:        'Source Sans 3', sans-serif;
+}
+</style>
+ <style>/* QUOLAB WHATSAPP FLOAT — comun a los 10 templates.
+   Diseno fijo: circulo verde oficial WhatsApp #25D366, icono blanco, sombra suave,
+   pulso sutil en reposo, escala leve en hover. Sigue siendo accesible con teclado. */
+
+.ql-wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45),
+              0 2px 6px rgba(0, 0, 0, 0.10);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ql-wa-float::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  animation: ql-wa-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.ql-wa-float:hover,
+.ql-wa-float:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55),
+              0 3px 8px rgba(0, 0, 0, 0.14);
+}
+.ql-wa-float:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+.ql-wa-float svg { display: block; }
+
+@keyframes ql-wa-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 480px) {
+  .ql-wa-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .ql-wa-float svg { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ql-wa-float::before { animation: none; }
+  .ql-wa-float { transition: none; }
+}
+</style>
+ <style>/* QUOLAB STRIP — franja final identica en los 10 templates.
+   Refuerza el branding Quolab usando la identidad de marca real:
+   - Fondo negro principal #0a0a0c
+   - Tipografia Neulis Sans (Adobe Typekit) cargada en el <head>
+   - Azul Quolab #2a3df4 en el link "Quolab"
+   Sirve de cierre comun: el cliente ve el branding sin importar el template
+   que le toco a su rubro. */
+
+.ql-strip {
+  background: #0a0a0c;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "neulis-sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ql-strip__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.ql-strip__copy strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+}
+.ql-strip__brand {
+  color: rgba(255, 255, 255, 0.45);
+}
+.ql-strip__brand a {
+  color: #2a3df4;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.ql-strip__brand a:hover,
+.ql-strip__brand a:focus-visible {
+  color: #f4622a;
+}
+.ql-strip__brand a:focus-visible {
+  outline: 2px solid #2a3df4;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .ql-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    gap: 0.4rem;
+  }
+  .ql-strip { font-size: 0.74rem; }
+}
+</style>
+ <style>/* TEMPLATE 04 — SALUD · Clínico sereno claro */
+body { background: var(--ql-bg); color: var(--ql-text); font-family: var(--ql-font-body); }
+.t04-wrap { width: 100%; max-width: 1100px; margin-inline: auto; padding-inline: clamp(1.25rem,4vw,2rem); }
+
+.ql-hero-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .75s ease, transform .75s ease; }
+.ql-hero-stagger.is-visible > * { opacity: 1; transform: none; }
+.ql-hero-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.ql-hero-stagger.is-visible > *:nth-child(2) { transition-delay: 130ms; }
+.ql-hero-stagger.is-visible > *:nth-child(3) { transition-delay: 250ms; }
+.ql-hero-stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+.ql-hero-stagger.is-visible > *:nth-child(5) { transition-delay: 460ms; }
+
+.t04-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.6rem; font-family: var(--ql-font-body); font-size: .875rem; font-weight: 600; border-radius: 8px; border: 1.5px solid transparent; cursor: pointer; transition: background .2s, opacity .2s, border-color .2s, color .2s; white-space: nowrap; }
+.t04-btn--primary { background: var(--ql-signature); color: #fff; border-color: var(--ql-signature); }
+.t04-btn--primary:hover { opacity: .88; }
+.t04-btn--outline { background: transparent; color: var(--ql-signature); border-color: var(--ql-signature); }
+.t04-btn--outline:hover { background: color-mix(in srgb, var(--ql-signature) 8%, transparent); }
+.t04-btn--white { background: #fff; color: var(--ql-signature); border-color: #fff; }
+.t04-btn--white:hover { opacity: .9; }
+.t04-btn--white-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.t04-btn--white-outline:hover { background: rgba(255,255,255,.15); }
+
+/* Logo con cruz SVG */
+.t04-logo { display: flex; align-items: center; gap: .625rem; flex-shrink: 0; }
+.t04-logo__mark { width: 30px; height: 30px; border-radius: 8px; background: var(--ql-signature); color: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.t04-logo__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); letter-spacing: -.01em; }
+
+.t04-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--ql-border); }
+.t04-header__inner { height: 68px; display: flex; align-items: center; gap: 2.5rem; }
+.t04-nav { display: flex; gap: 2rem; margin-left: auto; }
+.t04-nav a { font-size: .875rem; font-weight: 500; color: var(--ql-text-muted); transition: color .2s; }
+.t04-nav a:hover { color: var(--ql-signature); }
+
+.t04-hero { background: var(--ql-bg); padding-block: clamp(4.5rem,9vw,7.5rem); }
+.t04-hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem,5vw,5rem); align-items: center; }
+.t04-hero__text { display: flex; flex-direction: column; gap: 1.25rem; }
+.t04-hero__badge { display: inline-block; padding: .35rem 1rem; font-size: .75rem; font-weight: 600; letter-spacing: .08em; background: color-mix(in srgb, var(--ql-signature) 10%, transparent); color: var(--ql-signature); border-radius: 6px; align-self: flex-start; }
+.t04-hero__h1 { font-family: var(--ql-font-display); font-size: clamp(2.5rem,5.5vw,4.5rem); font-weight: 700; color: var(--ql-text); line-height: 1.1; letter-spacing: -.025em; }
+.t04-hero__desc { font-size: 1.05rem; color: var(--ql-text-muted); max-width: 460px; line-height: 1.7; }
+.t04-hero__actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.t04-hero__rating { font-size: .875rem; color: var(--ql-text-muted); }
+.t04-hero__img { width: 100%; height: clamp(380px,50vw,600px); object-fit: cover; border-radius: 16px; display: block; }
+
+.t04-section-header { margin-bottom: clamp(2rem,4vw,3rem); }
+.t04-section-header--center { text-align: center; }
+.t04-eyebrow { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ql-signature); margin-bottom: .5rem; }
+.t04-section-title { font-family: var(--ql-font-display); font-size: clamp(1.8rem,3.5vw,2.75rem); font-weight: 700; color: var(--ql-text); line-height: 1.12; letter-spacing: -.02em; }
+.t04-section-sub { font-size: .95rem; color: var(--ql-text-muted); margin-top: .5rem; }
+
+.t04-tratamientos { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t04-tratamientos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.t04-trat-card { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 12px; padding: 1.875rem; transition: box-shadow .2s; }
+.t04-trat-card:hover { box-shadow: 0 8px 24px rgba(13,31,45,.07); }
+.t04-trat-card__icon { color: var(--ql-signature); margin-bottom: .875rem; }
+.t04-trat-card__title { font-family: var(--ql-font-display); font-size: 1.05rem; font-weight: 700; color: var(--ql-text); margin-bottom: .4rem; }
+.t04-trat-card__desc { font-size: .875rem; color: var(--ql-text-muted); line-height: 1.65; }
+
+.t04-tranquilidad { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t04-tranquilidad__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.t04-pilar { text-align: center; }
+.t04-pilar__icon { width: 64px; height: 64px; border-radius: 50%; background: color-mix(in srgb, var(--ql-signature) 10%, transparent); color: var(--ql-signature); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+.t04-pilar__title { font-family: var(--ql-font-display); font-size: 1.05rem; font-weight: 700; color: var(--ql-text); margin-bottom: .4rem; }
+.t04-pilar__desc { font-size: .875rem; color: var(--ql-text-muted); line-height: 1.65; }
+
+.t04-proceso { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg-alt); }
+.t04-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; list-style: none; position: relative; }
+.t04-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: var(--ql-border); z-index: 0; }
+.t04-step { position: relative; z-index: 1; text-align: center; }
+.t04-step__num { font-family: var(--ql-font-display); font-size: 2rem; font-weight: 800; color: var(--ql-signature); width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--ql-signature); background: var(--ql-bg-alt); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1rem; font-weight: 700; }
+.t04-step__title { font-family: var(--ql-font-display); font-size: 1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .375rem; }
+.t04-step__desc { font-size: .85rem; color: var(--ql-text-muted); line-height: 1.6; }
+
+.t04-testimonios { padding: clamp(4rem,8vw,7rem) 0; background: var(--ql-bg); }
+.t04-testimonios__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.t04-testi { background: var(--ql-surface); border: 1px solid var(--ql-border); border-radius: 12px; padding: 1.875rem; display: flex; flex-direction: column; gap: 1rem; }
+.t04-testi__texto { font-size: .9rem; color: var(--ql-text); line-height: 1.7; font-style: italic; flex: 1; }
+.t04-testi__footer { display: flex; align-items: center; gap: .875rem; border-top: 1px solid var(--ql-border); padding-top: 1rem; }
+.t04-testi__avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--ql-signature); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .95rem; }
+.t04-testi__autor { font-size: .8rem; font-weight: 600; color: var(--ql-text); display: block; margin-bottom: .15rem; }
+.t04-testi__stars { font-size: .8rem; color: var(--ql-signature); font-weight: 600; }
+
+.t04-cta { background: var(--ql-signature); padding: clamp(3.5rem,7vw,6rem) 0; }
+.t04-cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.t04-cta__copy { flex: 1; min-width: 240px; }
+.t04-cta__titulo { font-family: var(--ql-font-display); font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.02em; }
+.t04-cta__sub { font-size: 1rem; color: rgba(255,255,255,.75); margin-top: .5rem; }
+.t04-cta__actions { display: flex; flex-wrap: wrap; gap: .75rem; flex-shrink: 0; }
+
+.t04-foot { background: var(--ql-bg-alt); border-top: 1px solid var(--ql-border); padding-block: 4rem 1.75rem; }
+.t04-foot__inner { display: grid; grid-template-columns: 2fr 1fr 1.4fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--ql-border); }
+.t04-foot__name { font-family: var(--ql-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ql-text); margin-bottom: .375rem; }
+.t04-foot__rubro { font-size: .8rem; color: var(--ql-text-muted); }
+.t04-foot__nav { display: flex; flex-direction: column; gap: .6rem; }
+.t04-foot__nav a { font-size: .875rem; color: var(--ql-text-muted); transition: color .2s; }
+.t04-foot__nav a:hover { color: var(--ql-signature); }
+.t04-foot__contact { display: flex; flex-direction: column; gap: .6rem; }
+.t04-foot__contact-item { font-size: .875rem; color: var(--ql-text-muted); }
+.t04-foot__contact-item a { color: var(--ql-signature); }
+.t04-foot__bottom { padding-top: 1.75rem; }
+.t04-foot__copy { font-size: .78rem; color: var(--ql-text-muted); text-align: center; opacity: .8; }
+.t04-foot__copy a { color: var(--ql-signature); }
+
+@media (max-width: 968px) {
+  .t04-tratamientos__grid { grid-template-columns: repeat(2,1fr); }
+  .t04-tranquilidad__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .t04-steps { grid-template-columns: repeat(2,1fr); }
+  .t04-steps::before { display: none; }
+  .t04-testimonios__grid { grid-template-columns: repeat(2,1fr); }
+  .t04-foot__inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .t04-foot__brand { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .t04-nav { display: none; }
+  .t04-header__cta { margin-left: auto; padding: .55rem 1rem; font-size: .82rem; }
+  .t04-hero__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t04-hero__img { height: 260px; border-radius: 12px; }
+  .t04-tratamientos__grid { grid-template-columns: 1fr; }
+  .t04-steps { grid-template-columns: 1fr; }
+  .t04-testimonios__grid { grid-template-columns: 1fr; }
+  .t04-cta__inner { flex-direction: column; align-items: flex-start; }
+  .t04-foot__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .t04-foot__brand { grid-column: unset; }
+}
+</style>
+</head>
+<body>
+
+<header class="t04-header" role="banner">
+ <div class="t04-wrap t04-header__inner">
+ <a href="#" class="t04-logo" aria-label="Clinica del Pie">
+ <span class="t04-logo__mark" aria-hidden="true">
+ <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+ </span>
+ <span class="t04-logo__name">Clinica del Pie</span>
+ </a>
+ <nav class="t04-nav" aria-label="Menu principal">
+ <a href="#tratamientos">Tratamientos</a>
+ <a href="#proceso">Como atendemos</a>
+ <a href="#testimonios">Resenas</a>
+ <a href="#contacto">Contacto</a>
+ </nav>
+ <a href="https://wa.me/56982345678" class="t04-btn t04-btn--primary t04-header__cta" target="_blank" rel="noopener noreferrer">Agendar hora</a>
+ </div>
+</header>
+
+<section class="t04-hero" aria-label="Portada">
+ <div class="t04-wrap t04-hero__inner ql-hero-stagger">
+ <div class="t04-hero__text">
+ <span class="t04-hero__badge">Hora disponible esta semana</span> 
+ <h1 class="t04-hero__h1">Tus pies en manos expertas.</h1>
+ <p class="t04-hero__desc">Centro especializado en podologia y salud del pie en Las Condes. Tratamientos clinicos, unas encarnadas, hongos y ortopedia podologica con profesionales certificados.</p>
+ <div class="t04-hero__actions">
+ <a href="https://wa.me/56982345678" class="t04-btn t04-btn--primary" target="_blank" rel="noopener noreferrer">Agendar hora</a>
+ <a href="#tratamientos" class="t04-btn t04-btn--outline"></a>
+ </div>
+ <p class="t04-hero__rating">&#9733; 4.8 &middot; 163 resenas</p> 
+ </div>
+ <div class="t04-hero__media" aria-hidden="true">
+ <img class="t04-hero__img" src="https://images.unsplash.com/photo-1545463913-5083aa7359a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mjg5OTB8MHwxfHNlYXJjaHwxfHxwb2RpYXRyeSUyMGZvb3QlMjBjYXJlJTIwY2xpbmljJTIwbWVkaWNhbCUyMHByb2Zlc3Npb25hbHxlbnwxfDB8fHwxNzc3NTIzMDQwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="person massaging other person's foot" loading="eager">
+ </div>
+ </div>
+</section>
+
+<!-- TRATAMIENTOS -->
+<section class="t04-tratamientos ql-anim" id="tratamientos">
+ <div class="t04-wrap">
+ <header class="t04-section-header">
+ <p class="t04-eyebrow">Especialidades</p>
+ <h2 class="t04-section-title">Nuestros tratamientos</h2>
+ </header>
+ <div class="t04-tratamientos__grid">
+ <article class="t04-trat-card">
+ <div class="t04-trat-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0.3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg></div>
+ <h3 class="t04-trat-card__title">Podologia clinica</h3>
+ <p class="t04-trat-card__desc">Atencion integral del pie: callos, durezas, unas y piel.</p>
+ </article>
+ <article class="t04-trat-card">
+ <div class="t04-trat-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+ <h3 class="t04-trat-card__title">Una encarnada</h3>
+ <p class="t04-trat-card__desc">Tratamiento indoloro con anestesia local y cirugia menor de precision.</p>
+ </article>
+ <article class="t04-trat-card">
+ <div class="t04-trat-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+ <h3 class="t04-trat-card__title">Tratamiento de hongos</h3>
+ <p class="t04-trat-card__desc">Protocolo clinico para onicomicosis con seguimiento hasta la cura.</p>
+ </article>
+ <article class="t04-trat-card">
+ <div class="t04-trat-card__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+ <h3 class="t04-trat-card__title">Plantillas ortopodologicas</h3>
+ <p class="t04-trat-card__desc">Plantillas a medida para corregir pisada y aliviar dolores cronicos.</p>
+ </article> 
+ 
+ 
+ </div>
+ </div>
+</section>
+
+<!-- TRANQUILIDAD -->
+<section class="t04-tranquilidad ql-anim">
+ <div class="t04-wrap">
+ <header class="t04-section-header t04-section-header--center">
+ <p class="t04-eyebrow">Nuestra promesa</p>
+ <h2 class="t04-section-title">Atencion que transmite confianza</h2>
+ </header>
+ <div class="t04-tranquilidad__grid ql-stagger">
+ <div class="t04-pilar">
+ <div class="t04-pilar__icon" aria-hidden="true">
+ <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+ </div>
+ <h3 class="t04-pilar__title">Profesionales certificados</h3>
+ <p class="t04-pilar__desc">Equipo con titulos validados y formacion continua en sus especialidades.</p>
+ </div>
+ <div class="t04-pilar">
+ <div class="t04-pilar__icon" aria-hidden="true">
+ <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+ </div>
+ <h3 class="t04-pilar__title">Atencion sin apuros</h3>
+ <p class="t04-pilar__desc">Cada paciente recibe el tiempo que necesita. Sin listas de espera improvisadas.</p>
+ </div>
+ <div class="t04-pilar">
+ <div class="t04-pilar__icon" aria-hidden="true">
+ <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+ </div>
+ <h3 class="t04-pilar__title">Equipamiento moderno</h3>
+ <p class="t04-pilar__desc">Tecnologia actualizada para diagnosticos precisos y tratamientos efectivos.</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- PROCESO -->
+<section class="t04-proceso ql-anim" id="proceso">
+ <div class="t04-wrap">
+ <header class="t04-section-header t04-section-header--center">
+ <p class="t04-eyebrow">Paso a paso</p>
+ <h2 class="t04-section-title">Como es la atencion</h2>
+ </header>
+ <ol class="t04-steps ql-stagger" aria-label="Pasos del proceso">
+ <li class="t04-step">
+ <div class="t04-step__num" aria-hidden="true">01</div>
+ <h3 class="t04-step__title">Agendar</h3>
+ <p class="t04-step__desc">Reserva tu hora por WhatsApp o telefono.</p>
+ </li>
+ <li class="t04-step">
+ <div class="t04-step__num" aria-hidden="true">02</div>
+ <h3 class="t04-step__title">Llegar</h3>
+ <p class="t04-step__desc">Te recibimos en el horario acordado.</p>
+ </li>
+ <li class="t04-step">
+ <div class="t04-step__num" aria-hidden="true">03</div>
+ <h3 class="t04-step__title">Tratamiento</h3>
+ <p class="t04-step__desc">Atencion profesional con plan claro.</p>
+ </li>
+ <li class="t04-step">
+ <div class="t04-step__num" aria-hidden="true">04</div>
+ <h3 class="t04-step__title">Seguimiento</h3>
+ <p class="t04-step__desc">Acompanamos tu evolucion despues de la consulta.</p>
+ </li>
+ </ol>
+ </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="t04-testimonios ql-anim" id="testimonios">
+ <div class="t04-wrap">
+ <header class="t04-section-header">
+ <p class="t04-eyebrow">Resenas</p>
+ <h2 class="t04-section-title">Lo que dicen nuestros pacientes</h2>
+ <p class="t04-section-sub">&#9733; 4.8 &middot; 163 resenas</p> 
+ </header>
+ <div class="t04-testimonios__grid">
+ <article class="t04-testi">
+ <p class="t04-testi__texto">&#8220;Llevaba anos con la una encarnada en el mismo pie. Me la resolvieron en una sola sesion, sin dolor. Increible.&#8221;</p>
+ <footer class="t04-testi__footer">
+ <span class="t04-testi__avatar" aria-hidden="true">L</span>
+ <div>
+ <strong class="t04-testi__autor">Lorena M.</strong>
+ <span class="t04-testi__stars">&#9733; 5</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t04-testi">
+ <p class="t04-testi__texto">&#8220;Las plantillas que me hicieron cambiaron todo. Ya no tengo dolor en la rodilla despues de andar. Muy recomendado.&#8221;</p>
+ <footer class="t04-testi__footer">
+ <span class="t04-testi__avatar" aria-hidden="true">J</span>
+ <div>
+ <strong class="t04-testi__autor">Jorge P.</strong>
+ <span class="t04-testi__stars">&#9733; 5</span>
+ </div>
+ </footer>
+ </article> 
+ <article class="t04-testi">
+ <p class="t04-testi__texto">&#8220;Atencion muy profesional y el lugar impecable. Primera vez que siento que me explican bien mi problema del pie.&#8221;</p>
+ <footer class="t04-testi__footer">
+ <span class="t04-testi__avatar" aria-hidden="true">P</span>
+ <div>
+ <strong class="t04-testi__autor">Paula G.</strong>
+ <span class="t04-testi__stars">&#9733; 5</span>
+ </div>
+ </footer>
+ </article> 
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="t04-cta" id="contacto">
+ <div class="t04-wrap t04-cta__inner">
+ <div class="t04-cta__copy">
+ <h2 class="t04-cta__titulo">Agenda tu hora hoy</h2>
+ <p class="t04-cta__sub">Primera consulta con evaluacion completa sin costo adicional.</p> 
+ </div>
+ <div class="t04-cta__actions">
+ <a href="https://wa.me/56982345678" class="t04-btn t04-btn--white" target="_blank" rel="noopener noreferrer">Agendar hora</a>
+ <a href="tel:+56 9 8234 5678" class="t04-btn t04-btn--white-outline">+56 9 8234 5678</a> 
+ </div>
+ </div>
+</section>
+
+<!--
+ Franja final Quolab — comun e identica en los 10 templates.
+ Refuerza el branding de la agencia: fondo negro principal #0a0a0c,
+ tipografia Neulis (Adobe Typekit), azul #2a3df4 en el link "Quolab".
+ Variables que reemplaza el assembler:
+ 2026 -> ano actual
+ Clinica del Pie -> nombre del negocio del prospecto
+-->
+<div class="ql-strip">
+ <div class="ql-strip__inner">
+ <span class="ql-strip__copy">
+ &copy; 2026 <strong>Clinica del Pie</strong> &mdash; Todos los derechos reservados.
+ </span>
+ <span class="ql-strip__brand">
+ Desarrollado
+ <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a>
+ </span>
+ </div>
+</div>
+
+<!--
+ Boton flotante de WhatsApp — comun a los 10 templates.
+ El assembler reemplaza 56982345678 por el numero del prospecto sin caracteres no numericos.
+ Posicionado fixed bottom-right con animacion de pulso sutil.
+-->
+<a class="ql-wa-float"
+ href="https://wa.me/56982345678?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s"
+ target="_blank" rel="noopener"
+ aria-label="Contactar por WhatsApp">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0.16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+ </svg>
+</a>
+
+<footer class="t04-foot" aria-label="Pie de pagina">
+ <div class="t04-wrap t04-foot__inner">
+ <div class="t04-foot__brand">
+ <p class="t04-foot__name">Clinica del Pie</p>
+ <p class="t04-foot__rubro">Podologia &middot; Las Condes</p> 
+ </div>
+ <nav class="t04-foot__nav" aria-label="Navegacion">
+ <a href="#tratamientos">Tratamientos</a>
+ <a href="#proceso">Como atendemos</a>
+ <a href="#testimonios">Resenas</a>
+ <a href="#contacto">Agendar</a>
+ </nav>
+ <div class="t04-foot__contact">
+ <p class="t04-foot__contact-item"><a href="tel:+56 9 8234 5678">+56 9 8234 5678</a></p> 
+ <p class="t04-foot__contact-item">Las Condes</p> 
+ <p class="t04-foot__contact-item">Lun-Vie 9:00-19:00 · Sab 9:00-14:00</p> 
+ </div>
+ </div>
+ <div class="t04-foot__bottom">
+ <p class="t04-foot__copy">&#169; 2026 Clinica del Pie &middot; Desarrollado por <a href="https://quolab.cl" target="_blank" rel="noopener">Quolab</a></p>
+ </div>
+</footer>
+
+<script>/* QUOLAB ANIM OBSERVER — script comun a los 10 templates.
+   - Activa las animaciones de tipo A (fade-in + slide leve) cuando el elemento entra al viewport.
+   - Una vez animado, queda visible: no se vuelve a ocultar al salir.
+   - Se inyecta inline en el HTML final por el assembler.
+   Uso en cualquier template:
+     <div class="ql-anim">...</div>
+     <ul class="ql-stagger">...</ul>     // anima los hijos en cascada
+   El hero usa animacion B (slide stagger desde abajo) que se dispara al cargar la pagina,
+   no por viewport. Esa logica vive en la clase .ql-hero-stagger inline del template. */
+(function () {
+  'use strict';
+
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  function init() {
+    document.querySelectorAll('.ql-anim, .ql-stagger').forEach(function (el) {
+      io.observe(el);
+    });
+    var hero = document.querySelector('.ql-hero-stagger');
+    if (hero) {
+      requestAnimationFrame(function () { hero.classList.add('is-visible'); });
+    }
+
+    // Safety net: si por algun motivo el IO no dispara (entornos headless,
+    // tabs en background, o algun error de paint), tras 2s marcamos todo
+    // como visible para que la pagina nunca quede en blanco.
+    setTimeout(function () {
+      document.querySelectorAll('.ql-anim:not(.is-visible), .ql-stagger:not(.is-visible)').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }, 2000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
