@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yerko's — El Sándwich de Verdad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --black2: #111111;
+    --yellow: #f5c518;
+    --gold: #c9952a;
+    --green: #3a7d2e;
+    --green-bright: #4caf37;
+    --white: #f5f0e8;
+    --gray: #888;
+    --red: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 48px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245,197,24,0.15);
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo img {
+    height: 130px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 36px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+
+  nav ul a:hover { opacity: 1; color: var(--yellow); }
+
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--black) !important;
+    padding: 10px 24px;
+    border-radius: 4px;
+    opacity: 1 !important;
+    font-weight: 800 !important;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+
+  .nav-cta:hover { background: #ffd540 !important; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 160px 48px 100px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--black);
+  }
+
+  .hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,10,10,0.55) 0%,
+      rgba(10,10,10,0.45) 50%,
+      rgba(10,10,10,0.72) 100%
+    );
+  }
+
+  /* Diagonal stripe accent */
+  .hero-stripes {
+    position: absolute;
+    right: -80px;
+    top: 0;
+    bottom: 0;
+    width: 420px;
+    background: repeating-linear-gradient(
+      -55deg,
+      rgba(245,197,24,0.03) 0px,
+      rgba(245,197,24,0.03) 2px,
+      transparent 2px,
+      transparent 28px
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+
+  .hero-eyebrow span {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--yellow);
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 11vw, 9.5rem);
+    line-height: 0.88;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.35s forwards;
+  }
+
+  h1 .line-yellow { color: var(--yellow); display: block; }
+  h1 .line-outline {
+    -webkit-text-stroke: 2px var(--white);
+    color: transparent;
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.85);
+    line-height: 1.65;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s forwards;
+  }
+
+  .hero-sub strong { color: var(--white); font-weight: 600; }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.65s forwards;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: #ffd540;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(245,197,24,0.35);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border: 1.5px solid rgba(245,240,232,0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); }
+
+  /* ── HAMBURGER ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(5,5,5,0.98);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .nav-mobile-menu.open { display: flex; }
+
+  .nav-mobile-menu a {
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    transition: color 0.2s;
+  }
+
+  .nav-mobile-menu a:hover { color: var(--yellow); }
+
+  .nav-mobile-menu .nav-cta-mobile {
+    background: var(--yellow);
+    color: var(--black) !important;
+    padding: 14px 36px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    background: var(--yellow);
+    padding: 18px 48px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: var(--black);
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ── SECTIONS GENERAL ── */
+  section { padding: 100px 48px; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--yellow);
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.9;
+    letter-spacing: 1px;
+  }
+
+  /* ── MENU SECTION ── */
+  .menu-section {
+    background: var(--black2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu-section::before {
+    content: 'MENÚ';
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18rem;
+    color: rgba(255,255,255,0.015);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 10px;
+  }
+
+  .menu-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+  }
+
+  .menu-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+    padding-bottom: 0;
+  }
+
+  .menu-tab {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: none;
+    background: none;
+    color: rgba(245,240,232,0.4);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+  }
+
+  .menu-tab.active {
+    color: var(--yellow);
+    border-bottom-color: var(--yellow);
+  }
+
+  .menu-tab:hover { color: var(--white); }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .menu-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+
+  .menu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .menu-card:hover {
+    border-color: rgba(245,197,24,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+  }
+
+  .menu-card:hover::before { transform: scaleX(1); }
+
+  .card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .card-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--yellow);
+    letter-spacing: 1px;
+  }
+
+  .card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--green);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  .menu-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px 8px 0 0;
+    transition: transform 0.4s;
+  }
+
+  .menu-card:hover .menu-card-img {
+    transform: scale(1.04);
+  }
+
+  .menu-card-img-wrap {
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin: -28px -28px 20px -28px;
+  }
+
+  .menu-card-body {
+    position: relative;
+  }
+
+  /* ── SUCURSALES ── */
+  .sucursales-section {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sucursales-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sucursales-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .sucursales-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .sucursal-card {
+    background: var(--black2);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .sucursal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+
+  .sucursal-header {
+    padding: 32px 32px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+
+  .sucursal-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(245,197,24,0.08);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+  }
+
+  .sucursal-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .sucursal-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .sucursal-body {
+    padding: 28px 32px 32px;
+  }
+
+  .sucursal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.5;
+  }
+
+  .info-icon {
+    width: 18px;
+    height: 18px;
+    background: rgba(245,197,24,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 0.6rem;
+  }
+
+  .sucursal-btn {
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 1.5px solid rgba(245,197,24,0.4);
+    color: var(--yellow);
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .sucursal-btn:hover {
+    background: var(--yellow);
+    color: var(--black);
+    border-color: var(--yellow);
+  }
+
+  /* ── ESPECIALES MARQUEE ── */
+  .marquee-section {
+    background: var(--yellow);
+    padding: 22px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+  }
+
+  .marquee-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    color: var(--black);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    white-space: nowrap;
+  }
+
+  .marquee-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--black);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── PROMOS SECTION ── */
+  .promos-section {
+    background: var(--black2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .promos-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    margin-bottom: 56px;
+  }
+
+  .promos-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 24px;
+  }
+
+  .promo-card {
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .promo-card.big {
+    grid-row: span 2;
+    background: linear-gradient(145deg, #1a1200 0%, #2d1f00 50%, #1a0d00 100%);
+    border: 1px solid rgba(201,149,42,0.25);
+    min-height: 500px;
+  }
+
+  .promo-card.big::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(245,197,24,0.12) 0%, transparent 60%);
+  }
+
+  .promo-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    opacity: 0.35;
+    transition: opacity 0.3s;
+  }
+
+  .promo-card:hover .promo-bg-img { opacity: 0.5; }
+
+  .promo-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.3) 100%);
+    border-radius: 16px;
+  }
+
+  .promo-card.green {
+    background: linear-gradient(135deg, #0d1f09 0%, #162e10 100%);
+    border: 1px solid rgba(76,175,55,0.2);
+  }
+
+  .promo-card.dark {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1c1c1c 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .promo-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--yellow);
+    display: block;
+    position: relative;
+  }
+
+  .promo-price.big { font-size: 6rem; }
+
+  .promo-desc {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .promo-small {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.5);
+    position: relative;
+  }
+
+  .promo-badge-big {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: var(--green);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* ── DELIVERY ── */
+  .delivery-section {
+    background: var(--green);
+    padding: 80px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .delivery-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.04) 0px,
+      rgba(0,0,0,0.04) 2px,
+      transparent 2px,
+      transparent 20px
+    );
+  }
+
+  .delivery-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .delivery-section h2 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .delivery-section p {
+    font-size: 1.15rem;
+    color: rgba(245,240,232,0.8);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .delivery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--black);
+    color: var(--white);
+    padding: 18px 44px;
+    border-radius: 6px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .delivery-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  }
+
+  .whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    fill: #25d366;
+  }
+
+  /* ── NOSOTROS ── */
+  .nosotros-section {
+    background: var(--black);
+    position: relative;
+  }
+
+  .nosotros-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .nosotros-text h2 {
+    margin-bottom: 28px;
+  }
+
+  .nosotros-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 20px;
+  }
+
+  .nosotros-text p strong { color: var(--white); }
+
+  .values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .value-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .nosotros-visual {
+    position: relative;
+  }
+
+  .nosotros-img {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .nosotros-img img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.1);
+  }
+
+  .nosotros-quote {
+    position: absolute;
+    bottom: -24px;
+    left: -24px;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 24px 28px;
+    border-radius: 8px;
+    max-width: 260px;
+  }
+
+  .nosotros-quote p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    color: var(--black);
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050505;
+    padding: 64px 48px 40px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+
+  .footer-logo {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+    /* logo es blanco sobre negro — se ve bien directo */
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.6;
+    max-width: 240px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul a {
+    text-decoration: none;
+    color: rgba(245,240,232,0.6);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: var(--yellow); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.3);
+  }
+
+  .footer-bottom a { color: rgba(245,197,24,0.6); text-decoration: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Floating animation for hero badge */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .hero-badge { animation: float 3s ease-in-out infinite; }
+
+  /* Counter animation */
+  .counter { display: inline-block; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .nosotros-inner { gap: 60px; }
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 8px 24px; }
+    nav ul { display: none; }
+    .nav-hamburger { display: flex; }
+    section { padding: 72px 24px; }
+    .hero { padding: 140px 24px 80px; }
+    .hero-content { max-width: 100%; }
+    .stats-bar { padding: 16px 24px; gap: 24px; flex-wrap: wrap; }
+    .stat-item { min-width: 120px; }
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .menu-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .sucursales-grid { grid-template-columns: 1fr; }
+    .promos-grid { grid-template-columns: 1fr; }
+    .promo-card.big { min-height: 360px; }
+    .nosotros-inner { grid-template-columns: 1fr; gap: 48px; }
+    .nosotros-img img { height: 380px; }
+    .nosotros-quote { left: 0; bottom: -16px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    h2 { font-size: 3rem; }
+    .delivery-section { padding: 64px 24px; }
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 6px 20px; }
+    .nav-logo img { height: 90px; }
+    section { padding: 60px 20px; }
+    .hero { padding: 120px 20px 70px; }
+    h1 { font-size: clamp(3.5rem, 14vw, 5.5rem); }
+    h2 { font-size: 2.6rem; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .stats-bar { gap: 16px; padding: 16px 20px; }
+    .stat-num { font-size: 1.8rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .promos-grid { grid-template-columns: 1fr; }
+    .promo-price.big { font-size: 4rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    .marquee-item { font-size: 1rem; padding: 0 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><img src="logo_head.png" alt="Yerko's"></a>
+  <ul>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#sucursales">Sucursales</a></li>
+    <li><a href="#promos">Promos</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#delivery" class="nav-cta">Pedir Ahora</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobile-menu">
+  <a href="#menu" class="mobile-link">Menú</a>
+  <a href="#sucursales" class="mobile-link">Sucursales</a>
+  <a href="#promos" class="mobile-link">Promos</a>
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="#delivery" class="nav-cta-mobile mobile-link">Pedir Ahora</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="hero.png" alt="Yerko's Sándwich">
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <div class="hero-stripes"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"><span></span>Concepción, Chile · Desde 2015</p>
+    <h1>
+      <span class="line-yellow">El Sándwich</span>
+      <span>Que No</span>
+      <span class="line-outline">Olvidás</span>
+    </h1>
+    <p class="hero-sub">
+      Mechadas, completos y sabores que se quedan.
+      <strong>Tres sucursales</strong> en el Gran Concepción para que siempre tengas
+      a Yerko's cerca.
+    </p>
+    <div class="hero-btns">
+      <a href="#delivery" class="btn-primary">Pide por WhatsApp</a>
+      <a href="#menu" class="btn-secondary">Ver el Menú</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">50.6K</span>
+    <span class="stat-label">Seguidores IG</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label">Sucursales</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">+10</span>
+    <span class="stat-label">Años sirviendo</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">7</span>
+    <span class="stat-label">Días a la semana</span>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">MECHADAS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">COMPLETOS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">DELIVERY DISPONIBLE<div class="marquee-dot"></div></div>
+    <div class="marquee-item">RESTOBAR LOMAS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">BOWLS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">CAFETERÍA<div class="marquee-dot"></div></div>
+    <div class="marquee-item">3 SUCURSALES<div class="marquee-dot"></div></div>
+    <div class="marquee-item">MECHADAS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">COMPLETOS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">DELIVERY DISPONIBLE<div class="marquee-dot"></div></div>
+    <div class="marquee-item">RESTOBAR LOMAS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">BOWLS<div class="marquee-dot"></div></div>
+    <div class="marquee-item">CAFETERÍA<div class="marquee-dot"></div></div>
+    <div class="marquee-item">3 SUCURSALES<div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- MENÚ -->
+<section class="menu-section" id="menu">
+  <div class="menu-inner">
+    <div class="menu-header reveal">
+      <div>
+        <p class="section-label">Lo que hacemos mejor</p>
+        <h2>NUESTRO MENÚ</h2>
+      </div>
+    </div>
+    <div class="menu-grid" id="menu-grid" style="grid-template-columns: repeat(3,1fr);">
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="mechada_clasica.png" alt="Mechada Clásica">
+        </div>
+        <div class="menu-card-body">
+          <span class="card-tag">Popular</span>
+          <div class="card-name">Mechada Clásica</div>
+          <div class="card-desc">Mechada tierna a punto, mayonesa, palta y queso. El clásico que siempre funciona.</div>
+          <div class="card-price">$8.000</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="mechada_tradicional.png" alt="Mechada Tradicional">
+        </div>
+        <div class="menu-card-body">
+          <div class="card-name">Mechada Tradicional</div>
+          <div class="card-desc">Con mayonesa y queso. Simple, directa, sin apología.</div>
+          <div class="card-price">$8.000</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-3">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="mechada_todo.png" alt="Mechada Con Todo">
+        </div>
+        <div class="menu-card-body">
+          <div class="card-name">Mechada Con Todo</div>
+          <div class="card-desc">Mechada con mayonesa, palta y queso. La versión completa y sin excusas.</div>
+          <div class="card-price">$8.000</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-1">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="completo.png" alt="Completo">
+        </div>
+        <div class="menu-card-body">
+          <span class="card-tag">Clásico</span>
+          <div class="card-name">Completo</div>
+          <div class="card-desc">Vienesa, chucrut, tomate, palta y mayo. El completo de siempre, bien hecho.</div>
+          <div class="card-price">$3.900</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-2">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="pollo_papas.png" alt="Pollo y Papas">
+        </div>
+        <div class="menu-card-body">
+          <div class="card-name">Pollo y Papas</div>
+          <div class="card-desc">Pollo jugoso y doradito con papas crujientes. Simple, delicioso, inolvidable.</div>
+          <div class="card-price">$8.990</div>
+        </div>
+      </div>
+      <div class="menu-card reveal reveal-delay-3">
+        <div class="menu-card-img-wrap">
+          <img class="menu-card-img" src="papas_bravas.png" alt="Papas Bravas">
+        </div>
+        <div class="menu-card-body">
+          <div class="card-name">Papas Bravas</div>
+          <div class="card-desc">Papas crujientes con salsa de la casa. El acompañamiento perfecto o el snack ideal.</div>
+          <div class="card-price">$3.500</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCURSALES -->
+<section class="sucursales-section" id="sucursales">
+  <div class="sucursales-inner">
+    <div class="sucursales-header reveal">
+      <p class="section-label">Encuéntranos</p>
+      <h2>TRES<br>SUCURSALES</h2>
+      <p style="margin-top: 16px; color: rgba(245,240,232,0.5); font-size: 1rem; max-width: 480px; margin: 16px auto 0;">
+        Siempre hay un Yerko's cerca. Visítanos en cualquiera de nuestros locales en el Gran Concepción.
+      </p>
+    </div>
+    <div class="sucursales-grid">
+      <div class="sucursal-card reveal reveal-delay-1">
+        <div class="sucursal-header">
+          <span class="sucursal-number">01</span>
+          <span class="sucursal-tag">Sucursal</span>
+          <div class="sucursal-name">BRISA DEL SOL</div>
+        </div>
+        <div class="sucursal-body">
+          <div class="sucursal-info">
+            <div class="info-row">
+              <div class="info-icon">📍</div>
+              <span>Calle B 6054, Talcahuano</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">⏰</div>
+              <span>Lunes a Sábado · 13:00 a 20:00 hrs</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">🛵</div>
+              <span>Delivery disponible</span>
+            </div>
+          </div>
+          <a href="https://wa.me/56973977659" class="sucursal-btn" target="_blank">Pedir por WhatsApp →</a>
+        </div>
+      </div>
+      <div class="sucursal-card reveal reveal-delay-2">
+        <div class="sucursal-header">
+          <span class="sucursal-number">02</span>
+          <span class="sucursal-tag">Sucursal</span>
+          <div class="sucursal-name">LOMAS</div>
+        </div>
+        <div class="sucursal-body">
+          <div class="sucursal-info">
+            <div class="info-row">
+              <div class="info-icon">📍</div>
+              <span>Ramón Carrasco 1080, Lomas de San Sebastián</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">⏰</div>
+              <span>Miérc.–Jueves hasta 01:00 AM · Vie.–Sáb. hasta 02:00 AM</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">🍺</div>
+              <span>Restobar disponible</span>
+            </div>
+          </div>
+          <a href="https://wa.me/56973977659" class="sucursal-btn" target="_blank">Pedir por WhatsApp →</a>
+        </div>
+      </div>
+      <div class="sucursal-card reveal reveal-delay-3">
+        <div class="sucursal-header">
+          <span class="sucursal-number">03</span>
+          <span class="sucursal-tag">Sucursal</span>
+          <div class="sucursal-name">COLÓN</div>
+        </div>
+        <div class="sucursal-body">
+          <div class="sucursal-info">
+            <div class="info-row">
+              <div class="info-icon">📍</div>
+              <span>Ramuntcho 15 (esq. Colón), Villa Acero, Hualpén</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">⏰</div>
+              <span>Lunes a Sábado · Horario local</span>
+            </div>
+            <div class="info-row">
+              <div class="info-icon">🛵</div>
+              <span>Delivery disponible</span>
+            </div>
+          </div>
+          <a href="https://wa.me/56973977659" class="sucursal-btn" target="_blank">Pedir por WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMOS -->
+<section class="promos-section" id="promos">
+  <div class="promos-inner">
+    <div class="promos-header reveal">
+      <div>
+        <p class="section-label">Ofertas del día</p>
+        <h2>PROMOS<br>QUE DAN GANAS</h2>
+      </div>
+    </div>
+    <div class="promos-grid">
+      <div class="promo-card big reveal">
+        <img class="promo-bg-img" src="2_mechadas.png" alt="2 Mechadas">
+        <div class="promo-card-overlay"></div>
+        <span class="promo-badge-big">Promo estrella</span>
+        <div class="promo-desc">2 Mechadas en sus 3 variedades</div>
+        <span class="promo-price big">$12.990</span>
+        <div class="promo-small">Miércoles y Jueves hasta las 22 hrs · Yerko's Colón</div>
+      </div>
+      <div class="promo-card green reveal reveal-delay-1">
+        <img class="promo-bg-img" src="2_completos.png" alt="2 Completos">
+        <div class="promo-card-overlay"></div>
+        <div class="promo-desc">2 Completos + Jugo de máquina</div>
+        <span class="promo-price">$5.990</span>
+        <div class="promo-small">Miérc. a Vie. · 12–18 hrs · Sucursal Lomas</div>
+      </div>
+      <div class="promo-card dark reveal reveal-delay-2">
+        <img class="promo-bg-img" src="sandwich_jugo.png" alt="Sándwich + Jugo">
+        <div class="promo-card-overlay"></div>
+        <div class="promo-desc">Sándwich de Mechada + Jugo</div>
+        <span class="promo-price">$8.000</span>
+        <div class="promo-small">Las 3 variantes · Promoción extendida Lomas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY CTA -->
+<div class="delivery-section" id="delivery">
+  <div class="delivery-inner">
+    <p class="section-label" style="color: rgba(245,240,232,0.7); text-align:center;">Pedidos rápidos</p>
+    <h2>PIDE AHORA,<br>RECIBE HOY</h2>
+    <p>Escríbenos directo al WhatsApp de tu sucursal más cercana. Sin apps, sin comisiones, sin rodeos.</p>
+    <a href="https://wa.me/56973977659" class="delivery-btn" target="_blank">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Escribir al WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section class="nosotros-section" id="nosotros">
+  <div class="nosotros-inner">
+    <div class="nosotros-text">
+      <p class="section-label reveal">Nuestra historia</p>
+      <h2 class="reveal">MÁS QUE<br>UN SÁNDWICH</h2>
+      <div class="reveal">
+        <p style="margin-top: 24px;">
+          Yerko's nació con una idea simple: hacer el sándwich que <strong>de verdad te da ganas</strong>. 
+          Sin atajos, con ingredientes reales y con el cariño de siempre.
+        </p>
+        <p>
+          Hoy somos tres locales en el Gran Concepción — en Brisa del Sol, Lomas y Colón — 
+          y más de <strong>50.000 personas en Instagram</strong> que nos siguen la corriente. 
+          Pero el sabor sigue siendo el mismo desde el principio.
+        </p>
+        <div class="values-list">
+          <div class="value-item"><div class="value-dot"></div>Ingredientes de calidad en cada preparación</div>
+          <div class="value-item"><div class="value-dot"></div>Sabor que se nota en cada mordida</div>
+          <div class="value-item"><div class="value-dot"></div>Hecho con pasión todos los días</div>
+          <div class="value-item"><div class="value-dot"></div>El mejor compañero para cualquier momento</div>
+        </div>
+      </div>
+    </div>
+    <div class="nosotros-visual reveal">
+      <div class="nosotros-img">
+        <img src="nuestra_historia.png" alt="Nuestra Historia - Yerko's">
+      </div>
+      <div class="nosotros-quote">
+        <p>Hecho con pasión. Sabor que se nota.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo"><img src="logo_footer.png" alt="Yerko's"></span>
+        <p class="footer-tagline">El sándwich de verdad. Tres sucursales en el Gran Concepción para que siempre tengas a Yerko's cerca.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menú</h4>
+        <ul>
+          <li><a href="#menu">Mechadas</a></li>
+          <li><a href="#menu">Completos</a></li>
+          <li><a href="#menu">Bowls</a></li>
+          <li><a href="#menu">Cafetería</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sucursales</h4>
+        <ul>
+          <li><a href="#sucursales">Brisa del Sol</a></li>
+          <li><a href="#sucursales">Lomas</a></li>
+          <li><a href="#sucursales">Colón</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/56973977659" target="_blank">WhatsApp</a></li>
+          <li><a href="https://instagram.com/yerkosandwich" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Yerko's — Todos los derechos reservados</span>
+      <span>Desarrollado por <a href="#">Quolab</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (window.scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === `#${current}` ? 'var(--yellow)' : '';
+    });
+  });
+
+  // Nav background on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 60
+      ? 'rgba(5,5,5,0.97)'
+      : 'rgba(10,10,10,0.85)';
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
